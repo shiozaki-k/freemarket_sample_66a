@@ -12,6 +12,11 @@
  |delivery_date|datetime||
  |delivery_charge|integer||
  ||||
+ ## Association
+ belongs to user
+ has_many images
+ has_many main_category
+ 
 
  ## Users table
  |Column|Type|Option|
@@ -26,6 +31,9 @@
  |birthday|datetime||
  |phone|integer||
 
+ ## Association
+ has_many products
+
  ## Comments table
  |Column|Type|Option|
  |---|---|---|
@@ -36,6 +44,9 @@
  |Column|Type|Option|
  |---|---|---|
  |image|string||
+
+ ## Asociation
+ belongs to products
  
  ## Addresses table
  |Column|Type|Option|
@@ -59,8 +70,15 @@
  |---|---|---|
  |category_name|string||
 
+ ## Asociation
+ has_many sub_category
+ belongs to products
+
  ## Sub_categories table
  |Column|Type|Option|
  |---|---|---|
  |sub_category_name|string||
+ 
+ ## Asociation
+ belongs to main_category
 
