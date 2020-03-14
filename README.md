@@ -120,7 +120,7 @@
  
  ### Association
  - belongs_to :user
- - has_many :categories
+ - belongs_to :category
  - has_many :orders
  - has_many :comments
  
