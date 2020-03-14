@@ -22,7 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# DB設計
  ## Items table
+ |Column|Type|Options|
  |---|---|---|
  |name|string|null: false|
  |price|integer|null: false|
@@ -41,6 +43,7 @@ Things you may want to cover:
  has_many orders
 
  ## Shipping_methods
+ |Column|Type|Options|
  |---|---|---|
  |shipper_delivery|string|
  |item_id(FK)
