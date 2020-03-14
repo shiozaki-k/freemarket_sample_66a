@@ -1,84 +1,51 @@
 # README
 
- ## Products　table
- |Column|Type|Option|
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+ ## Items table
  |---|---|---|
- |userID|references||
- |name|string||
- |category|string||
- |price|integer||
- |condetion|string||
- |delivery_status|string||
- |delivery_date|datetime||
- |delivery_charge|integer||
- ||||
- ## Association
- belongs to user
- has_many images
- has_many main_category
+ |name|string|null: false|
+ |price|integer|null: false|
+ |condition|string|null: false|
+ |brand|string|
+ |description|text|null: false|
+ |shipping_fee|string|null: false|
+ |shipping_duration|string|null: false|
+ |main_category(FK)|refereces|
+ |user_id(FK)|refereces|
+ |order_id(FK)|refereces|
  
+ ### Asociation
+ belongs to users
+ has_many main_categories
+ has_many orders
 
- ## Users table
- |Column|Type|Option|
+ ## Shipping_methods
  |---|---|---|
- |email|string||
- |password|string||
- |nickname|string||
- |last_name(漢字)|string||
- |first_name(漢字)|string||
- |last_name(カナ)|string||
- |first_name(カナ)|string||
- |birthday|datetime||
- |phone|integer||
+ |shipper_delivery|string|
+ |item_id(FK)
 
- ## Association
- has_many products
-
- ## Comments table
- |Column|Type|Option|
- |---|---|---|
- |comment|text||
-
-
- ## Image table
- |Column|Type|Option|
- |---|---|---|
- |image|string||
-
- ## Asociation
- belongs to products
+ ### Asociation
+ belongs to items
  
- ## Addresses table
- |Column|Type|Option|
- |---|---|---|
- |user_id|string||
- |post_number|integer||
- |prefectures|string||
- |city|string||
- |address|string||
- |building_name|string||
- |room_number|integer||
-
- ## Cards table
- |Column|Type|Option|
- |---|---|---|
- |user_id|references||
- |card_id|references||
-
- ## Main_categories table
- |Column|Type|Option|
- |---|---|---|
- |category_name|string||
-
- ## Asociation
- has_many sub_category
- belongs to products
-
- ## Sub_categories table
- |Column|Type|Option|
- |---|---|---|
- |sub_category_name|string||
- 
- ## Asociation
- belongs to main_category
 
