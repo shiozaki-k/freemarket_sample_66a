@@ -3,6 +3,7 @@
 
 
 
+
 ## orders table
 |Column|Type|Options|
 |------|----|-------|
@@ -104,6 +105,7 @@
  - has_many :main_categories
  - has_many :orders
 
+
  ## Shipping_methods table
  |Column|Type|Options|
  |---|---|---|
@@ -112,4 +114,6 @@
 
  ### Association
  - belongs to :item
+ 
+
 
