@@ -21,7 +21,7 @@
  - has_many :main_categories
  - has_many :orders
 
- ## Shipping_methods
+ ## Shipping_methods table
  |Column|Type|Options|
  |---|---|---|
  |shipper_delivery|string|
