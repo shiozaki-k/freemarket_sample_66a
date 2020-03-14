@@ -110,7 +110,7 @@
 - has_many :orders
 - has_many :comments
 - has_many :creditcards
-- belongs_to :address
+- has_one :address
 
 
 
