@@ -16,8 +16,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|main_category|string|
-|item_id|references|null: false, foreign_key: true|
+|category|string|
+
 
 ### Association
 - has_many :items
@@ -114,13 +114,13 @@
  |description|text|null: false|
  |shipping_fee|string|null: false|
  |shipping_duration|string|null: false|
- |main_category|references|foreign_key: true|
+ |category|references|foreign_key: true|
  |user_id|references|foreign_key: true|
  |order_id|references|foreign_key: true|
  
  ### Association
- - belongs to :user
- - has_many :main_categories
+ - belongs_to :user
+ - has_many :categories
  - has_many :orders
  - has_many :comments
  
@@ -133,6 +133,6 @@
  |item_id|references|foreign_key: true|
 
  ### Association
- - belongs to :item
+ - belongs_to :item
  
 
