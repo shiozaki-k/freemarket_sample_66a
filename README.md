@@ -37,7 +37,7 @@ Things you may want to cover:
  |user_id|refereces|foreign_key: true|
  |order_id|refereces|foreign_key: true|
  
- ### Asociation
+ ### Association
  belongs to users
  has_many main_categories
  has_many orders
@@ -48,7 +48,7 @@ Things you may want to cover:
  |shipper_delivery|string|
  |item_id|string|foreign: true|
 
- ### Asociation
+ ### Association
  belongs to items
  
 
