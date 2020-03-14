@@ -54,7 +54,7 @@
  |order_id|refereces|foreign_key: true|
  
  ### Association
- - belongs to :users
+ - belongs to :user
  - has_many :main_categories
  - has_many :orders
 
@@ -62,8 +62,8 @@
  |Column|Type|Options|
  |---|---|---|
  |shipper_delivery|string|
- |item_id|string|foreign: true|
+ |item_id|string|foreign_key: true|
 
  ### Association
- - belongs to :items
+ - belongs to :item
  
