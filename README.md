@@ -21,30 +21,7 @@
 
 ### Association
 - belongs_to :item
-- has_many :sub_categories
 
-
-## sub_categories table
-
-|Column|Type|Options|
-|------|----|-------|
-|sub_category|string|
-|main_category_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :main_category
-- has_many :sub2_categories
-
-
-## sub2_categories table
-
-|Column|Type|Options|
-|------|----|-------|
-|sub2_category|string|
-|sub_category_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :sub_category
 
 
 ## orders table
