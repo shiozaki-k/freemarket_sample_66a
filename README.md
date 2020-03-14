@@ -18,101 +18,42 @@ Things you may want to cover:
 |------|----|-------|
 |nickname|string|null: false|
 |email|string|null: false|
-|password|integer|null: false|
-|surname|string|null: false|
-|given_name|string|null: false|
-|birthday|string|null: false|
+|password|string|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_furigana|string|null: false|
+|first_furigana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
+|phone-number|integer|null: false|
+
 
 ## Association
-- has_many :addresses
-- has_many :posts
+- has_many :items
+- has_many :orders
 - has_many :comments
+- has_many :creditcards
+- belongs_to :address
 
 
 
 ## addresses table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
 |postal_code|integer|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|house_number|integer|null: false|
+|prefectures|string|null: false|
+|city_name|string|null: false|
+|street_number|string|null: false|
 |building_name|string|null: false|
-
-## Association
-- belongs_to :user
-
-
-
-## posts table
-|Column|Type|Options|
-|------|----|-------|
-|title|text|null: false|
-|details|text|null: false|
-|category|string|null: false|
-|brand_name|string|
-|condition|string|null: false|
-|delivery_fee|string|null: false|
-|shipmnent_location|string|null: false|
-|delivery_time|string|null: false|
-|price|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|delivery_method|string|null: false|
 
 ## Association
 - belongs_to :user
-- has_many :comments
-- has_many :images
-- has_many :main_categories
-
-## comments table
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
-
-## Association
-- belongs_to :user
-- belongs_to :post
-
-## images table
-|Column|Type|Options|
-|------|----|-------|
-|image|text|null: false|
-
-## Association
-- belongs_to :post
 
 
 
-## main_categories table
-|Column|Type|Options|
-|------|----|-------|
-|main_category|string|null: false|
 
-## Association
-- belongs_to :post
-- has_many :sub_categories
-
-
-## sub-categories table
-|Column|Type|Options|
-|------|----|-------|
-|sub_category|string|null: false|
-
-## Association
-- belongs_to :main_category
-- has_many :sub2_categories
-
-## sub2-categories table
-|Column|Type|Options|
-|------|----|-------|
-|sub2_category|string|null: false|
-
-## Association
-- belongs_to :sub_category
 
 * Database initialization
 
