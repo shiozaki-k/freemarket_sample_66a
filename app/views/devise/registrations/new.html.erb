@@ -23,6 +23,34 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :last_furigana %><br />
+    <%= f.text_field :last_furigana, autofocus: true %>
+    <%= f.label :first_furigana %><br />
+    <%= f.text_field :first_furigana, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :birth_year %><br />
+    <%= f.text_field :birth_year, autofocus: true %>
+    <%= f.label :birth_month %><br />
+    <%= f.text_field :birth_month, autofocus: true %>
+    <%= f.label :birth_day %><br />
+    <%= f.text_field :birth_day, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.password_field :phone_number, autocomplete: true %>
+  </div>
+
+
+
+  
 
   <div class="actions">
     <%= f.submit "Sign up" %>
