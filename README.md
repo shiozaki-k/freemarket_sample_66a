@@ -12,7 +12,7 @@
 - belongs_to :item
 
 
-## main_categories table
+## categories table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -20,7 +20,7 @@
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :item
+- has_many :items
 
 
 
