@@ -33,7 +33,7 @@ Things you may want to cover:
  |description|text|null: false|
  |shipping_fee|string|null: false|
  |shipping_duration|string|null: false|
- |main_category(FK)|refereces|
+ |main_category|refereces|foreign_key: true|
  |user_id|refereces|foreign_key: true|
  |order_id|refereces|foreign_key: true|
  
