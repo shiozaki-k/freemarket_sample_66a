@@ -34,8 +34,8 @@ Things you may want to cover:
  |shipping_fee|string|null: false|
  |shipping_duration|string|null: false|
  |main_category(FK)|refereces|
- |user_id(FK)|refereces|
- |order_id(FK)|refereces|
+ |user_id|refereces|foreign_key: true|
+ |order_id|refereces|foreign_key: true|
  
  ### Asociation
  belongs to users
@@ -46,7 +46,7 @@ Things you may want to cover:
  |Column|Type|Options|
  |---|---|---|
  |shipper_delivery|string|
- |item_id(FK)
+ |item_id|string|foreign: true|
 
  ### Asociation
  belongs to items
