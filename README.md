@@ -80,6 +80,7 @@
 |card_year|integer|null: false|
 |security_code|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
+|card_holder_name|string|null: false|
 
 
 ### Association
@@ -91,8 +92,8 @@
 ## users table
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
-|email|string|null: false|
+|nickname|string|null: false, unique: true|
+|email|string|null: false, unique: true|
 |password|string|null: false|
 |last_name|string|null: false|
 |first_name|string|null: false|
@@ -101,7 +102,7 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-|phone-number|integer|null: false|
+|phone_number|integer|null: false, unique: true|
 
 
 ## Association
@@ -129,7 +130,7 @@
  ## Items table
  |Column|Type|Options|
  |---|---|---|
- |name|string|null: false|
+ |name|string|null: false, index: true|
  |price|integer|null: false|
  |condition|string|null: false|
  |brand|string|
