@@ -17,9 +17,9 @@
  |order_id|refereces|foreign_key: true|
  
  ### Association
- belongs to users
- has_many main_categories
- has_many orders
+ - belongs to :users
+ - has_many :main_categories
+ - has_many :orders
 
  ## Shipping_methods
  |Column|Type|Options|
@@ -28,6 +28,6 @@
  |item_id|string|foreign: true|
 
  ### Association
- belongs to items
+ - belongs to :items
  
 
