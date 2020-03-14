@@ -25,72 +25,46 @@ Things you may want to cover:
 
 # フリマアプリ DB設計
 
-## usersテーブル
+## orders table
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false, index: true|
-|email|string|null: false|
-|password|string|null: false|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|date_of_birth|date|null: false|
-|phone|integer|null: false|
-|post_code|integer||
-|Prefectures|integer||
-|ctiy|string||
-|address|string||
-|building|string||
-### Association
-  has_many :products
-- has_many :comments
-
-
-
-
-## productsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|product_name|string|null: false |
-|explanatory text|text|null: false|
-|categories|string|null: false|
-|brand|string||
-|status|string|null: false|
-|shipping_charges|string|null: false|
-|ordering_source|string|null: false|
-|delivery time|string|null: false|
-|price|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
+|item_id| refereces|null: false, foreign_key: true|
+|user_id| refereces|null: false, foreign_key: true|
 
 ### Association
-  belongs_to :user
-- has_many :images
-- has_many :comments
-
-
-## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string||
-|product_id|integer|null: false, foreign_key: true|
-
-### Association
-  belongs_to :product
-  
-
-  
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|comment|text||
-|time|timestamp||
-|product_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-  belongs_to :product
 - belongs_to :user
+- belongs_to :item
 
+
+
+
+
+## comments table
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|item_id| refereces|null: false, foreign_key: true|
+|user_id| refereces|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+
+
+## creditcards table
+|Column|Type|Options|
+|------|----|-------|
+|card_number|integer|null: false|
+|card_month|integer|null: false|
+|card_year|integer|null: false|
+|security_code|integer|null: false|
+|user_id| refereces|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :user
   
+
+
