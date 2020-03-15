@@ -12,8 +12,8 @@
         width:20%;
         margin-right: 20px;
         img{
-          width:150px;
-          height:73px;
+          width:145px;
+          height:60x;
         }
       }
       &__searchbox{
@@ -28,8 +28,8 @@
           padding:10px;
           background-color:rgb(24, 184, 170);
           img{
-            width:18px;
-            height:18px;
+            width:16px;
+            height:15px;
           }
         }
       }
@@ -38,6 +38,8 @@
     &__bottom{
       display:flex;
       justify-content: space-between;
+      font-size: 14px;
+      margin-top: 10px;
       &__left{
         ul li{
           display:inline;
