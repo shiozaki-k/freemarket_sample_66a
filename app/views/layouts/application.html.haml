@@ -8,24 +8,68 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header.header
-      .header__inner
-        .header__inner__top
-          .header__inner__top__icon
-            %a{:href => "#"}
-              %img{:src => "/assets/material/logo/logo.png"}/
-          .header__inner__top__searchbox
-            %input{:placeholder => "キーワードから探す", :type => "text"}/
-            %button{:type => "submit"}
-              .header__inner__top__searchbox__icon
-                %img{:src => "/assets/material/icon/icon-search 1.png"}/
-        .header__inner__bottom
-          .header__inner__bottom__left
-            %ul
-              %li カテゴリー
-              %li ブランド
-          .header__inner__bottom__right
-            %ul
-              %li ログイン
-              %li 新規会員登録
-    = yield
+    .wrap
+      %header.header
+        .header__inner
+          .header__inner__top
+            .header__inner__top__icon
+              %a{:href => "#"}
+                %img{:src => "/assets/material/logo/logo.png"}/
+            .header__inner__top__searchbox
+              %input{:placeholder => "キーワードから探す", :type => "text"}/
+              %button{:type => "submit"}
+                .header__inner__top__searchbox__icon
+                  %img{:src => "/assets/material/icon/icon-search 1.png"}/
+          .header__inner__bottom
+            .header__inner__bottom__left
+              %ul
+                %li カテゴリー
+                %li ブランド
+            .header__inner__bottom__right
+              %ul
+                %li ログイン
+                %li 新規会員登録
+      = yield
+    .bottom-banner
+      .bottom-banner__inner
+        %h2 だれでもかんたん、人生を変えるフリマアプリ
+        %p 今すぐ無料ダウンロード！
+        .bottom-banner__inner__icon
+          -# %a{:href => "#"}
+          -#   %img{:src =>}/
+          -# %a{:href => "#"}
+          -#   %img{:src =>}/
+    %footer
+      .footer-contents
+        .footer-contents__content
+          %h2 FURIMAについて
+          %ul
+            %li 
+              %a{:href => "#"} 会社概要（運営会社）
+            %li
+              %a{:href => "#"} プライバシーポリシー
+            %li
+              %a{:href => "#"} FURIMA利用規約
+            %li
+              %a{:href => "#"} ポイントに関する特約
+        .footer-contents__content
+          %h2 FURIMAを見る
+          %ul
+            %li 
+              %a{:href => "#"} カテゴリー一覧
+            %li
+              %a{:href => "#"} ブランド一覧
+        .footer-contents__content
+          %h2 ヘルプ＆ガイド
+          %ul
+            %li 
+              %a{:href => "#"} FURIMAガイド
+            %li
+              %a{:href => "#"} FURIMAロゴ利用ガイドライン
+            %li
+              %a{:href => "#"} お知らせ
+      .footer-logo
+        %a{:href => "#"}
+          %img{:src => "/assets/material/logo/logo-white.png"}/
+      %p© FURIMA
+          
