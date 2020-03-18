@@ -42,8 +42,31 @@
   </div>
   <div class="field">
     <%= f.label :phone_number %><br />
-    <%= f.password_field :phone_number, autocomplete: true %>
+    <%= f.text_field :phone_number, autocomplete: true %>
   </div>
+
+   <%= f.fields_for :address do |f| %>
+    <div class="field">
+      <%= f.label :postal_code %><br />
+      <%= f.text_field :postal_code, autocomplete: true %>
+    </div>
+    <div class="field">
+      <%= f.label :prefectures %><br />
+      <%= f.text_field :prefectures, autocomplete: true %>
+    </div>
+    <div class="field">
+      <%= f.label :city_name %><br />
+      <%= f.text_field :city_name, autocomplete: true %>
+    </div>
+    <div class="field">
+      <%= f.label :street_number %><br />
+      <%= f.text_field :street_number, autocomplete: true %>
+    </div>
+    <div class="field">
+      <%= f.label :building_name %><br />
+      <%= f.text_field :building_name, autocomplete: true %>
+    </div>
+   <% end %>
 
 
 
