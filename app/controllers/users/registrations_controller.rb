@@ -62,6 +62,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     @user = User.new
-    @addresses = @user.build_address
+    @address = @user.build_address
   end
 end
