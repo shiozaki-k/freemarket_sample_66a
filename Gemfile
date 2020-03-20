@@ -35,13 +35,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-group :development, :test do
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
-end
+# group :development, :test do
+#   gem 'capistrano'
+#   gem 'capistrano-rbenv'
+#   gem 'capistrano-bundler'
+#   gem 'capistrano-rails'
+#   gem 'capistrano3-unicorn'
+# end
   gem 'carrierwave'
   gem 'fog-aws'
 group :development, :test do
