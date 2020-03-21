@@ -17,15 +17,18 @@
               %a{:href => "#"}
                 %img{:src => "/assets/material/logo/logo.png"}/
             .header__inner__top__searchbox
-              %input{:placeholder => "キーワードから探す", :type => "text"}/
-              %button{:type => "submit"}
-                .header__inner__top__searchbox__icon
-                  %img{:src => "/assets/material/icon/icon-search 1.png"}/
+              %form
+                %input{:placeholder => "キーワードから探す", :type => "text"}/
+                %button{:type => "submit"}
+                  .header__inner__top__searchbox__icon
+                    %img{:src => "/assets/material/icon/icon-search 1.png"}/
           .header__inner__bottom
             .header__inner__bottom__left
               %ul
-                %li カテゴリー
-                %li ブランド
+                %a{:href => "#"}
+                  %li カテゴリー
+                %a{:href => "#"}
+                  %li ブランド
             .header__inner__bottom__right
               %ul
                 %li ログイン
@@ -36,10 +39,10 @@
         %h2 だれでもかんたん、人生を変えるフリマアプリ
         %p 今すぐ無料ダウンロード！
         .bottom-banner__inner__icon
-          -# %a{:href => "#"}
-          -#   %img{:src =>}/
-          -# %a{:href => "#"}
-          -#   %img{:src =>}/
+          %a{:href => "#"}
+            %img{:src =>"assets/material/icon/app.svg"}/
+          %a{:href => "#"}
+            %img{:src =>"assets/material/icon/google.svg"}/
     %footer
       .footer-contents
         .footer-contents__content
