@@ -16,7 +16,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|category|string|
+|name|string|
+|ancestry|string|
 
 
 ### Association
@@ -52,12 +53,9 @@
 ## creditcards table
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
-|card_month|integer|null: false|
-|card_year|integer|null: false|
-|security_code|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
-|card_holder_name|string|null: false|
+|payjp_id|integer|null: false|
+
 
 
 ### Association
