@@ -13,7 +13,11 @@
 ActiveRecord::Schema.define(version: 2020_03_18_172133) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "postal_code", default: 0, null: false
+    t.string "last_name_ad", default: "", null: false
+    t.string "first_name_ad", default: "", null: false
+    t.string "last_furigana_ad", default: "", null: false
+    t.string "first_furigana_ad", default: "", null: false
+    t.integer "postal_code", null: false
     t.string "prefectures", default: "", null: false
     t.string "city_name", default: "", null: false
     t.string "street_number", default: "", null: false
@@ -32,10 +36,10 @@ ActiveRecord::Schema.define(version: 2020_03_18_172133) do
     t.string "first_name", default: "", null: false
     t.string "last_furigana", default: "", null: false
     t.string "first_furigana", default: "", null: false
-    t.integer "birth_year", default: 0, null: false
-    t.integer "birth_month", default: 0, null: false
-    t.integer "birth_day", default: 0, null: false
-    t.integer "phone_number"
+    t.integer "birth_year", null: false
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
+    t.bigint "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

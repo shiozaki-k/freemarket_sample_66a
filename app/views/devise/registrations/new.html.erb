@@ -52,6 +52,18 @@
 
    <%= f.fields_for :address do |f| %>
     <div class="field">
+    <%= f.label :last_name_ad %><br />
+    <%= f.text_field :last_name_ad, autofocus: true %>
+    <%= f.label :first_name_ad %><br />
+    <%= f.text_field :first_name_ad, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :last_furigana_ad %><br />
+    <%= f.text_field :last_furigana_ad, autofocus: true %>
+    <%= f.label :first_furigana_ad %><br />
+    <%= f.text_field :first_furigana_ad, autofocus: true %>
+  </div>
+    <div class="field">
       <%= f.label :postal_code %><br />
       <%= f.text_field :postal_code, autocomplete: true %>
     </div>

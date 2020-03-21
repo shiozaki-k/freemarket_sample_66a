@@ -94,6 +94,10 @@
 ## addresses table
 |Column|Type|Options|
 |------|----|-------|
+|last_name_ad|string|null: false|
+|first_name_ad|string|null: false|
+|last_furigana_ad|string|null: false|
+|first_furigana_ad|string|null: false|
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
 |city_name|string|null: false|
