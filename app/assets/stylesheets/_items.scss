@@ -4,8 +4,13 @@
 .wrap {
   overflow: hidden;
 }
+
+@mixin appBtn{
+  margin-top:15px;
+
+}
+
 .header{
-  // background-color: darkgrey;
   padding:0 60px;
   padding-top:15px;
   &__inner{
@@ -57,11 +62,23 @@
       margin-top: 10px;
       margin-bottom:10px;
       &__left{
-        ul li{
-          display:inline;
-          margin-right: 20px;
+        &__menu{
+          .lists{
+            display:none;
+            
+          }
+          &__title{
+            &:hover{
+              color:orange;
+            }
+            &:hover + ul.lists{
+              display:block;
+              z-index: 3;
+            } 
+          }
         }
       }
+      
       &__right{
         ul li{
           display:inline;
@@ -96,6 +113,9 @@
     p{
       font-size: 35px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__icon{
+      @include appBtn;
     }
   }
 }
@@ -176,28 +196,38 @@ ul{
     line-height: 1.77778;
     margin: 16px 0 0 0;
     }
+    &__btn{
+      @include appBtn;
+    }
   }
 }
 
 /* main__top-fin */
+
+@mixin introduction-h{
+  text-align:center;
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+}
+
+@mixin introduction-list{
+  max-width:1020px;
+  display:flex;
+  justify-content: space-between;
+  margin:0 auto;
+}
 .top-introduction{
   width:100vw;
   padding: 60px 20px;
   box-sizing: border-box;
   h3{
-    text-align:center;
-    font-size: 26px;
-    line-height: 1.4;
-    font-weight: bold;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    @include introduction-h;
   }
   &__list{
-    max-width:1020px;
-    display:flex;
-    justify-content: space-between;
-    margin:0 auto;
-    
+    @include introduction-list;
     &__content{
       width:30%;
       box-sizing: border-box;
@@ -260,6 +290,10 @@ ul{
     margin: 20px 0 30px;
     line-height: 1.5;
     }
+    &__btn{
+      @include appBtn;
+    }
+
   }
 }
 
@@ -268,19 +302,10 @@ ul{
   padding: 60px 20px;
   box-sizing: border-box;
   h2{
-    text-align:center;
-    font-size: 26px;
-    line-height: 1.4;
-    font-weight: bold;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    @include introduction-h;
   }
   &__list{
-    max-width:1020px;
-    display:flex;
-    justify-content: space-between;
-    margin:0 auto;
-    
+    @include introduction-list;
     &__content{
       width:30%;
       box-sizing: border-box;

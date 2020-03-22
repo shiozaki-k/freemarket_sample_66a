@@ -24,11 +24,14 @@
                     %img{:src => "/assets/material/icon/icon-search 1.png"}/
           .header__inner__bottom
             .header__inner__bottom__left
-              %ul
-                %a{:href => "#"}
-                  %li カテゴリー
-                %a{:href => "#"}
-                  %li ブランド
+              .header__inner__bottom__left__menu
+                .header__inner__bottom__left__menu__title カテゴリー
+                %ul.lists
+                  %a{:href=>"#"}
+                    %li{:href => "#"} sub1
+                  %li{:href => "#"} sub1
+                  %li{:href => "#"} sub1
+                    
             .header__inner__bottom__right
               %ul
                 %li ログイン
