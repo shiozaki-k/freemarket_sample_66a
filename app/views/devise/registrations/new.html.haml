@@ -221,7 +221,8 @@
       %span.description-of-input ハイフン"ー"は不要です。
       = f.telephone_field :phone_number, autocomplete: true
     .field
-      = f.submit "次へ進む", :class=> "btn-next"
+      .btn-next
+        = link_to "次へ進む", "../addresses", :class=> "btn-next"
   .new-footer
     .footer-main
     .footer-logo
