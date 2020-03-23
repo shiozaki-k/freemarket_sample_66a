@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_172133) do
     t.string "prefectures", default: "", null: false
     t.string "city_name", default: "", null: false
     t.string "street_number", default: "", null: false
-    t.string "building_name", default: "", null: false
+    t.string "building_name", default: ""
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_172133) do
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
-    t.bigint "phone_number"
+    t.string "phone_number", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

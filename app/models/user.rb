@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :birth_year, presence: true
   validates :birth_month, presence: true
   validates :birth_day, presence: true
-  validates :phone_number, format: {with: /\A\d{10,11}\z/}
+  validates :phone_number, uniqueness: true
  
 
 
