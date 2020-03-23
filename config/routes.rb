@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  root to: "posts#index"
+  # devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+
+  root to: 'posts#index'
+  
+  
 end
