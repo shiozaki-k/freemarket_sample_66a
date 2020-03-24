@@ -59,4 +59,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def new
+    @user = User.new
+    @address = @user.build_address
+  end
 end
