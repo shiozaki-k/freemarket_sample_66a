@@ -36,15 +36,18 @@ ActiveRecord::Schema.define(version: 2020_03_18_172133) do
     t.string "first_name", default: "", null: false
     t.string "last_furigana", default: "", null: false
     t.string "first_furigana", default: "", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
-    t.string "phone_number", default: ""
+    t.integer "birth_year", default: 0, null: false
+    t.integer "birth_month", default: 0, null: false
+    t.integer "birth_day", default: 0, null: false
+    t.integer "phone_number", default: 0, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
+    t.index ["phone_number"], name: "index_users_on_phone_number", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
