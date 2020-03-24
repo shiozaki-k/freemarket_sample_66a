@@ -1,0 +1,105 @@
+@mixin back($color){
+  background-color:$color
+}
+
+.container {
+  @include back(red);
+  height: 256vh;
+  width: 100vw;
+  display: flex;
+  margin:20px;
+  padding:0;
+  &__main{
+    @include back(white);
+    height: 1500px;
+    width: 1020px;
+    margin: 70px 10px;
+    &__top{
+      @include back(black);
+      height: 800px;
+      width: 1000px;
+      margin:auto;
+      &__user{
+        @include back(white);
+        &__icon{
+          @include back(blue);
+        }
+        &__name{
+          @include back(yellow);
+        }
+        &__number{
+          @include back(white);
+          &__point{
+            @include back(blue);
+          }
+          &__item{
+            @include back(red);
+          }
+        }
+
+      }
+      &__tab-head{
+        @include back(skyblue);
+        &__notice{
+          @include back(pink);
+        }
+        &__to-do{
+          @include back(green);
+        }
+
+      }
+    }
+    
+    &__bottom{
+      @include back(yellow);
+      height: 500px;
+      width: 1000px;
+      margin-top: 20px;
+      &__tab-head{
+        @include back(black);
+      }
+      &__tab{
+        @include back(white);
+        &__left{
+
+        }
+        &__roght{
+
+        }
+      }
+      &__lists{
+        @include back(yellow);
+      }
+    }
+  }
+  
+  &__side{
+    @include back(rgb(170, 163, 163));
+    height: 95%;
+    width: 280px;
+    margin:70px ;
+    float: left;
+    &__top{
+      @include back(skyblue);
+      height:730px;
+      width: 280px;
+
+    }
+    
+    &__middle{
+      @include back(pink);
+      height: 100px;
+      width: 280px;
+
+    }
+    
+    &__bottom{
+      @include back(green);
+      height: 364px;
+      width: 280px;
+    }
+    }
+      
+}
+    
+   
