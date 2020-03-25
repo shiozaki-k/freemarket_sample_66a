@@ -22,20 +22,62 @@
                 %button{:type => "submit"}
                   .header__inner__top__searchbox__icon
                     %img{:src => "/assets/material/icon/icon-search 1.png"}/
-          .header__inner__bottom
-            .header__inner__bottom__left
-              .header__inner__bottom__left__menu
-                .header__inner__bottom__left__menu__title カテゴリー
-                %ul.lists
-                  %a{:href=>"#"}
-                    %li{:href => "#"} sub1
-                  %li{:href => "#"} sub1
-                  %li{:href => "#"} sub1
-                    
-            .header__inner__bottom__right
-              %ul
-                %li ログイン
-                %li 新規会員登録
+          .header__inner__nav
+            %ul.header__inner__nav__left
+              %li.header__inner__nav__left__category
+                %a{:href=>""} カテゴリー
+                .header__inner__nav__left__category__treeContainer
+                  %ul.header__inner__nav__left__category__treeContainer__tree
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} レディース
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} メンズ
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} ベビー・キッズ
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} インテリア・住まい・小物
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} 本・音楽・ゲーム
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} おもちゃ・ホビー・グッズ
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} コスメ・香水・美容
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} 家電・スマホ・カメラ
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} スポーツ・レジャー
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} ハンドメイド
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} チケット
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} 自動車・オートバイ
+                    %li.header__inner__nav__left__category__treeContainer__tree__item
+                      %a{:href=>""} その他
+              %li.header__inner__nav__left__brand
+                %a{:href=>""} ブランド
+            %ul.header__inner__nav__right
+              %li.header__inner__nav__right__login 
+                %a{:href=>""} ログイン
+              %li.header__inner__nav__right__new 
+                %a{:href=>""} 新規登録
+          -# .header__inner__bottom
+            -# .header__inner__bottom__left
+            -#   -# .header__inner__bottom__left__menu
+            -#   -#   %p カテゴリ
+            -#   -#   %ul
+            -#   -#     %li 
+            -#   -#       %a{:href=>"#"} sub1
+            -#   -#     %li 
+            -#   -#       %a{:href=>"#"} sub1
+            -#   -#     %li 
+            -#   -#       %a{:href=>"#"} sub1
+            -#   -#     %li 
+            -#   -#       %a{:href=>"#"} sub1
+            -# .header__inner__bottom__right
+            -#   %ul
+            -#     %li ログイン
+            -#     %li 新規会員登録
       = yield
     .bottom-banner
       .bottom-banner__inner
