@@ -16,7 +16,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|category|string|
+|name|string|
+|ancestry|string|
 
 
 ### Association
@@ -52,12 +53,9 @@
 ## creditcards table
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
-|card_month|integer|null: false|
-|card_year|integer|null: false|
-|security_code|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
-|card_holder_name|string|null: false|
+|payjp_id|integer|null: false|
+
 
 
 ### Association
@@ -94,6 +92,10 @@
 ## addresses table
 |Column|Type|Options|
 |------|----|-------|
+|last_name_ad|string|null: false|
+|first_name_ad|string|null: false|
+|last_furigana_ad|string|null: false|
+|first_furigana_ad|string|null: false|
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
 |city_name|string|null: false|
@@ -126,6 +128,7 @@
  
 
 
+
  ## Shipping_methods table
  |Column|Type|Options|
  |---|---|---|
@@ -134,5 +137,5 @@
 
  ### Association
  - belongs_to :item
- 
+
 
