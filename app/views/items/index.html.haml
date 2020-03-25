@@ -1,15 +1,15 @@
 .main
   .main__top
-    .main__top__content
+    .main__top__inner
       %h2 人生を変えるフリマアプリ
       %p
         FURIMAはだれでもかんたんに出品・購入できる
         %br>/
         フリマアプリです
-      .main__top__content__btn
-        %a.main__top__content__btn__app{:href => "#"}
+      .main__top__inner__btn
+        %a.main__top__inner__btn__app{:href => "#"}
           %img{:src => "assets/material/icon/app.svg"}/
-        %a.main__top__content__btn__google{:href => "#"}
+        %a.main__top__inner__btn__google{:href => "#"}
           %img{:src => "assets/material/icon/google.svg"}/
 
 .top-introduction
@@ -74,90 +74,19 @@
     .post__box__head
       %a{:href => "#"} 新規投稿商品
     .post__box__lists
-      .post__box__lists__list
-        %a{:href =>"#"}
-          %figure.post__box__lists__list__img
-            %img{:src => "assets/material/pict/pict-reason-01.jpg"}/
-          .post__box__lists__list__body
-            %h3 product1
-            .post__box__lists__list__body__details
-              %ul
-                %li 3000円
-                %li 
-                  = icon("fas", "star")
-                  0
-              %p (税込)
-      .post__box__lists__list
-        %a{:href =>"#"}
-          %figure.post__box__lists__list__img
-            %img{:src => "assets/material/pict/pict-reason-01.jpg"}/
-          .post__box__lists__list__body
-            %h3 product1
-            .post__box__lists__list__body__details
-              %ul
-                %li 3000円
-                %li 
-                  = icon("fas", "star")
-                  0
-              %p (税込)
-      .post__box__lists__list
-        %a{:href =>"#"}
-          %figure.post__box__lists__list__img
-            %img{:src => "assets/material/pict/pict-reason-01.jpg"}/
-          .post__box__lists__list__body
-            %h3 product1
-            .post__box__lists__list__body__details
-              %ul
-                %li 3000円
-                %li 
-                  = icon("fas", "star")
-                  0
-              %p (税込)
+      = render partial: 'index', locals: { index: @index }
+      = render partial: 'index', locals: { index: @index }
+      = render partial: 'index', locals: { index: @index }
+      
 .post
   %h2 ピックアップブランド
   .post__box
     .post__box__head
       %a{:href => "#"} アーカイブ
     .post__box__lists
-      .post__box__lists__list
-        %a{:href =>"#"}
-          %figure.post__box__lists__list__img
-            %img{:src => "assets/material/pict/pict-reason-01.jpg"}/
-          .post__box__lists__list__body
-            %h3 product1
-            .post__box__lists__list__body__details
-              %ul
-                %li 3000円
-                %li 
-                  = icon("fas", "star")
-                  0
-              %p (税込)
-      .post__box__lists__list
-        %a{:href =>"#"}
-          %figure.post__box__lists__list__img
-            %img{:src => "assets/material/pict/pict-reason-01.jpg"}/
-          .post__box__lists__list__body
-            %h3 product1
-            .post__box__lists__list__body__details
-              %ul
-                %li 3000円
-                %li 
-                  = icon("fas", "star")
-                  0
-              %p (税込)
-      .post__box__lists__list
-        %a{:href =>"#"}
-          %figure.post__box__lists__list__img
-            %img{:src => "assets/material/pict/pict-reason-01.jpg"}/
-          .post__box__lists__list__body
-            %h3 product1
-            .post__box__lists__list__body__details
-              %ul
-                %li 3000円
-                %li 
-                  = icon("fas", "star")
-                  0
-              %p (税込)
+      = render partial: 'index', locals: { index: @index }
+      = render partial: 'index', locals: { index: @index }
+      = render partial: 'index', locals: { index: @index }
 
   
 

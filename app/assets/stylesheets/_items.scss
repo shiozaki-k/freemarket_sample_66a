@@ -100,147 +100,43 @@
         }
       }
     }
-    // &__bottom{
-    //   display:flex;
-    //   justify-content: space-between;
-    //   font-size: 14px;
-    //   margin-top: 10px;
-    //   margin-bottom:10px;
-    //   &__left{
-    //     position: relative;
-    //     display: flex;
-
-    //     &__menu{
-    //       position:relative;
-    //       &:hover ul{
-    //       display:block;
-    //       height:100px;
-    //     }
-    //     ul{
-    //       display:none;
-    //       position:absolute;
-    //       top:30px;
-    //       left:0px;
-    //       z-index: 1;
-    //       a{
-    //         color:black;
-    //         display:block;
-    //       }
-    //     }
-    //     }
-    //   }
-      
-    //   &__right{
-    //     ul li{
-    //       display:inline;
-    //       margin-left: 20px;
-    //     }
-    //   }
-    // }
+    
   }
 }
 
 
 /* header-fin */
 
-.bottom-banner{
-  background-image: url('/assets/material/pict/bg-appBanner-pict.jpg');
-  padding: 100px 40px;
-  position: relative;
+@mixin banner($Bimage,$Bposition){
+  background-image:$Bimage;
+  background-position:$Bposition;
   background-size: cover;
-  background-position: center;
-  &__inner{
-    color: #fff;
-    text-align: center;
-    h2{
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      font-size: 24px;
-      font-weight: bold;
-      line-height: 1.4;
-    }
-    p{
-      font-size: 35px;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-    }
-    &__icon{
-      @include appBtn;
-    }
-  }
 }
 
-footer{
-  padding: 60px 0;
+@mixin banner-inner{
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
   color: #fff;
-  background-color: #272727;
-  text-align: center;
-  p{
-    font-size: 14px;
-  }
-}
-
-.footer-contents{
-  max-width: 840px;
-  margin: 0 auto;
-  display: flex;
-  &__content{
-    width:33%;
-    margin: 0 2% 0 0;
-    h2{
-      margin: 0 0 20px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-  }
-}
-
-
-ul{
-  list-style: none;
-  li{
-    a{
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      line-height: 32px;
-    }
-    a:hover{
-    border-bottom: 1px solid white;
-    }
-  }
-}
-
-.footer-logo{
-  max-width: 160px;
-  margin: 0 auto;
-  img{
-    width: 100%;
-    vertical-align: bottom;
-  }
 }
 
 .main__top{
   width: 100vw;
   height: 560px;
-  background-image: url('/assets/material/pict/bg-mainVisual-pict_pc.jpg');
-  background-size: cover;
+  @include banner(url('/assets/material/pict/bg-mainVisual-pict_pc.jpg'),top center);
   background-repeat: no-repeat;
-  background-position: top center;
   position: relative;
   padding: 0 60px;
   display: flex;
   align-items: center;
   box-sizing:border-box;
-  &__content{
+  &__inner{
+    @include banner-inner;
     h2{
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
     font-size: 60px;
     line-height: 1.2;
-    color: #fff;
+    
     }
     p{
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
     font-size: 18px;
-    color: #fff;
     line-height: 1.77778;
     margin: 16px 0 0 0;
     }
@@ -315,15 +211,12 @@ ul{
 }
 
 .topMiddle{
-  background-image: url('/assets/material/pict/bg-topMiddleDl-pict.jpg');
-  background-position: bottom right;
+  @include banner(url('/assets/material/pict/bg-topMiddleDl-pict.jpg'),bottom right);
   height: 400px;
-  background-size: cover;
   display: flex;
   align-items: center;
   &__inner{
-    color: #fff;
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    @include banner-inner;
     text-align: left;
     max-width: 1040px;
     width: 100%;
@@ -459,6 +352,77 @@ ul{
 
 .post:last-child{
   padding-bottom: 80px;
+}
+
+.bottom-banner{
+  @include banner(url('/assets/material/pict/bg-appBanner-pict.jpg'),center);
+  padding: 100px 40px;
+  position: relative;
+  &__inner{
+    @include banner-inner;
+    text-align: center;
+    h2{
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    p{
+      font-size: 35px;
+    }
+    &__icon{
+      @include appBtn;
+    }
+  }
+}
+
+footer{
+  padding: 60px 0;
+  color: #fff;
+  background-color: #272727;
+  text-align: center;
+  p{
+    font-size: 14px;
+  }
+}
+
+.footer-contents{
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex;
+  &__content{
+    width:33%;
+    margin: 0 2% 0 0;
+    h2{
+      margin: 0 0 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+
+
+ul{
+  list-style: none;
+  li{
+    a{
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 32px;
+    }
+    a:hover{
+    border-bottom: 1px solid white;
+    }
+  }
+}
+
+.footer-logo{
+  max-width: 160px;
+  margin: 0 auto;
+  img{
+    width: 100%;
+    vertical-align: bottom;
+  }
 }
 
 .purchase-Btn{
