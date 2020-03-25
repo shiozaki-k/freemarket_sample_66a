@@ -61,9 +61,11 @@
       &__tab{
         @include back(white);
         &__left{
+          @include back(white);
 
         }
         &__roght{
+          @include back(white);
 
         }
       }
@@ -79,23 +81,8 @@
     width: 280px;
     margin:70px ;
     float: left;
-    &__top{
-      @include back(skyblue);
-      height:730px;
-      width: 280px;
-
-    }
-    
-    &__middle{
-      @include back(pink);
-      height: 100px;
-      width: 280px;
-
-    }
-    
-    &__bottom{
-      @include back(green);
-      height: 364px;
+    li{
+      height: 48px;
       width: 280px;
     }
     }
