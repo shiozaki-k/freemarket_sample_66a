@@ -1,0 +1,67 @@
+.field-first {
+  width: 343px;
+  height: 99px;
+  font-size: 14px;
+  margin: auto;
+  margin-top: 23px;
+
+  #user_email.input-email-for-login {
+    @include input-common-style
+  }
+}
+
+.forget-password {
+  width: 343px;
+  font-size: 14px;
+  color:#ff6699;
+  display: block;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.forget-password:hover {
+  text-decoration: underline;
+}
+
+.field-checkbox {
+  width: 343px;
+  height: 10px;
+  font-size: 14px;
+  margin: auto;
+  margin-top: 13px;
+  margin-bottom: 23px;
+  #user_remember_me {
+    width: 15px;
+    height: 15px;
+    margin: 0 3px 0 15px;
+  }
+}
+
+.field-no-account {
+  width: 343px;
+  height: 145px;
+  margin: auto;
+  margin-top: 35px;
+  & p {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.btn-no-account {
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0066ff;
+  border: 1px solid #0066ff;
+  margin-top: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-no-account:hover {
+  opacity: 0.9;
+}

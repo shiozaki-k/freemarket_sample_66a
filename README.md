@@ -128,6 +128,7 @@
  
 
 
+
  ## Shipping_methods table
  |Column|Type|Options|
  |---|---|---|
@@ -136,5 +137,5 @@
 
  ### Association
  - belongs_to :item
- 
+
 
