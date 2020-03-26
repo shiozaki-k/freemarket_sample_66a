@@ -14,98 +14,122 @@
         .header__inner
           .header__inner__top
             .header__inner__top__icon
-              %a{:href => "#"}
-                %img{:src => "/assets/material/logo/logo.png"}/
+              = link_to "#" do
+                = image_tag "/assets/material/logo/logo.png"
             .header__inner__top__searchbox
               %form
                 %input{:placeholder => "キーワードから探す", :type => "text"}/
                 %button{:type => "submit"}
                   .header__inner__top__searchbox__icon
-                    %img{:src => "/assets/material/icon/icon-search 1.png"}/
+                    = image_tag "/assets/material/icon/icon-search 1.png"
           .header__inner__nav
             %ul.header__inner__nav__left
               %li.header__inner__nav__left__category
-                %a{:href=>""} カテゴリー
+                = link_to "#" do
+                  カテゴリー
                 .header__inner__nav__left__category__treeContainer
                   %ul.header__inner__nav__left__category__treeContainer__tree
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} レディース
+                      = link_to "#" do
+                        レディース
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} メンズ
+                      = link_to "#" do
+                        メンズ
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} ベビー・キッズ
+                      = link_to "#" do
+                        ベビー・キッズ
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} インテリア・住まい・小物
+                      = link_to "#" do
+                        インテリア・住まい・小物
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} 本・音楽・ゲーム
+                      = link_to "#" do
+                        本・音楽・ゲーム
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} おもちゃ・ホビー・グッズ
+                      = link_to "#" do
+                        おもちゃ・ホビー・グッズ
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} コスメ・香水・美容
+                      = link_to "#" do
+                        コスメ・香水・美容
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} 家電・スマホ・カメラ
+                      = link_to "#" do
+                        家電・スマホ・カメラ
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} スポーツ・レジャー
+                      = link_to "#" do
+                        スポーツ・レジャー
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} ハンドメイド
+                      = link_to "#" do
+                        ハンドメイド
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} チケット
+                      = link_to "#" do
+                        チケット
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} 自動車・オートバイ
+                      = link_to "#" do
+                        自動車・オートバイ
                     %li.header__inner__nav__left__category__treeContainer__tree__item
-                      %a{:href=>""} その他
+                      = link_to "#" do
+                        その他
               %li.header__inner__nav__left__brand
-                %a{:href=>""} ブランド
+                = link_to "#" do
+                  ブランド
             %ul.header__inner__nav__right
               %li.header__inner__nav__right__login 
-                %a{:href=>""} ログイン
+                = link_to "#" do
+                  ログイン
               %li.header__inner__nav__right__new 
-                %a{:href=>""} 新規登録
+                = link_to "#" do
+                  新規登録
       = yield
     .bottom-banner
       .bottom-banner__inner
         %h2 だれでもかんたん、人生を変えるフリマアプリ
         %p 今すぐ無料ダウンロード！
         .bottom-banner__inner__icon
-          %a{:href => "#"}
-            %img{:src =>"assets/material/icon/app.svg"}/
-          %a{:href => "#"}
-            %img{:src =>"assets/material/icon/google.svg"}/
+          = render partial: 'app.html'
     %footer
       .footer-contents
         .footer-contents__content
           %h2 FURIMAについて
           %ul
             %li 
-              %a{:href => "#"} 会社概要（運営会社）
+              = link_to "#" do
+                会社概要（運営会社）
             %li
-              %a{:href => "#"} プライバシーポリシー
+              = link_to "#" do
+                プライバシーポリシー
             %li
-              %a{:href => "#"} FURIMA利用規約
+              = link_to "#" do
+                FURIMA利用規約
             %li
-              %a{:href => "#"} ポイントに関する特約
+              = link_to "#" do
+                ポイントに関する特約
         .footer-contents__content
           %h2 FURIMAを見る
           %ul
             %li 
-              %a{:href => "#"} カテゴリー一覧
+              = link_to "#" do
+                カテゴリー一覧
             %li
-              %a{:href => "#"} ブランド一覧
+              = link_to "#" do
+                ブランド一覧
         .footer-contents__content
           %h2 ヘルプ＆ガイド
           %ul
             %li 
-              %a{:href => "#"} FURIMAガイド
+              = link_to "#" do
+                FURIMAガイド
             %li
-              %a{:href => "#"} FURIMAロゴ利用ガイドライン
+              = link_to "#" do
+                FURIMAロゴ利用ガイドライン
             %li
-              %a{:href => "#"} お知らせ
+              = link_to "#" do
+                お知らせ
       .footer-logo
-        %a{:href => "#"}
-          %img{:src => "/assets/material/logo/logo-white.png"}/
+        = link_to "#" do
+          = image_tag "/assets/material/logo/logo-white.png"
       %p© FURIMA
-    %a{:href => "#"}
+    = link_to "#" do
       .purchase-Btn
         %span.purchase-Btn__text 出品する
-        %img.purchase-Btn__icon{:src => "/assets/material/icon/icon_camera.png"}/
+        = image_tag "/assets/material/icon/icon_camera.png", class:"purchase-Btn__icon"
+        
           
