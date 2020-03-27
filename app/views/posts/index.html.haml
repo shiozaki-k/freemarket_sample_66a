@@ -1,7 +1,10 @@
+
 .container
   .container__side
-    %ul 
-      %li マイページ
+    %ul
+      %liマイページ 
+      = link_to "#" do
+        %i.fas.fa-angle-right
       %li お知らせ
       %li やることリスト
       %li いいね！一覧
@@ -16,11 +19,11 @@
       %li 評価一覧
       %li ガイド
       %li お問い合せ
-    %ul 
+    %ul
       %h3 メルペイ
       %li 売上・振込申請
       %li ポイント
-    %ul 
+    %ul
       %h3 設定
       %li プロフィール
       %li 発注元・お届け先住所変更
@@ -29,15 +32,20 @@
       %li 本人情報
       %li 電話番号の確認
       %li ログアウト
+    
       
   .container__main
     .container__main__top
       .container__main__top__user
         .container__main__top__user__icon
-        .container__main__top__user__name
-        .container__main__top__user__number
-          .container__main__top__user__number__point
-          .container__main__top__user__number__item
+          .container__main__top__user__icon__image
+          .container__main__top__user__icon__name
+            %h4 name
+          .container__main__top__user__icon__number
+            .container__main__top__user__icon__number__point
+              %span 評価
+            .container__main__top__user__icon__number__item
+              %span 出品数
       .container__main__top__tab-head
         .container__main__top__tab-head__notice
         .container__main__top__tab--head__to-do

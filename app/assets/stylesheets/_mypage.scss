@@ -3,43 +3,71 @@
 }
 
 .container {
-  @include back(red);
+  @include back(rgb(246, 246, 246));
   height: 256vh;
-  width: 100vw;
+  width: 1040px;
   display: flex;
-  margin:20px;
+  margin:40px auto 0 ;
   padding:0;
   &__main{
-    @include back(white);
-    height: 1500px;
-    width: 1020px;
-    margin: 70px 10px;
+    @include back(rgb(246, 246, 246));
+    height: 1200px;
+    width: 700px;
+    margin: 70px ;
     &__top{
-      @include back(black);
+      @include back(#b3d4fc);
       height: 800px;
-      width: 1000px;
-      margin:auto;
+      width: 700px;
+      margin: 0 0 0 -50px;
+      
       &__user{
-        @include back(white);
+        @include back(skyblue);
+        height: 200px;
+        position: relative;
+        padding: 20px;
+        text-align: center;
         &__icon{
-          @include back(blue);
-        }
-        &__name{
-          @include back(yellow);
-        }
-        &__number{
-          @include back(white);
-          &__point{
-            @include back(blue);
-          }
-          &__item{
+          @include back(rgb(246, 246, 246));
+          height: 111px;
+          // position: absolute;
+          margin-top: 50px;
+          
+          &__image{
             @include back(red);
+            height: 60px;
+            width: 60px;
+            margin: auto;
+          }
+          &__name{
+            @include back(rgb(246, 246, 246));
+            height: 19px;
+            margin: 8px;
+            text-align: center;
+            
+          }
+          &__number{
+            display: flex;
+            @include back(white);
+            height: 18px;
+            margin-top: 8px;
+            
+            &__point{
+              @include back(rgb(246, 246, 246));
+              height: 16px;
+              margin: auto;
+            }
+            &__item{
+              @include back(rgb(246, 246, 246));
+              height: 16px;
+              margin: auto;
+              
+            }
           }
         }
 
       }
       &__tab-head{
-        @include back(skyblue);
+        @include back(#fff);
         &__notice{
           @include back(pink);
         }
@@ -51,10 +79,10 @@
     }
     
     &__bottom{
-      @include back(yellow);
-      height: 500px;
-      width: 1000px;
-      margin-top: 20px;
+      @include back(red);
+      height: 380px;
+      width: 700px;
+      margin: 20px 0 0 -50px;
       &__tab-head{
         @include back(black);
       }
@@ -64,7 +92,7 @@
           @include back(white);
 
         }
-        &__roght{
+        &__right{
           @include back(white);
 
         }
@@ -76,15 +104,26 @@
   }
   
   &__side{
-    @include back(rgb(170, 163, 163));
-    height: 95%;
-    width: 280px;
-    margin:70px ;
-    float: left;
-    li{
-      height: 48px;
-      width: 280px;
-    }
+    ul{
+      @include back(rgb(246, 246, 246));
+      margin-top: 70px;
+      list-style: none;
+    
+      li{
+        @include back(white);
+        height: 16px;
+        width: 248px;
+        font-size: 14px;
+        padding: 16px;
+        border-bottom: solid;
+        border-width: 1px;
+        border-color: rgb(246, 246, 246);
+        i{
+          position: absolute;
+        }
+      }
+    
+  }
     }
       
 }
