@@ -118,9 +118,24 @@
         border-bottom: solid;
         border-width: 1px;
         border-color: rgb(246, 246, 246);
-        i{
-          position: absolute;
+        a{
+          height: 16px;
+          width: 100%;
+          text-decoration: none;
+          display:block;
         }
+        a::after{
+          font-family: FontAwesome;
+          
+        }
+        
+        .fas{
+          margin-left: 150px;
+          font-size: 1.5em;
+          color: gray;
+        }
+        
+       
       }
     
   }
