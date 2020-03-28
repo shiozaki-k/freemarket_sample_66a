@@ -1,0 +1,77 @@
+.wrap
+  %header.header
+    .header__inner
+      .header__inner__top
+        .header__inner__top__icon
+          = link_to "#" do
+            = image_tag '/images/material/logo/logo.png'
+        .header__inner__top__searchbox
+          %form
+            %input{:placeholder => "キーワードから探す", :type => "text"}/
+            %button{:type => "submit"}
+              .header__inner__top__searchbox__icon
+                = image_tag "/images/material/icon/icon-search 1.png"
+      .header__inner__nav
+        %ul.header__inner__nav__left
+          %li.header__inner__nav__left__category
+            = link_to "#" do
+              カテゴリー
+            .header__inner__nav__left__category__treeContainer
+              %ul.header__inner__nav__left__category__treeContainer__tree
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    レディース
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    メンズ
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    ベビー・キッズ
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    インテリア・住まい・小物
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    本・音楽・ゲーム
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    おもちゃ・ホビー・グッズ
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    コスメ・香水・美容
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    家電・スマホ・カメラ
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    スポーツ・レジャー
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    ハンドメイド
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    チケット
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    自動車・オートバイ
+                %li.header__inner__nav__left__category__treeContainer__tree__item
+                  = link_to "#" do
+                    その他
+          %li.header__inner__nav__left__brand
+            = link_to "#" do
+              ブランド
+        %ul.header__inner__nav__right
+          - if user_signed_in?
+            %li.header__inner__nav__right__login 
+              = link_to  "#" do
+                マイページ
+            %li.header__inner__nav__right__new 
+              = link_to destroy_user_session_path, method: :delete do
+                ログアウト
+          - else
+            %li.header__inner__nav__right__login 
+              = link_to new_user_session_path do
+                ログイン
+            %li.header__inner__nav__right__new 
+              = link_to new_user_registration_path do
+                新規登録

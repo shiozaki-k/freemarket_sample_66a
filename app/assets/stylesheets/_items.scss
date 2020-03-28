@@ -75,11 +75,13 @@
         display: flex;
         margin-bottom: 10px;
         position: relative;
+        
         a{
           color:black;
           &:hover{
             color: #ffb340;
             line-height: 32px;
+            
           }
         }
         &__category{
