@@ -132,7 +132,7 @@
 .main__top{
   width: 100vw;
   height: 560px;
-  @include banner(url('/assets/material/pict/bg-mainVisual-pict_pc.jpg'),top center);
+  @include banner(url('/images/material/pict/bg-mainVisual-pict_pc.jpg'),top center);
   background-repeat: no-repeat;
   position: relative;
   padding: 0 60px;
@@ -226,7 +226,7 @@
 }
 
 .topMiddle{
-  @include banner(url('/assets/material/pict/bg-topMiddleDl-pict.jpg'),bottom right);
+  @include banner(url('/images/material/pict/bg-topMiddleDl-pict.jpg'),bottom right);
   height: 400px;
   display: flex;
   align-items: center;
@@ -372,7 +372,7 @@
 }
 
 .bottom-banner{
-  @include banner(url('/assets/material/pict/bg-appBanner-pict.jpg'),center);
+  @include banner(url('/images/material/pict/bg-appBanner-pict.jpg'),center);
   padding: 100px 40px;
   position: relative;
   &__inner{
