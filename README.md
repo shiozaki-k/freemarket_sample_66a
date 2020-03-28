@@ -116,7 +116,7 @@
  |description|text|null: false|
  |shipping_fee|string|null: false|
  |shipping_duration|string|null: false|
- |category|references|foreign_key: true|
+ |category_id|references|foreign_key: true|
  |user_id|references|foreign_key: true|
  |order_id|references|foreign_key: true|
  
