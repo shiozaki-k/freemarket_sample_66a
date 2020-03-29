@@ -4,8 +4,8 @@
   .container__main
     .container__main__top
       .container__main__top__user
-        .container__main__top__user__icon
-          =link_to "#" do
+        =link_to "#" do
+          .container__main__top__user__icon
             .container__main__top__user__icon__image
               =image_tag "/assets/material/pict/31528.jpg", size: "60x60"
             .container__main__top__user__icon__name
@@ -13,14 +13,41 @@
               .a name
             .container__main__top__user__icon__number
               .container__main__top__user__icon__number__point
-                .a 評価
+                .a 評価 1
               .container__main__top__user__icon__number__item
-                .a 出品数
+                .a 出品数 1
       .container__main__top__tab-head
-        .container__main__top__tab-head__notice
-        .container__main__top__tab--head__to-do
-      .container__main__top__lists
+        .tabs
+          %input#tab-1{:checked => "checked", :name => "tab-radio", :type => "radio"}/
+          %label.tab-label{:for => "tab-1"} お知らせ
+          %input#tab-2{:name => "tab-radio", :type => "radio"}/
+          %label.tab-label{:for => "tab-2"} やることリスト
+          .tab-content.tab-1-content
+            = link_to "#" do
+              おしらせ
+            %i.fas.fa-angle-right 
+          .tab-content.tab-2-content
+            = link_to "#" do
+              やること
+            %i.fas.fa-angle-right 
+       
+
+        -# .container__main__top__tab-head__notice
+        -#   お知らせ
+        -#   %li.container__main__top__tab-head__notice__list
+        -#     = link_to "#" do
+        -#       お知らせ1
+        -#     %i.fas.fa-angle-right 
+   
+        -# .container__main__top__tab--head__to-do
+        -#   やることリスト
+        -#   %li.container__main__top__tab--head__to-do__list
+            = link_to "#" do
+              やること1
+            %i.fas.fa-angle-right 
+      
       .container__main__top__button
+      一覧を見る
     .container__main__bottom
       .container__main__bottom__tab-head
       .container__main__bottom__tab
