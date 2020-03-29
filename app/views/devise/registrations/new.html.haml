@@ -25,17 +25,17 @@
       %span.plate-required 必須
       = f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "コピー・貼り付けはしないでください"
     .field
-      = f.label :お名前（全角）
+      = f.label :お名前
       %span.plate-required 必須
       %br/
-      = f.text_field :first_name, autofocus: true, :placeholder => "例) 大阪"
-      = f.text_field :last_name, autofocus: true, :placeholder => "例) 花子"
+      = f.text_field :last_name, autofocus: true, :placeholder => "例) 大阪"
+      = f.text_field :first_name, autofocus: true, :placeholder => "例) 花子"
     .field
-      = f.label :お名前ふりがな（全角）
+      = f.label :ふりがな
       %span.plate-required 必須
       %br/
-      = f.text_field :first_furigana, autofocus: true, :placeholder => "例) おおさか"
-      = f.text_field :last_furigana, autofocus: true, :placeholder => "例) はなこ"
+      = f.text_field :last_furigana, autofocus: true, :placeholder => "例) おおさか"
+      = f.text_field :first_furigana, autofocus: true, :placeholder => "例) はなこ"
     .field
       = f.label :生年月日
       %span.plate-required 必須
@@ -222,17 +222,17 @@
       = f.telephone_field :phone_number, autocomplete: true
     = f.fields_for :address do |f|
       .field
-        = f.label :お名前（全角）
+        = f.label :お名前
         %span.plate-required 必須
         %br/
-        = f.text_field :first_name_ad, autofocus: true, :placeholder => "例) 大阪"
-        = f.text_field :last_name_ad, autofocus: true, :placeholder => "例) 花子"
+        = f.text_field :last_name_ad, autofocus: true, :placeholder => "例) 大阪"
+        = f.text_field :first_name_ad, autofocus: true, :placeholder => "例) 花子"
       .field
-        = f.label :お名前ふりがな（全角）
+        = f.label :ふりがな
         %span.plate-required 必須
         %br/
-        = f.text_field :first_furigana_ad, autofocus: true, :placeholder => "例) おおさか"
-        = f.text_field :last_furigana_ad, autofocus: true, :placeholder => "例) はなこ"
+        = f.text_field :last_furigana_ad, autofocus: true, :placeholder => "例) おおさか"
+        = f.text_field :first_furigana_ad, autofocus: true, :placeholder => "例) はなこ"
       .field
         = f.label :郵便番号
         %span.plate-required 必須
