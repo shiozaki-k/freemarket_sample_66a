@@ -18,7 +18,6 @@
 @mixin input-default-half {
   width: calc(50% - 6px);
   height: 48px;
-  padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
@@ -161,6 +160,43 @@ h2 {
   #user_phone_number {
     @include input-common-style
   }
+
+  #user_address_attributes_last_name_ad {
+    @include input-lastname-or-lastfurigana
+  }
+
+  #user_address_attributes_first_name_ad {
+    @include input-default-half
+  }
+
+  #user_address_attributes_last_furigana_ad {
+    @include input-lastname-or-lastfurigana
+  }
+
+  #user_address_attributes_first_furigana_ad {
+    @include input-default-half
+  }
+
+  #user_address_attributes_postal_code {
+    @include input-common-style
+  }
+
+  #user_address_attributes_prefectures {
+    @include input-default-half
+  }
+
+  #user_address_attributes_city_name {
+    @include input-common-style
+  }
+
+  #user_address_attributes_street_number {
+    @include input-common-style
+  }
+
+  #user_address_attributes_building_name {
+    @include input-common-style
+  }
+
 }
 
 .btn-next {
