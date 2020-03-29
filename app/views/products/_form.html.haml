@@ -1,0 +1,22 @@
+= form_for @product do |f|
+  商品名#{f.text_field :name}
+  %br/
+  価格#{f.number_field :price}
+  %br/
+  商品の状態#{f.text_field :condition}
+  %br/
+  ブランド#{f.text_field :brand}
+  %br/
+  商品説明#{f.text_area :description}
+  %br/
+  配送料について#{f.text_field :shipping_fee}
+  %br/
+  発送元の地域#{f.text_field :shipping_fee}
+  %br/
+  発送までの日数#{f.text_field :shipping_fee}
+  %br/
+
+  = f.fields_for :images do |i|
+    = i.file_field :src
+    %br/
+  = f.submit

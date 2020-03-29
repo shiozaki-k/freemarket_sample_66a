@@ -42,14 +42,14 @@ ActiveRecord::Schema.define(version: 2020_03_29_081956) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name", default: "", null: false
     t.integer "price", null: false
-    t.string "condition", null: false
-    t.string "brand"
+    t.string "condition", default: "", null: false
+    t.string "brand", default: ""
     t.text "description", null: false
-    t.string "shipping_fee", null: false
-    t.string "shipping_origin", null: false
-    t.string "shipping_duration", null: false
+    t.string "shipping_fee", default: "", null: false
+    t.string "shipping_origin", default: "", null: false
+    t.string "shipping_duration", default: "", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
