@@ -11,9 +11,9 @@
   %br/
   配送料について#{f.text_field :shipping_fee}
   %br/
-  発送元の地域#{f.text_field :shipping_fee}
+  発送元の地域#{f.text_field :shipping_origin}
   %br/
-  発送までの日数#{f.text_field :shipping_fee}
+  発送までの日数#{f.text_field :shipping_duration}
   %br/
 
   = f.fields_for :images do |i|
