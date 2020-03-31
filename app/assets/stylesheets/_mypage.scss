@@ -15,13 +15,13 @@
     width: 700px;
     margin: 70px ;
     &__top{
-      @include back(#b3d4fc);
+      @include back(white);
       height: 800px;
       width: 700px;
       margin: 0 0 0 -50px;
       
       &__user{
-        @include back(skyblue);
+        @include back(pink);
         height: 200px;
         // position: relative;
         padding: 20px;
@@ -80,38 +80,79 @@
       }
       &__tab-head{
         @include back(#fff);
-        .tabs {
+        height: 450px;
+        &__tabs{
           margin-top: 12px;
           width:700px;
           .tab-label {
+            height: 72px;
+            width: 49%;
             display: inline-block;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
+            // border-top-left-radius: 8px;
+            // border-top-right-radius: 8px;
             border: 1px solid #999;
             background-color: #f3f3f3;
-            margin-left: 1px;
-            margin-right: 1px;
-            padding: 3px 6px;
+            // margin-left: 1px;
+            // margin-right: 1px;
+            padding: 0 1px;
             border-bottom: none;
             font-size: 0.9em;
+            text-align: center;
+            align-items: center;
+            font-size: 16px;
+            justify-content: space-around;
             &:hover {
               opacity: 0.7;
             }
           }
-          input[name="tab-radio"] {
+          input[name="tab-notice"] {
             display: none;
           }
           .tab-content {
+            @include back(white);
             display: none;
             border: 1px solid #999;
             padding: 10px;
             min-height: 200px;
+            a{
+              color: black;
+              margin-top: 3px;
+              display: flex;
+              text-decoration: none;
+              .p{
+                font-size: 20px;
+                margin:5px 0 0 10px;
+              }
+              i{
+                font-size: 1.5em;
+                margin: 5px 5px 0 0;
+              }
+            }
           }
-          #tab-1:checked ~ .tab-1-content, #tab-2:checked ~ .tab-2-content, #tab-3:checked ~ .tab-3-content, #tab-4:checked ~ .tab-4-content, #tab-5:checked ~ .tab-5-content {
+          #tab-1:checked ~ .tab-1-content, #tab-2:checked ~ .tab-2-content {
             display: block;
           }
-          input[name="tab-radio"]:checked + .tab-label {
+          input[name="tab-notice"]:checked + .tab-label {
             background-color: #fff;
+          }
+        }
+
+      }
+      &__low{
+        @include back(white);
+        height: 90px;
+        width: 700px;
+        margin-bottom: auto;
+        &__btn{
+          @include back(#c2bdbd);
+          height: 80px;
+          width: 670px;
+          margin: 5px 15px;
+          .a{
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            color: currentColor;
           }
         }
 
@@ -119,27 +160,75 @@
     }
     
     &__bottom{
-      @include back(red);
+      @include back(rgb(246, 246, 246));
       height: 380px;
-      width: 700px;
+      // width: 700px;
       margin: 20px 0 0 -50px;
-      &__tab-head{
-        @include back(black);
-      }
-      &__tab{
-        @include back(white);
-        &__left{
-          @include back(white);
-
+      &__tabs{
+        margin-top: 12px;
+        width:700px;
+        .tab-label {
+          height: 72px;
+          width: 49%;
+          display: inline-block;
+          border: 1px solid #999;
+          background-color: #f3f3f3;
+          padding: 0 1px;
+          border-bottom: none;
+          font-size: 0.9em;
+          text-align: center;
+          align-items: center;
+          font-size: 16px;
+          justify-content: space-around;
+          &:hover {
+            opacity: 0.7;
+          }
         }
-        &__right{
+        input[name="tab-transaction"] {
+          display: none;
+        }
+        .tab-content {
           @include back(white);
-
+          display: none;
+          border: 1px solid #999;
+          padding: 10px;
+          min-height: 200px;
+          a{
+            color: black;
+            margin-top: 3px;
+            display: flex;
+            text-decoration: none;
+            .p{
+              font-size: 20px;
+              margin:5px 0 0 10px;
+            }
+            i{
+              font-size: 1.5em;
+              margin: 5px 5px 0 0;
+            }
+          }
+        }
+        #tab-3:checked ~ .tab-3-content, #tab-4:checked ~ .tab-4-content {
+          display: block;
+        }
+        input[name="tab-transaction"]:checked + .tab-label {
+          background-color: #fff;
         }
       }
-      &__lists{
-        @include back(yellow);
-      }
+      // &__tab{
+      //   @include back(white);
+      //   &__left{
+      //     @include back(white);
+
+      //   }
+      //   &__right{
+      //     @include back(white);
+
+      //   }
+      // }
+      // &__lists{
+      //   @include back(yellow);
+      // }
     }
   }
   
@@ -188,10 +277,10 @@
             // padding-right: 16px;
           }
         }
-        // a::before{
-        //   font-family: FontAwesome;
+        a::before{
+          font-family: FontAwesome;
 
-        //   }
+          }
           
                   
         
