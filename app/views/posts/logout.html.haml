@@ -1,0 +1,7 @@
+%main.l-container
+  .container-lofout
+  = render partial: 'posts/sidemenu'
+
+    .container-logout__main
+      .container-logout__main__top
+        = link_to "ログアウト", destroy_user_session_path, method: :delete,class: 'btn-default btn-red' 
