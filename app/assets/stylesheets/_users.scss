@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+@mixin input-common-style {
+  width: 100%;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  margin: 8px 0 0;
+}
+
+@mixin input-default-half {
+  width: calc(50% - 6px);
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 10px 16px 8px;
+  margin: 8px 0 0;
+}
+
+@mixin input-lastname-or-lastfurigana {
+  width: calc(50% - 6px);
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 10px 16px 8px;
+  margin: 8px 8px 0 0;
+}
+
+@mixin input-default-trichotomy {
+  width: 76px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 0 10px;
+  margin: 8px 0 0;
+}
+
+
+.new-header {
+  width: 100%;
+  height: 97.55px;
+  text-align: center;
+
+  h1 {
+    display: inline-block;
+    margin: 20px 0 0;
+    :hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+h2 {
+  width: 100%;
+  height: 97px;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 32px;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+  margin: auto;
+}
+
+.new_user {
+  width: 100%;
+  margin: auto;
+  padding: 24px 0 40px;
+  border-top: 1px solid #E0E0E0;
+}
+
+.field {
+  width: 343px;
+  height: 99px;
+  font-size: 14px;
+  margin: auto;
+
+  label {
+    color: #333;
+    font-weight: 600;
+  }
+
+  .plate-required {
+    font-size: 12.5px;
+    color: #fff;
+    background-color: #ff3366;
+    border-radius: 2px;
+    margin-left: 10px;
+    padding: 1.6px 4.8px;
+  }
+
+  .fixed-text-year-month-date {
+    margin: 0 8px 0 8px;
+  }
+
+  .description-of-input {
+    margin-left: 20px;
+  }
+
+  #user_nickname {
+    @include input-common-style
+  }
+
+  #user_email {
+    @include input-common-style
+  }
+
+  #user_password {
+    @include input-common-style
+  }
+
+  #user_password_confirmation {
+    @include input-common-style
+  }
+
+  #user_last_name {
+    @include input-lastname-or-lastfurigana
+  }
+
+  #user_first_name {
+    @include input-default-half
+  }
+
+  #user_last_furigana {
+    @include input-lastname-or-lastfurigana
+  }
+
+  #user_first_furigana {
+    @include input-default-half
+  }
+
+  #user_birth_year {
+    @include input-default-trichotomy
+  }
+
+  #user_birth_month {
+    @include input-default-trichotomy
+  }
+
+  #user_birth_day {
+    @include input-default-trichotomy
+  }
+
+  #user_phone_number {
+    @include input-common-style
+  }
+
+  #user_address_attributes_last_name_ad {
+    @include input-lastname-or-lastfurigana
+  }
+
+  #user_address_attributes_first_name_ad {
+    @include input-default-half
+  }
+
+  #user_address_attributes_last_furigana_ad {
+    @include input-lastname-or-lastfurigana
+  }
+
+  #user_address_attributes_first_furigana_ad {
+    @include input-default-half
+  }
+
+  #user_address_attributes_postal_code {
+    @include input-common-style
+  }
+
+  #user_address_attributes_prefectures {
+    @include input-default-half
+  }
+
+  #user_address_attributes_city_name {
+    @include input-common-style
+  }
+
+  #user_address_attributes_street_number {
+    @include input-common-style
+  }
+
+  #user_address_attributes_building_name {
+    @include input-common-style
+  }
+
+}
+
+.btn-next {
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  background-color: #ff3366;
+  border: 1px solid #ff3366;
+  border-radius: 4px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.btn-next:hover {
+  opacity: 0.9;
+}
+
+.new-footer {
+  width: 100%;
+  height: 354.34px;
+  color: #fff;
+  background-color: #272727;
+  text-align: center;
+  padding: 60px 0;
+
+  .footer-main {
+    width: 100%;
+    height: 172px;
+  }
+
+  .footer-logo {
+    margin-bottom: 0;
+    :hover {
+      opacity: 0.9;
+    }
+  }
+
+  .mark-of-copy-right {
+    font-size: 14px;
+  }
+}
+

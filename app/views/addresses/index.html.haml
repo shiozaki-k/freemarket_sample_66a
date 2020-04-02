@@ -1,0 +1,105 @@
+%body
+  %header.new-header
+    %h1
+      %a{:href => "http://furima.tokyo/?utf8=%E2%9C%93&key=&authenticity_token=UevxGZzcSKajTarCjryjWUlJ55%2FOE4M%2FrOCFzPCEFL7s7SCAGAxNbn7dZb5LoXbcXoEKY6%2B94hlugXjuBVJ%2BXQ%3D%3D"}
+        %img{:alt => "furima", :src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
+  %h2 発送元・お届け先情報登録
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+      = f.fields_for :address do |f|
+        .field
+          = f.label :お名前（全角）
+          %span.plate-required 必須
+          %br/
+          = f.text_field :first_name, autofocus: true, :placeholder => "例) 大阪"
+          = f.text_field :last_name, autofocus: true, :placeholder => "例) 花子"
+        .field
+          = f.label :お名前カナ（全角）
+          %span.plate-required 必須
+          %br/
+          = f.text_field :first_furigana, autofocus: true, :placeholder => "例) オオサカ"
+          = f.text_field :last_furigana, autofocus: true, :placeholder => "例) ハナコ"
+        .field
+          = f.label :郵便番号
+          %span.plate-required 必須
+          %br/
+          = f.text_field :last_name, autocomplete: true, :placeholder => "12345678"
+        .field
+          = f.label :都道府県
+          %span.plate-required 必須
+          %span.description-of-input 選択してください。
+          %br/
+          = f.select :last_name, |
+            [                    |
+            ["北海道","北海道"],   |
+            ["青森県","青森県"],   |
+            ["岩手県","岩手県"],   |
+            ["宮城県","宮城県"],   |
+            ["秋田県","秋田県"],   |
+            ["山形県","山形県"],   |
+            ["福島県","福島県"],   |
+            ["茨城県","茨城県"],   |
+            ["栃木県","栃木県"],   |
+            ["群馬県","群馬県"],   |
+            ["埼玉県","埼玉県"],   |
+            ["千葉県","千葉県"],   |
+            ["東京都","東京都"],   |
+            ["神奈川県","神奈川県"],   |
+            ["新潟県","新潟県"],   |
+            ["富山県","富山県"],   |
+            ["石川県","石川県"],   |
+            ["福井県","福井県"],   |
+            ["山梨県","山梨県"],   |
+            ["長野県","長野県"],   |
+            ["岐阜県","岐阜県"],   |
+            ["静岡県","静岡県"],   |
+            ["愛知県","愛知県"],   |
+            ["三重県","三重県"],   |
+            ["滋賀県","滋賀県"],   |
+            ["京都府","京都府"],   |
+            ["大阪府","大阪府"],   |
+            ["兵庫県","兵庫県"],   |
+            ["奈良県","奈良県"],   |
+            ["和歌山県","和歌山県"],   |
+            ["鳥取県","鳥取県"],   |
+            ["島根県","島根県"],   |
+            ["岡山県","岡山県"],   |
+            ["広島県","広島県"],   |
+            ["山口県","山口県"],   |
+            ["徳島県","徳島県"],   |
+            ["香川県","香川県"],   |
+            ["愛媛県","愛媛県"],   |
+            ["高知県","高知県"],   |
+            ["福岡県","福岡県"],   |
+            ["佐賀県","佐賀県"],   |
+            ["長崎県","長崎県"],   |
+            ["熊本県","熊本県"],   |
+            ["大分県","大分県"],   |
+            ["宮崎県","宮崎県"],   |
+            ["鹿児島県","鹿児島県"],   |
+            ["沖縄県","沖縄県"],   |
+            ],                   |
+            autofocus: true      |
+        .field
+          = f.label :市区町村
+          %span.plate-required 必須
+          %br/
+          = f.text_field :nickname, autocomplete: true, :placeholder => "大阪市中央区"
+        .field
+          = f.label :番地
+          %span.plate-required 必須
+          %br/
+          = f.text_field :nickname, autocomplete: true, :placeholder => "難波５丁目１ー１６"
+        .field
+          = f.label :建物名・部屋番号
+          %span.plate-option 任意
+          %br/
+          = f.text_field :nickname, autocomplete: true, :placeholder => "なんばスカイオ15階"
+        .field
+          = f.submit "確認画面へ進む", :class=> "btn-next"
+  .new-footer
+    .footer-main
+    .footer-logo
+      %a{:href => "http://furima.tokyo/?utf8=%E2%9C%93&key=&authenticity_token=UevxGZzcSKajTarCjryjWUlJ55%2FOE4M%2FrOCFzPCEFL7s7SCAGAxNbn7dZb5LoXbcXoEKY6%2B94hlugXjuBVJ%2BXQ%3D%3D"}
+        %img{:alt => "furima", :src => "http://furima.tokyo/assets/logo-white-f61961ed5170064c5f33dd4524bdceeb5a5df2c83eb76fba31143f63fbab2c5e.svg"}/
+    .mark-of-copy-right ©︎ FURIMA

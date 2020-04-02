@@ -92,6 +92,10 @@
 ## addresses table
 |Column|Type|Options|
 |------|----|-------|
+|last_name_ad|string|null: false|
+|first_name_ad|string|null: false|
+|last_furigana_ad|string|null: false|
+|first_furigana_ad|string|null: false|
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
 |city_name|string|null: false|
@@ -112,7 +116,7 @@
  |description|text|null: false|
  |shipping_fee|string|null: false|
  |shipping_duration|string|null: false|
- |category|references|foreign_key: true|
+ |category_id|references|foreign_key: true|
  |user_id|references|foreign_key: true|
  |order_id|references|foreign_key: true|
  
@@ -124,6 +128,7 @@
  
 
 
+
  ## Shipping_methods table
  |Column|Type|Options|
  |---|---|---|
@@ -132,5 +137,5 @@
 
  ### Association
  - belongs_to :item
- 
+
 
