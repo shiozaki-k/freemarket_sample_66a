@@ -1,3 +1,4 @@
+= render partial: 'layouts/header'
 .container
   = render partial: 'posts/sidemenu'
   .container__main
@@ -8,7 +9,6 @@
             .container__main__top__user__icon__image
               =image_tag "/assets/material/logo/member_photo_noimage_thumb.png", size: "60x60"
             .container__main__top__user__icon__name
-              -# = current_user.name
               .a name
             .container__main__top__user__icon__number
               .container__main__top__user__icon__number__point
@@ -65,9 +65,5 @@
             =image_tag "/assets/material/logo/logo.png", size: "48x48"
             .p 取引終わりました。
             %i.fas.fa-angle-right
-      -# .container__main__bottom__tab-head
-      -# .container__main__bottom__tab
-      -#   .container__main__bottom__tab__left
-      -#   .container__main__bottom__tab__right
-      -# .container__main__bottom__lists
+= render partial: 'layouts/footer'     
       

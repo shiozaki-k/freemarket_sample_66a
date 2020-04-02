@@ -86,14 +86,12 @@
           width:700px;
           .tab-label {
             height: 72px;
-            width: 49%;
+            width: 49.6%;
             display: inline-block;
-            // border-top-left-radius: 8px;
-            // border-top-right-radius: 8px;
+         
             border: 1px solid #999;
             background-color: #f3f3f3;
-            // margin-left: 1px;
-            // margin-right: 1px;
+           
             padding: 0 1px;
             border-bottom: none;
             font-size: 0.9em;
@@ -152,6 +150,7 @@
             text-decoration: none;
             font-size: 20px;
             text-align: center;
+            align-items: center;
             color: currentColor;
           }
         }
@@ -169,7 +168,7 @@
         width:700px;
         .tab-label {
           height: 72px;
-          width: 49%;
+          width: 49.6%;
           display: inline-block;
           border: 1px solid #999;
           background-color: #f3f3f3;
@@ -215,20 +214,7 @@
           background-color: #fff;
         }
       }
-      // &__tab{
-      //   @include back(white);
-      //   &__left{
-      //     @include back(white);
-
-      //   }
-      //   &__right{
-      //     @include back(white);
-
-      //   }
-      // }
-      // &__lists{
-      //   @include back(yellow);
-      // }
+      
     }
   }
   
@@ -240,15 +226,17 @@
     
       &__name{
         @include back(white);
-        height: 16px;
+        height: 20px;
         width: 248px;
-        font-size: 14px;
-        padding: 16px;
+        font-size: 20px;
+        padding: 20px;
         border-bottom: solid;
         border-width: 1px;
         border-color: #f5f5f5;
         position: relative;
         display: flex;
+        align-items: center;
+        text-decoration: none;
        
         &:hover{
           background-color: rgb(221, 216, 216);
@@ -260,6 +248,7 @@
         }
         a{
           width: 248px;
+          font-size: 14px;
           text-decoration: none;
           display:block;
           color: currentColor;
@@ -267,14 +256,6 @@
             font-size: 1.5em;
             position: absolute;
             color: gray;
-            // margin-right: 10px;
-            // text-align: right
-            // justify-items: flex-end;
-            // justify-content: flex-end;
-            // margin: 0 0 0 auto;
-            // float: right;
-            // text-align: right;
-            // padding-right: 16px;
           }
         }
         a::before{
