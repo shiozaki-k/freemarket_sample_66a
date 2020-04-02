@@ -3,7 +3,7 @@
 }
 
 .container {
-  @include back(rgb(246, 246, 246));
+  @include back(white);
   height: 256vh;
   width: 1040px;
   display: flex;
@@ -21,7 +21,7 @@
       margin: 0 0 0 -50px;
       
       &__user{
-        @include back(pink);
+        @include back(rgb(117, 201, 207));
         height: 200px;
         // position: relative;
         padding: 20px;
@@ -151,7 +151,7 @@
             font-size: 20px;
             text-align: center;
             align-items: center;
-            color: currentColor;
+            color: black;
           }
         }
 
@@ -159,7 +159,7 @@
     }
     
     &__bottom{
-      @include back(rgb(246, 246, 246));
+      @include back(white);
       height: 380px;
       // width: 700px;
       margin: 20px 0 0 -50px;
