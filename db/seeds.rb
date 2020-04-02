@@ -23,8 +23,9 @@ ladies_grandchild_array = [
                           ]
 parent = Category.create(name: 'レディース')
 ladies_child_array.each_with_index do |child, i|
-  child = parent.children.create(name: child)
-  ladies_grandchild_array[i].each do |grandchild|
-    child.children.create(name: grandchild)
+child = parent.children.create(name: child)
+ladies_grandchild_array[i].each do |grandchild|
+child.children.create(name: grandchild)
   end
 end
+
