@@ -1,21 +1,10 @@
+%body
+  %header.new-header
+    %h1
+      %a{:href => "http://furima.tokyo/?utf8=%E2%9C%93&key=&authenticity_token=UevxGZzcSKajTarCjryjWUlJ55%2FOE4M%2FrOCFzPCEFL7s7SCAGAxNbn7dZb5LoXbcXoEKY6%2B94hlugXjuBVJ%2BXQ%3D%3D"}
+        %img{:alt => "furima", :src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
+  %h2 出品フォーム
 = form_for @product do |f|
-  商品名#{f.text_field :name}
-  %br/
-  価格#{f.number_field :price}
-  %br/
-  商品の状態#{f.text_field :condition}
-  %br/
-  ブランド#{f.text_field :brand}
-  %br/
-  商品説明#{f.text_area :description}
-  %br/
-  配送料について#{f.text_field :shipping_fee}
-  %br/
-  発送元の地域#{f.text_field :shipping_origin}
-  %br/
-  発送までの日数#{f.text_field :shipping_duration}
-  %br/
-
   #image-box
     #previews
       - if @product.persisted?
@@ -32,5 +21,21 @@
       .js-file_group{"data-index" => "#{@product.images.count}"}
         = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
         .js-remove 削除
-  = f.submit
+  商品名#{f.text_field :name}
+  %br/
+  価格#{f.number_field :price}
+  %br/
+  商品の状態#{f.text_field :condition}
+  %br/
+  ブランド#{f.text_field :brand}
+  %br/
+  商品説明#{f.text_area :description}
+  %br/
+  配送料について#{f.text_field :shipping_fee}
+  %br/
+  発送元の地域#{f.text_field :shipping_origin}
+  %br/
+  発送までの日数#{f.text_field :shipping_duration}
+  %br/
+  = f.submit "出品する", :class=> "btn-next"
 

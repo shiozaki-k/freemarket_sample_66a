@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   get 'addresses', to: 'addresses#index'
 
-  root 'products#index'
   resources :products, except: :show
 
 end
