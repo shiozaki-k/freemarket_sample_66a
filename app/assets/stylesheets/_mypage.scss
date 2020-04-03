@@ -4,7 +4,7 @@
 
 .container {
   @include back(white);
-  height: 256vh;
+  height: 170vh;
   width: 1040px;
   display: flex;
   margin:40px auto 0 ;
@@ -219,8 +219,9 @@
   }
   
   &__side{
+    width: 300px;
     &__list{
-      @include back(rgb(246, 246, 246));
+      @include back(white);
       margin-top: 70px;
       list-style: none;
     
