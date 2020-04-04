@@ -17,53 +17,12 @@
           カテゴリー
         .header__inner__nav__left__category__treeContainer
           %ul.header__inner__nav__left__category__treeContainer__tree
-            %li.header__inner__nav__left__category__treeContainer__tree__item
+            %li.header__inner__nav__left__category__treeContainer__tree__parent
               - @parents.each do |parent|
                 = link_to "#{parent.name}", class: "parent_category",id: "#{parent.id}"
-      
-        -# = link_to "#" do
-        -#   カテゴリー
-        -# .header__inner__nav__left__category__treeContainer
-        -#   %ul.header__inner__nav__left__category__treeContainer__tree
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         レディース
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         メンズ
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         ベビー・キッズ
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         インテリア・住まい・小物
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         本・音楽・ゲーム
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         おもちゃ・ホビー・グッズ
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         コスメ・香水・美容
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         家電・スマホ・カメラ
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         スポーツ・レジャー
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         ハンドメイド
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         チケット
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         自動車・オートバイ
-        -#     %li.header__inner__nav__left__category__treeContainer__tree__item
-        -#       = link_to "#" do
-        -#         その他
+            %li.header__inner__nav__left__category__treeContainer__tree__children
+            %li.header__inner__nav__left__category__treeContainer__tree__grandchildren
+    
       %li.header__inner__nav__left__brand
         = link_to "#" do
           ブランド
