@@ -1,0 +1,86 @@
+@mixin back($color){
+  background-color:$color
+}
+// .card::after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
+.c-container {
+  @include back(white);
+  height: 170vh;
+  width: 1040px;
+  display: flex;
+  margin: 40px auto;
+  
+  &__form{
+    @include back(white);
+    height: 50px;
+    width: 700px;
+    margin-top:40px;
+    text-align: center;
+    border: 1px solid;
+    
+    .card-title{
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    &__inner{
+      @include back(yellow);
+      height: auto;
+      width: 700px;
+      // border: 1px solid;
+      &__top{
+        @include back(skyblue);
+        height: 90px;
+        width: 700px;
+        .card-number{
+          font-size: 14px;
+        }
+        .form-require__label{
+          font-size: 14px;
+        }
+        &__form{
+          .card__input.number{
+          height: 10px;
+          width: 350px; 
+          }
+        }
+        
+      }
+      &__middle{
+        @include back(green);
+        height: 90px;
+        width: 700px;
+        .card-date{
+          font-size: 14px;
+        }
+        
+      }
+      &__bottom{
+        @include back(pink);
+        height: 90px;
+        width: 700px;
+        .card-seq{
+          font-size: 14px;
+        }
+        
+      }
+      // &__seqcode{
+      //   @include back(brown);
+      //   height: 20px;
+      //   width: 200px;
+        
+      // }
+
+      &__btn{
+        @include back(black);
+        height: 90px;
+        width: 700px;
+        
+      }
+    }
+
+  }
+}
