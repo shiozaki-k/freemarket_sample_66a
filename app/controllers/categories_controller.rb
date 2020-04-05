@@ -12,9 +12,6 @@ class CategoriesController < ApplicationController
   #     format.json
   #   end
   # end
-  # def index
-  #   @parents = Category.all.order("id ASC").limit(13)
-  # end
-
+ 
   
 end

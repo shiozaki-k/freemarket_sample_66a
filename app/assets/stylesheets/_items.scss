@@ -97,14 +97,43 @@
             background-color: #fff;
             width: 240px;
             top: 30px;
-            padding: 3px 8px 3px 5px;
+            padding-right: 3px;
             border-bottom: 1px solid #f8f8f8;
             line-height: 32px;
-            &__tree__parent{
+            &__parent{
+              position:relative;
+              &:hover &__children{
+                display:block;
+                background-color:red;
+                position:absolute;
+                top:7px;
+                left: 236px;
+                width: 240px;
+                height: 417px;
+              }
               a{
                 display:block;
+                
+              }
+              &__children{
+                &:hover &__grandchildren{
+                  display:block;
+                  background-color:pink;
+                  position:absolute;
+                  z-index:3;
+                  top: 0px;
+                  left: 241px;
+                  width: 240px;
+                  height: 417px;
+                }
+                display:none;
+                &__grandchildren{
+                  display:none;
+                }
               }
             }
+
+            
           }
         }
       }

@@ -16,19 +16,16 @@
         = link_to "#" do
           カテゴリー
         .header__inner__nav__left__category__treeContainer
-          %ul.header__inner__nav__left__category__treeContainer__tree
-            %li.header__inner__nav__left__category__treeContainer__tree__parent
-              - @parents.each do |parent|
-                = link_to "#{parent.name}", class: "parent_category",id: "#{parent.id}"
+          .header__inner__nav__left__category__treeContainer__parent
+            - @parents.each do |parent|
+              = link_to "#{parent.name}", class: "parent_category",id: "#{parent.id}"
+              .header__inner__nav__left__category__treeContainer__parent__children
                 - parent.children.each do |child|
-                  = link_to "#{child.name}", class: "child_category",id: "#{parent.id}"
-                  - child.children.each do |grandchild|
-                    = link_to "#{grandchild.name}", class: "grandchild_category",id: "#{parent.id}"
-            %li.header__inner__nav__left__category__treeContainer__tree__children
-              -# - parent.children.each do |child|
-              -#   =child.name
-            %li.header__inner__nav__left__category__treeContainer__tree__grandchildren
-    
+                  = link_to "#{child.name}", class: "child_category",id: "#{child.id}"
+                  .header__inner__nav__left__category__treeContainer__parent__children__grandchildren
+                    - child.children.each do |grandchild|
+                      = link_to "#{grandchild.name}", class: "grandchild_category",id: "#{grandchild.id}"
+
       %li.header__inner__nav__left__brand
         = link_to "#" do
           ブランド
