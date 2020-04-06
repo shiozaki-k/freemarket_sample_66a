@@ -4,12 +4,12 @@
   .main__show__content
    .main__show__content__top
     .main__show__content__top__itenBox
-     %h2 product3
+     %h2 #{@item.name}
       
      .main__show__content__top__itenBox__body
       %ul
        %li
-        = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+        = image_tag @item.images(2).src
         %ul
          %li
           = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
@@ -19,7 +19,8 @@
           = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png"
 
      .main__show__content__top__itenBox__price
-      %span ¥30000
+      %span ¥#{@item.price}
+        
       .main__show__content__top__itenBox__price__detail
        %span (税入)
        %span 送料込み
@@ -31,7 +32,7 @@
        %tbody
         %tr
          %th 出品者
-         %td hoge
+         %td #{@item.user.nickname}
         %tr
          %th カテゴリー
          %td
@@ -45,24 +46,24 @@
            アウター
         %tr
          %th ブランド
-         %td
+         %td #{@item.brand}
         %tr
          %th 商品のサイズ
-         %td
+         %td 
         %tr
          %th 商品の状態
-         %td 未使用に近い
+         %td #{@item.condition}
         %tr
          %th 配送料の負担
-         %td 送料込み（出品者負担）
+         %td #{@item.shipping_fee}
         %tr
          %th 発送元の地域
          %td
           = link_to "" do
-           岩手県
+           #{@item.shipping_origin}
         %tr
          %th 発送日の目安
-         %td 4-7日で発送
+         %td #{@item.shipping_duration}
 
      .main__show__content__top__itenBox__Area
       %ul.option1
