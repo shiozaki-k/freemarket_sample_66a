@@ -5,6 +5,7 @@
         %img{:alt => "furima", :src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
   %h2 出品フォーム
   = form_for @product do |f|
+    = render 'products/error_messages', model: f.object
     .field-of-imageUploader
       = f.label :出品画像
       %span.plate-required 必須
@@ -29,7 +30,7 @@
     .field-of-product
       = f.label :商品名
       %span.plate-required 必須
-      = f.text_field :name, autofocus: true, :placeholder => "40文字まで"
+      = f.text_field :name, autofocus: true, :placeholder => "40文字以内"
     .field-of-product
       = f.label :商品の状態
       %span.plate-required 必須
@@ -48,7 +49,29 @@
     .field-of-text-area
       = f.label :商品の説明
       %span.plate-required 必須
-      = f.text_area :description, autofocus: true, :placeholder => "色、素材、重さ、定価、注意点など"
+      = f.text_area :description, autofocus: true, :placeholder => "1000文字以内（色、素材、重さ、定価、注意点など）"
+    .field-of-product
+      = f.label :カテゴリー
+      %span.plate-required 必須
+      %span.description-of-input 選択してください。
+      %br/
+      = f.select :category, |
+        [                   |
+        ["レディース","レディース"],      |
+        ["メンズ","メンズ"],      |
+        ["ベビー・キッズ","ベビー・キッズ"],      |
+        ["インテリア・住まい・小物","インテリア・住まい・小物"],      |
+        ["本・音楽・ゲーム","本・音楽・ゲーム"],      |
+        ["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],      |
+        ["コスメ・香水・美容","コスメ・香水・美容"],      |
+        ["家電・スマホ・カメラ","家電・スマホ・カメラ"],      |
+        ["スポーツ・レジャー","スポーツ・レジャー"],      |
+        ["ハンドメイド","ハンドメイド"],      |
+        ["チケット","チケット"],      |
+        ["自動車・オートバイ","自動車・オートバイ"],      |
+        ["その他","その他"],      |
+        ],                   |
+        autofocus: true      |
     .field-of-product
       = f.label :ブランド
       %span.plate-option 任意

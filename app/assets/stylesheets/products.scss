@@ -38,6 +38,21 @@
     margin-left: 20px;
   }
 }
+
+#image-box {
+  margin: 15px 0 45px 0;
+  #previews {
+    width: 600px;
+    height: 210px;
+    background-color: #f3f3f3;
+    margin: auto;
+    padding: 5px;
+    .js-file_group {
+
+    }
+  }  
+}
+
 // #image-box {
 //   margin: 15px 0 45px 0;
 //   .js-file_group {
@@ -90,6 +105,9 @@
     @include product-common-style
   }
   #product_shipping_duration {
+    @include product-common-style
+  }
+  #product_category {
     @include product-common-style
   }
   #product_price {
@@ -156,4 +174,22 @@
   .btn-selling:hover {
     opacity: 0.9;
   }
+}
+
+.alert {
+  width: 600px;
+  margin: auto;
+  margin-bottom: 24px !important;
+  font-size: 15px;
+  color: #ff0033;
+  text-align: left;
+  border: 0.5px solid #ff0033;
+  padding: 20px;
+  li:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f071';
+    line-height: 2.5;
+    padding-right: 12px;
+  }  
 }

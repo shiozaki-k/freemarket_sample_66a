@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path, notice: '出品完了しました'
+      redirect_to controller: :products, action: :index
     else
       render :new
     end
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :condition, :brand, :description, :shipping_fee, :shipping_origin, :shipping_duration, :user_id, images_attributes:  [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :price, :condition, :category, :brand, :description, :shipping_fee, :shipping_origin, :shipping_duration, :user_id, images_attributes:  [:src, :_destroy, :id])
   end
 
   def set_product
