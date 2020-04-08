@@ -17,10 +17,10 @@
                 .a 出品数 1
       .container__main__top__tab-head
         .container__main__top__tab-head__tabs
-          %input#tab-1{:checked => "checked", :name => "tab-notice", :type => "radio"}/
-          %label.tab-label{:for => "tab-1"} お知らせ
-          %input#tab-2{:name => "tab-notice", :type => "radio"}/
-          %label.tab-label{:for => "tab-2"} やることリスト
+          %input#tab-1{checked: "checked", name: "tab-notice", type: "radio"}/
+          %label.tab-label{for: "tab-1"} お知らせ
+          %input#tab-2{name: "tab-notice", type: "radio"}/
+          %label.tab-label{for: "tab-2"} やることリスト
           .tab-content.tab-1-content
             .tab-content.tab-1-content__lists
             = link_to "#" do
@@ -44,10 +44,10 @@
             .a 一覧を見る
     .container__main__bottom
       .container__main__bottom__tabs
-        %input#tab-3{:checked => "checked", :name => "tab-transaction", :type => "radio"}/
-        %label.tab-label{:for => "tab-3"}  取引中
-        %input#tab-4{:name => "tab-transaction", :type => "radio"}/
-        %label.tab-label{:for => "tab-4"} 過去の取引
+        %input#tab-3{checked: "checked", name: "tab-transaction", type: "radio"}/
+        %label.tab-label{for: "tab-3"}  取引中
+        %input#tab-4{name: "tab-transaction", type: "radio"}/
+        %label.tab-label{for: "tab-4"} 過去の取引
         .tab-content.tab-3-content
           .tab-content.tab-3-content__lists
           = link_to "#" do
