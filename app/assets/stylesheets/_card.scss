@@ -1,0 +1,124 @@
+@mixin back($color){
+  background-color:$color
+}
+
+.c-container {
+  @include back(white);
+  height: 170vh;
+  width: 1040px;
+  display: flex;
+  margin: 40px auto;
+  
+  &__form{
+    @include back(white);
+    height: 50px;
+    width: 700px;
+    margin-top:40px;
+    text-align: center;
+   
+    
+    .card-title{
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    &__inner{
+      @include back(white);
+      height: auto;
+      width: 700px;
+      &__top{
+        @include back(white);
+        height: 90px;
+        width: 700px;
+        margin-top: 50px;
+        .card-number{
+          font-size: 14px;
+          font-weight: 600;
+          
+        }
+        &__label{
+          @include back(red);
+          color: white;
+          border-radius: 2px;
+          font-size: 14px;
+        }
+        &__content{
+          .card__input.number{
+          height: 40px;
+          width: 350px; 
+          }
+        }
+        
+      }
+      &__middle{
+        @include back(white);
+        height: 90px;
+        width: 700px;
+        margin-top: 30px;
+        .card-date{
+          font-size: 14px;
+          font-weight: 600;
+        }
+        &__label{
+          @include back(red);
+          color: white;
+          border-radius: 2px;
+          font-size: 14px;
+        }
+        &__date-form{
+          font-size: 20px;
+          .exp_month{
+            width: 100px;
+            background: transparent;
+          }
+          .exp_year{
+            width: 100px;
+            margin-left: 30px;
+            background: transparent;
+          }
+        }
+        
+      }
+      &__bottom{
+        @include back(white);
+        height: 75px;
+        width: 700px;
+        .seq-cord{
+          font-size: 14px;
+          font-weight: 600;
+        }
+        &__label{
+          @include back(red);
+          color: white;
+          font-size : 14px;
+          border-radius: 2px;
+        }
+        .card__input.number{
+          height: 40px;
+          width: 250px;
+          font-size: 12px;
+        }
+      }
+      &__seq {
+        a {
+          color: #3ccace;
+          font-size: 16px;
+        }
+
+      }
+
+      &__btn{
+        @include back(blackwhite);
+        color: currentColor;
+        font-size: 18px;
+        height: 40px;
+        width: 200px;
+        text-align: center;
+        margin-top: 20px;
+        
+        
+      }
+    }
+
+  }
+}
