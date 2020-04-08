@@ -6,16 +6,18 @@
     .c-container__form__inner 
       .c-container__form__inner__top
         %label{class: "card-number"} カード番号
-        %span.form-require__label 必須
-        .c-container__form__inner__top__form
+        %span.c-container__form__inner__top__label 必須
+        .c-container__form__inner__top__content
           %input.card__input.number{maxlength: "19", name: "number", placeholder: "半角英数字のみ", type: "text", value: "",id: "payment_card_no",required: "required"}
-        -# %ul#card-no-error-wrapper.has-error-text
+          %ul.card-list
+            %li.card-list__image
+              = image_tag "/assets/material/logo/credit-card.png"
         
       .c-container__form__inner__middle
         %label{class: "card-date"} 有効期限
-        %span.form-require.card__form__top__label 必須
+        %span.c-container__form__inner__middle__label 必須
         .c-container__form__inner__middle__date-form
-          %select#payment_card_expire_mm.select-wrap__default.exp_month{maxlength: "2",name: "exp_month", placeholder: "月", type: "text",required: "required"}
+          %select#c-container__form__inner__middle__date-form.exp_month{maxlength: "2",name: "exp_month", placeholder: "月", type: "text",required: "required"}
             %option{value: "01"} 01
             %option{value: "02"} 02
             %option{value: "03"} 03
@@ -28,9 +30,8 @@
             %option{value: "10"} 10
             %option{value: "11"} 11
             %option{value: "12"} 12
-          %i.fa.fa-angle-down.select-wrap__icon
           %span 月
-          %select#payment_card_expire_yy.select-wrap__default.exp_year{maxlength: "4",name: "exp_year", placeholder: "年", type: "text",required: "required"}
+          %select#c-container__form__inner__middle__date-form.exp_year{maxlength: "4",name: "exp_year", placeholder: "年", type: "text",required: "required"}
             %option{value: "2020"} 20
             %option{value: "2021"} 21
             %option{value: "2022"} 22
@@ -42,14 +43,15 @@
             %option{value: "2028"} 28
             %option{value: "2029"} 29
             %option{value: "2030"} 30
-          %i.fa.fa-angle-down.select-wrap__icon
           %span 年
       .c-container__form__inner__bottom
-        %label{class: "card-seq"} セキュリティコード
-        %span.form-require.card__form__top__label 必須
+        %label{class: "seq-cord"} セキュリティコード
+        %span.c-container__form__inner__bottom__label 必須
         .c-container__form__inner__seqcode
           %input.card__input.number{maxlength: "4", name: "number", placeholder: "カード背面4桁もしくは3桁の番号", type: "text", value: "",id: "payment_card_no",required: "required"}
       .c-container__form__inner__seq 
-        .a カード裏面番号とは？
-        %button.c-container__form__inner__btn{type: "submit"} 登録完了
+        %span.c-container__form__inner__seq__label  
+          = link_to "#" do
+            カード裏面番号とは？
+      %button.c-container__form__inner__btn{type: "submit"} 登録する
 = render partial: 'layouts/footer'

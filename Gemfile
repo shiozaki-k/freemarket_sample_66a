@@ -83,5 +83,5 @@ gem 'erb2haml'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise' 
 gem 'haml-rails'
-
+gem 'payjp'
 
