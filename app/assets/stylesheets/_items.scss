@@ -87,10 +87,13 @@
         &__category{
           padding: 0;
           padding-right: 30px;
-          &:hover &__treeContainer{
+          &:hover &__treeContainer {
           display:block; 
           }
           &__treeContainer{
+            li{
+              display:block;
+            }
             display:none;
             position: absolute;
             z-index: 2;
@@ -116,6 +119,7 @@
                 
               }
               &__children{
+                display:none;
                 &:hover &__grandchildren{
                   display:block;
                   background-color:pink;
@@ -126,7 +130,7 @@
                   width: 240px;
                   height: 417px;
                 }
-                display:none;
+                
                 &__grandchildren{
                   display:none;
                 }

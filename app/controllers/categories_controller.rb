@@ -1,7 +1,8 @@
 class CategoriesController < ApplicationController
  
   def set_parents
-    @parents = Category.where(ancestry: nil)
+    @parents = Category.where(ancestry: null)
+    binding.pry
     render layout 'header'
   end
 
