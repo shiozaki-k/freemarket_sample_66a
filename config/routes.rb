@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "items#index"
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  # get 'user/edit'
+
   resource :users do
     get 'edit'
   end
@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   get 'addresses', to: 'addresses#index'
 
+  resources :items
 end
