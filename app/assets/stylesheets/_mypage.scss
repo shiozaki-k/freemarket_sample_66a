@@ -23,7 +23,6 @@
       &__user{
         @include back(rgb(117, 201, 207));
         height: 200px;
-        // position: relative;
         padding: 20px;
         text-align: center;
         &__icon{
@@ -65,12 +64,10 @@
             
             &__point{
               @include back(transparent);
-              // height: 16px;
               margin: auto;
               }
               &__item{
                 @include back(transparent);
-                // height: 16px;
                 margin: auto;
                 
               }
@@ -161,7 +158,6 @@
     &__bottom{
       @include back(white);
       height: 380px;
-      // width: 700px;
       margin: 20px 0 0 -50px;
       &__tabs{
         margin-top: 12px;
