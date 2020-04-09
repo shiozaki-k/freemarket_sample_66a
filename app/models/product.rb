@@ -1,7 +1,9 @@
 class Product < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
-  validates :name, length: {maximum: 40}, presence: true
-  validates :description, length: {maximum: 1000}, presence: true
+  validates_associated :images
+  validates :images, presence: true
+  validates :name, length: { maximum: 40 }, presence: true
+  validates :description, length: { maximum: 1000 }, presence: true
   validates :price, :condition, :category, :shipping_fee, :shipping_origin, :shipping_duration, presence: true
 end
