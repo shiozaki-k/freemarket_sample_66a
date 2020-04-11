@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   get 'addresses', to: 'addresses#index'
 
-  resources :products, except: :show
+  resources :products
 
 end

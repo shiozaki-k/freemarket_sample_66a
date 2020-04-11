@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create,:show]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -22,6 +22,10 @@ class ProductsController < ApplicationController
   def edit
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def update
   end
 
@@ -33,7 +37,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :condition, :category, :brand, :description, :shipping_fee, :shipping_origin, :shipping_duration, :user_id, images_attributes:  [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :price, :condition, :category, :brand, :description, :shipping_fee, :shipping_origin, :shipping_duration, :user_id, images_attributes:  [:src, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_product
