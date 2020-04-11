@@ -84,4 +84,11 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise' 
 gem 'haml-rails'
 
+gem 'mini_magick'
+
+gem 'jquery-rails'
+
+gem 'rails-i18n'
+
+gem 'active_hash'
 
