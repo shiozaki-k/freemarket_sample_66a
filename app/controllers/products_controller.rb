@@ -30,11 +30,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    begin
-     @product.destroy!
-       
-        Rails.logger.debug e.message
-    end
+ 
     if @product.destroy
       redirect_to root_path
     else
