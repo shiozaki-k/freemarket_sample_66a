@@ -1,0 +1,115 @@
+%body
+  %header.new-header
+    %h1
+      =render partial:"layouts/header_simple"
+  %h2 出品フォーム
+  = form_for @product do |f|
+    = render 'products/error_messages', model: f.object
+    .field-of-imageUploader
+      = f.label :出品画像
+      %span.plate-required 必須
+      %span.description-of-input 最大10枚まで登録できます。
+    #image-box
+      #previews
+        - if @product.persisted?
+          - @product.images.each_with_index do |image, i|
+            = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+      = f.fields_for :images do |image|
+        .js-file_group{"data-index" => "#{image.index}"}
+          = image.file_field :src, class: 'js-file'
+          %br/
+          %span.js-remove 削除
+        - if @product.persisted?
+          = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+      - if @product.persisted?
+        .js-file_group{"data-index" => "#{@product.images.count}"}
+          = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+          .js-remove 削除
+    .field-of-product
+      = f.label :商品名
+      %span.plate-required 必須
+      = f.text_field :name, autofocus: true, :placeholder => "40文字以内"
+    .field-of-product
+      = f.label :商品の状態
+      %span.plate-required 必須
+      %span.description-of-input 選択してください。
+      %br/
+      = f.select :condition, |
+        [                    |
+        ["新品・未使用","新品・未使用"],      |
+        ["未使用に近い","未使用に近い"],      |
+        ["目立った傷や汚れなし","目立った傷や汚れなし"],      |
+        ["やや傷や汚れあり","やや傷や汚れあり"],      |
+        ["傷や汚れあり","傷や汚れあり"],      |
+        ["全体的に状態が悪い","全体的に状態が悪い"],      |
+        ],                   |
+        autofocus: true      |
+    .field-of-text-area
+      = f.label :商品の説明
+      %span.plate-required 必須
+      = f.text_area :description, autofocus: true, :placeholder => "1000文字以内（色、素材、重さ、定価、注意点など）"
+    .field-of-product
+      = f.label :カテゴリー
+      %span.plate-required 必須
+      %span.description-of-input 選択してください。
+      %br/
+      = f.select :category, |
+        [                   |
+        ["レディース","レディース"],      |
+        ["メンズ","メンズ"],      |
+        ["ベビー・キッズ","ベビー・キッズ"],      |
+        ["インテリア・住まい・小物","インテリア・住まい・小物"],      |
+        ["本・音楽・ゲーム","本・音楽・ゲーム"],      |
+        ["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],      |
+        ["コスメ・香水・美容","コスメ・香水・美容"],      |
+        ["家電・スマホ・カメラ","家電・スマホ・カメラ"],      |
+        ["スポーツ・レジャー","スポーツ・レジャー"],      |
+        ["ハンドメイド","ハンドメイド"],      |
+        ["チケット","チケット"],      |
+        ["自動車・オートバイ","自動車・オートバイ"],      |
+        ["その他","その他"],      |
+        ],                   |
+        autofocus: true      |
+    .field-of-product
+      = f.label :ブランド
+      %span.plate-option 任意
+      = f.text_field :brand, autofocus: true, :placeholder => "例) シャネル"
+    .field-of-product
+      = f.label :配送料の負担
+      %span.plate-required 必須
+      %span.description-of-input 選択してください。
+      %br/
+      = f.select :shipping_fee, |
+        [                       |
+        ["送料込み（出品者負担）","送料込み（出品者負担）"],      |
+        ["着払い（購入者負担）","着払い（購入者負担）"],      |
+        ],                   |
+        autofocus: true      |
+    .field-of-product
+      = f.label :配送元の地域
+      %span.plate-required 必須
+      %span.description-of-input 選択してください。
+      %br/
+      = f.collection_select :shipping_origin, Prefecture.all, :id, :name, autofocus: true
+    .field-of-product
+      = f.label :発送までの日数
+      %span.plate-required 必須
+      %span.description-of-input 選択してください。
+      %br/
+      = f.select :shipping_duration, |
+        [                    |
+        ["１〜２日で発送","１〜２日で発送"],      |
+        ["２〜３日で発送","２〜３日で発送"],      |
+        ["４〜７日で発送","４〜７日で発送"],      |
+        ],                   |
+        autofocus: true      |
+    .field-of-product
+      = f.label :販売価格
+      %span.plate-required 必須
+      %br/
+      %span.label-for-YenMark ￥
+      = f.number_field :price, autofocus: true
+    %br/
+    .field-of-btn-selling
+      = f.submit "出品する", :class=> "btn-selling"
+  = render partial: "layouts/footer_simple"

@@ -1,0 +1,181 @@
+@mixin product-common-style {
+  width: 100%;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  margin: 8px 0 0;
+}
+
+.new_product.new_product {
+  width: 100%;
+  margin: auto;
+  padding: 24px 0 40px;
+  border-top: 1px solid #E0E0E0;
+}
+
+.field-of-imageUploader {
+  width: 600px;
+  height: 20px;
+  font-size: 14px;
+  margin: auto;
+  label {
+    color: #333;
+    font-weight: 600;
+  }
+  .plate-required {
+    font-size: 12.5px;
+    color: #fff;
+    background-color: #ff3366;
+    border-radius: 2px;
+    margin-left: 10px;
+    padding: 1.6px 4.8px;
+  }
+  .description-of-input {
+    margin-left: 20px;
+  }
+}
+
+#image-box {
+  margin: 15px 0 45px 0;
+  #previews {
+    width: 600px;
+    height: 210px;
+    background-color: #f3f3f3;
+    margin: auto;
+    padding: 5px;
+  }  
+}
+
+.field-of-product {
+  width: 600px;
+  height: 99px;
+  font-size: 14px;
+  margin: auto;
+  label {
+    color: #333;
+    font-weight: 600;
+  }
+  .label-for-YenMark {
+    color: #333;
+    font-weight: 600;
+    margin: 0 10px 0 42px;
+  }
+  .plate-required {
+    font-size: 12.5px;
+    color: #fff;
+    background-color: #ff3366;
+    border-radius: 2px;
+    margin-left: 10px;
+    padding: 1.6px 4.8px;
+  }
+  .description-of-input {
+    margin-left: 20px;
+  }
+  #product_name {
+    @include product-common-style
+  }
+  #product_condition {
+    @include product-common-style
+  }
+  #product_brand {
+    @include product-common-style
+  }
+  #product_shipping_fee {
+    @include product-common-style
+  }
+  #product_shipping_origin {
+    @include product-common-style
+  }
+  #product_shipping_duration {
+    @include product-common-style
+  }
+  #product_category {
+    @include product-common-style
+  }
+  #product_price {
+    width: calc(50% - 6px);
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    padding: 10px 16px 8px;
+    margin: 8px 0 0;
+  }
+}
+
+.field-of-text-area {
+  width: 600px;
+  height: 250px;
+  font-size: 14px;
+  margin: auto;
+  label {
+    color: #333;
+    font-weight: 600;
+  }
+  .plate-required {
+    font-size: 12.5px;
+    color: #fff;
+    background-color: #ff3366;
+    border-radius: 2px;
+    margin-left: 10px;
+    padding: 1.6px 4.8px;
+  }
+  #product_description {
+    width: 100%;
+    height: 150px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    margin: 8px 0 0;
+  }
+}
+.field-of-btn-selling {
+  width: 600px;
+  height: 99px;
+  font-size: 14px;
+  margin: auto;
+  text-align: center;
+  .btn-selling {
+    width: 350px;
+    line-height: 48px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    background-color: #ff3333;
+    border: 1px solid #ff3333;
+    border-radius: 4px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  .btn-selling:hover {
+    opacity: 0.9;
+  }
+}
+
+.alert {
+  width: 600px;
+  margin: auto;
+  margin-bottom: 24px !important;
+  font-size: 15px;
+  color: #ff0033;
+  text-align: left;
+  border: 0.5px solid #ff0033;
+  padding: 20px;
+  li:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f071';
+    line-height: 2.5;
+    padding-right: 12px;
+  }  
+}
