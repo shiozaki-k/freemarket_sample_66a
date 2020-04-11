@@ -30,8 +30,13 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+    begin
+     @product.destroy!
+       redirect_to root_path
+    rescue => e
+        Rails.logger.debug e.message
+    end
+    
   end
 
   private
