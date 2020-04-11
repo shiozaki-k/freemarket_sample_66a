@@ -32,9 +32,13 @@ class ProductsController < ApplicationController
   def destroy
     begin
      @product.destroy!
-       redirect_to root_path
-    rescue => e
+       
         Rails.logger.debug e.message
+    end
+    if @product.destroy
+      redirect_to root_path
+    else
+      redirect_to product(@product.id)
     end
     
   end
