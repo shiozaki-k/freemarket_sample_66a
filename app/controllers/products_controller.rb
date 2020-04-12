@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    product_params[:status]= 0
     @product = Product.new(product_params)
     if @product.save
       redirect_to controller: :products, action: :index
@@ -33,7 +34,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :condition, :category, :brand, :description, :shipping_fee, :shipping_origin, :shipping_duration, :user_id, images_attributes:  [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :price, :condition, :category, :brand, :description, :shipping_fee, :shipping_origin, :shipping_duration, :user_id, images_attributes:  [:src, :_destroy, :id]).merge(status:0)
   end
 
   def set_product

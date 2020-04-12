@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  enum status: { sale: 0, trade: 1, sold: 2 }
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   has_many :images, dependent: :destroy
