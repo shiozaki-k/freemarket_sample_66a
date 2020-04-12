@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create,:show]
+  before_action :set_product, except: [:index, :new, :create]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -13,20 +13,29 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to controller: :products, action: :index
+      redirect_to product_path(@product.id)
     else
       render :new
     end
   end
-  
-  def edit
-  end
 
   def show
-    @product = Product.find(params[:id])
+   
+  end
+  
+  def edit
+
   end
 
+  
+
   def update
+    @product.update(product_params)
+    if @product.save
+      redirect_to product_path(@product.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -34,7 +43,7 @@ class ProductsController < ApplicationController
     if @product.destroy
       redirect_to root_path
     else
-      redirect_to product(@product.id)
+      redirect_to product_path(@product.id)
     end
     
   end
