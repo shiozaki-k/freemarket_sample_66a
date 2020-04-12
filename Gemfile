@@ -90,3 +90,4 @@ gem 'devise'
 gem 'haml-rails'
 gem 'ancestry'
 gem 'pry-rails'
+gem "jquery-rails"
