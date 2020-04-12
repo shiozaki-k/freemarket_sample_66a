@@ -15,6 +15,7 @@
       %li.header__inner__nav__left__category
         = link_to "#" do
           カテゴリー
+
         %ul.header__inner__nav__left__category__treeContainer
           %li.header__inner__nav__left__category__treeContainer__parent
             - @parents.each do |parent|
@@ -26,6 +27,7 @@
               -#       - child.children.each do |grandchild|
               -#         = link_to "#{grandchild.name}", class: "grandchild_category",id: "#{parent.id}"
          
+
 
       %li.header__inner__nav__left__brand
         = link_to "#" do

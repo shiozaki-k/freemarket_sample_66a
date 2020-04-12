@@ -90,4 +90,8 @@ gem 'devise'
 gem 'haml-rails'
 gem 'ancestry'
 gem 'pry-rails'
-gem "jquery-rails"
+gem 'mini_magick'
+gem 'jquery-rails'
+gem 'rails-i18n'
+gem 'active_hash'
+
