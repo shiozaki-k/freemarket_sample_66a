@@ -1,1 +1,8 @@
-= render partial: 'form'
+%body
+  %header.new-header
+    %h1
+      =render partial:"layouts/header_simple"
+  %h2 編集フォーム
+  = render partial: 'form'
+  
+
