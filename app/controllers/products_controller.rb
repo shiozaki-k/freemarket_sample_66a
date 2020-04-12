@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to controller: :products, action: :index
+      redirect_to product_path(@product.id)
     else
       render :new
     end
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
     if @product.destroy
       redirect_to root_path
     else
-      redirect_to product(@product.id)
+      redirect_to product_path(@product.id)
     end
     
   end
