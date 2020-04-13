@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product_params[:status]= 0
     @product = Product.new(product_params)
     if @product.save
       redirect_to controller: :products, action: :index
