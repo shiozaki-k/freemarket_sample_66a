@@ -9,7 +9,8 @@
      .main__show__content__top__itenBox__body
       %ul
        %li
-        = image_tag @product.images[0].src.url
+        .main__show__content__top__itenBox__body__image
+         = image_tag @product.images[0].src.url class: ""
         
         %ul
          - @product.images.each do |image|
@@ -44,7 +45,7 @@
          %th 出品者
          %td= @product.user.nickname
         %tr
-         %th
+         %th カテゴリー
          %td
           = link_to "" do
            ベビー・キッズ
