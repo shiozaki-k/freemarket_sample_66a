@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -8,7 +8,23 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @category = Category.all.order("id ASC").limit(13) # categoryの親を取得
+    
   end
+
+  def category_children 
+    @category_children = Category.find(params[:productcategory]).children 
+    respond_to do |format|
+      format.html
+      format.json
+  end
+end
+  # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
+ 
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
+    end
+  # Ajax通信で送られてきたデータをparamsで受け取り､childrenで孫を取得｡（実際には子カテゴリーの子になる｡childrenは子を取得するメソッド)
 
   def create
     @product = Product.new(product_params)
@@ -19,7 +35,9 @@ class ProductsController < ApplicationController
     end
   end
   
+  
   def edit
+    
   end
 
   def update

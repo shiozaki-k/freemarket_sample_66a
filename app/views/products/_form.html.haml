@@ -53,23 +53,11 @@
       %span.plate-required 必須
       %span.description-of-input 選択してください。
       %br/
-      = f.select :category, |
-        [                   |
-        ["レディース","レディース"],      |
-        ["メンズ","メンズ"],      |
-        ["ベビー・キッズ","ベビー・キッズ"],      |
-        ["インテリア・住まい・小物","インテリア・住まい・小物"],      |
-        ["本・音楽・ゲーム","本・音楽・ゲーム"],      |
-        ["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],      |
-        ["コスメ・香水・美容","コスメ・香水・美容"],      |
-        ["家電・スマホ・カメラ","家電・スマホ・カメラ"],      |
-        ["スポーツ・レジャー","スポーツ・レジャー"],      |
-        ["ハンドメイド","ハンドメイド"],      |
-        ["チケット","チケット"],      |
-        ["自動車・オートバイ","自動車・オートバイ"],      |
-        ["その他","その他"],      |
-        ],                   |
-        autofocus: true      |
+    .product_category-select
+      = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+      %i.fa.fa-chevron-down
+    .product_select-children
+     
     .field-of-product
       = f.label :ブランド
       %span.plate-option 任意
