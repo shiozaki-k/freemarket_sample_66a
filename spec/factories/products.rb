@@ -4,7 +4,7 @@ FactoryBot.define do
     price               {"5000"}
     condition           {"新品・未使用"}
     category            {"家電・スマホ・カメラ"}
-    # brand               {"apple"}
+    brand               {"apple"}
     description         {"最新式です"}
     shipping_fee        {"送料込み（出品者負担）"}
     shipping_origin     {"大阪"}
