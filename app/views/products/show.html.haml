@@ -10,7 +10,7 @@
       %ul
        %li
         .main__show__content__top__itenBox__body__image
-         = image_tag @product.images[0].src.url class: ""
+         = image_tag @product.images[0].src.url class: "main__show__content__top__itenBox__body__image__big"
         
         %ul
          - @product.images.each do |image|
