@@ -9,7 +9,8 @@
      .main__show__content__top__itenBox__body
       %ul
        %li
-        = image_tag @product.images[0].src.url
+        .main__show__content__top__itenBox__body__image
+         = image_tag @product.images[0].src.url class: ""
         
         %ul
          - @product.images.each do |image|
@@ -23,10 +24,10 @@
        - if user_signed_in? && current_user.id == @product.user_id
         %ul.main__show__content__top__itenBox__price__detail__buy
          %li
-          = link_to  "#", method: :get do
+          = link_to  edit_product_path(@product.id), method: :get do
            編集
          %li
-          = link_to  "#", method: :delete do
+          = link_to  product_path(@product.id), method: :delete do
            削除
        - else
         .main__show__content__top__itenBox__price__detail__buy2
@@ -44,7 +45,7 @@
          %th 出品者
          -# %td= @product.user.nickname
         %tr
-         %th
+         %th カテゴリー
          %td
           = link_to "" do
            ベビー・キッズ
