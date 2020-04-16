@@ -60,7 +60,8 @@ $(document).on('turbolinks:load', ()=> {
 // 詳細画面画像切替
 $(function() {
   $('.main__show__content__top__itenBox__body ul ul li ').on('click',function() {
-    var selectedImgSrc = $(this).children('img').attr('src');
+    var selectedImgSrc = $(this).children('img' ).attr('src');
     $('.main__show__content__top__itenBox__body__image').children('img').attr('src', selectedImgSrc);
+    
  });
 })
