@@ -62,6 +62,16 @@
       = image_tag "/images/material/icon/icon-04.png"
       %p.middle-introduction__list__content__title 様々な支払いに対応
       %p.middle-introduction__list__content__text お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+.post
+  %h2 新着一覧
+  .post__box
+    .post__box__head
+      = link_to "#" do
+        新規投稿商品
+    .post__box__lists
+      = render partial: 'index', locals: { index: @index }
+      = render partial: 'index', locals: { index: @index }
+      = render partial: 'index', locals: { index: @index }
 
 .post
   %h2 ピックアップカテゴリー
