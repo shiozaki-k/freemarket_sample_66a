@@ -1,8 +1,8 @@
 %body
-  %header.new-header
-    %h1
-      =render partial:"layouts/header_simple"
-  %h2 出品フォーム
+  -# %header.new-header
+    -# %h1
+      -# =render partial:"layouts/header_simple"
+  -# %h2 出品フォーム
   = form_for @product do |f|
     = render 'products/error_messages', model: f.object
     .field-of-imageUploader
@@ -99,5 +99,9 @@
       = f.number_field :price, autofocus: true
     %br/
     .field-of-btn-selling
-      = f.submit "出品する", :class=> "btn-selling"
+      -if @product.id
+        = f.submit "編集する", :class=> "btn-selling"
+      - else
+        = f.submit "出品する", :class=> "btn-selling"
+      
   = render partial: "layouts/footer_simple"

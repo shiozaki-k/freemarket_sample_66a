@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  enum status: { sale: 0, trade: 1, sold: 2 }
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   belongs_to :category
@@ -8,5 +9,8 @@ class Product < ApplicationRecord
   validates :images, presence: true
   validates :name, length: { maximum: 40 }, presence: true
   validates :description, length: { maximum: 1000 }, presence: true
-  validates :price, :condition, :category, :category_id, :shipping_fee, :shipping_origin, :shipping_duration, presence: true
+
+  validates :price, :condition, :category, :category_id,:shipping_fee, :shipping_origin, :shipping_duration, presence: true
+  belongs_to :user
+
 end

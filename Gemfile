@@ -35,13 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-# group :development, :test do
-#   gem 'capistrano'
-#   gem 'capistrano-rbenv'
-#   gem 'capistrano-bundler'
-#   gem 'capistrano-rails'
-#   gem 'capistrano3-unicorn'
-# end
+
   gem 'carrierwave'
   gem 'fog-aws'
 group :development, :test do
@@ -59,6 +53,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 
@@ -87,6 +82,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'erb2haml'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise' 
 gem 'haml-rails'

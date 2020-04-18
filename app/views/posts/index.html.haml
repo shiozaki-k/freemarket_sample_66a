@@ -1,5 +1,69 @@
-tekitou
-test
-dekiteru?
-1234567
-pppppp
+= render partial: 'layouts/header'
+.container
+  = render partial: 'posts/sidemenu'
+  .container__main
+    .container__main__top
+      .container__main__top__user
+        =link_to "#" do
+          .container__main__top__user__icon
+            .container__main__top__user__icon__image
+              =image_tag "/images/material/icon/member_photo_noimage_thumb.png", size: "60x60"
+            .container__main__top__user__icon__name
+              .a name
+            .container__main__top__user__icon__number
+              .container__main__top__user__icon__number__point
+                .a 評価 1
+              .container__main__top__user__icon__number__item
+                .a 出品数 1
+      .container__main__top__tab-head
+        .container__main__top__tab-head__tabs
+          %input#tab-1{checked: "checked", name: "tab-notice", type: "radio"}/
+          %label.tab-label{for: "tab-1"} お知らせ
+          %input#tab-2{name: "tab-notice", type: "radio"}/
+          %label.tab-label{for: "tab-2"} やることリスト
+          .tab-content.tab-1-content
+            .tab-content.tab-1-content__lists
+            = link_to "#" do
+              - if @notice
+                - @notice.each do |notice|
+                  = text
+              =image_tag "/images/material/logo/logo.png", size: "48x48"
+              .p お知らせメッセージなどなど。
+              %i.fas.fa-angle-right 
+          .tab-content.tab-2-content
+            = link_to "#" do
+              - if @notice
+                - @notice.each do |notice|
+                  = text
+              =image_tag "/images/material/logo/logo.png", size: "48x48"
+              .p やること。
+              %i.fas.fa-angle-right
+      .container__main__top__low
+        .container__main__top__low__btn
+          = link_to "#" do
+            .a 一覧を見る
+    .container__main__bottom
+      .container__main__bottom__tabs
+        %input#tab-3{checked: "checked", name: "tab-transaction", type: "radio"}/
+        %label.tab-label{for: "tab-3"}  取引中
+        %input#tab-4{name: "tab-transaction", type: "radio"}/
+        %label.tab-label{for: "tab-4"} 過去の取引
+        .tab-content.tab-3-content
+          .tab-content.tab-3-content__lists
+          = link_to "#" do
+            - if @transaction
+              - @transaction.each do |transaction|
+                = text
+            =image_tag "/images/material/logo/logo.png", size: "48x48"
+            .p 取引中。
+            %i.fas.fa-angle-right 
+        .tab-content.tab-4-content
+          = link_to "#" do
+            - if @transaction
+              - @transaction.each do |transaction|
+                = text
+            =image_tag "/images/material/logo/logo.png", size: "48x48"
+            .p 取引終わりました。
+            %i.fas.fa-angle-right
+= render partial: 'layouts/footer'     
+      

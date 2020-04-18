@@ -56,3 +56,12 @@ $(document).on('turbolinks:load', ()=> {
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
+
+// 詳細画面画像切替
+$(function() {
+  $('.main__show__content__top__itenBox__body ul ul li ').on('click',function() {
+    var selectedImgSrc = $(this).children('img' ).attr('src');
+    $('.main__show__content__top__itenBox__body__image').children('img').attr('src', selectedImgSrc);
+    
+ });
+})

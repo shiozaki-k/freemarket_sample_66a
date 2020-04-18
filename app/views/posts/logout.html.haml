@@ -1,0 +1,8 @@
+= render partial: 'layouts/header'
+.l-container
+  = render partial: 'posts/sidemenu'
+  .l-container__main
+    .l-container__main__top
+      = link_to destroy_user_session_path, method: :delete do
+        ログアウト
+= render partial: 'layouts/footer' 

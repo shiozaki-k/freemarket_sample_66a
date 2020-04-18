@@ -1,0 +1,35 @@
+@mixin back($color){
+  background-color:$color
+}
+.l-container{
+  @include back(white);
+  height: 170vh;
+  width: 1040px;
+  display: flex;
+  margin: 40px auto;
+  &__main{
+    @include back(rgb(246, 246, 246));
+    height: 180px;
+    width: 700px;
+    margin-top:40px;
+    text-align: center;
+    &__top{
+      @include back(yellow);
+      height: 50px;
+      width: 320px;
+      margin: 60px auto;
+      a{
+        @include back(#FF3366);
+        height: 50px;
+        width: 100%;
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        line-height: 50px;
+        margin-top: 10px;
+        display: block;
+      }
+    }
+  }
+  
+}
