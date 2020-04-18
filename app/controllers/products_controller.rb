@@ -51,7 +51,8 @@ end
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :condition, :category, :brand, :description, :shipping_fee, :shipping_origin, :shipping_duration, :user_id, images_attributes:  [:src, :_destroy, :id])
+    
+    params.require(:product).permit(:name, :price, :condition, :category_id,:brand, :description, :shipping_fee, :shipping_origin, :shipping_duration, :user_id, images_attributes:  [:src, :_destroy, :id])
   end
 
   def set_product

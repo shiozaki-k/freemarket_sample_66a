@@ -7,7 +7,7 @@ $(function(){
     var childSelectHtml = '';
       childSelectHtml = `<div class='product-select-wrapper' id= 'children_wrapper'>
                         <div class='product_category-select'>
-                        <select class="category_select-box" id="child_category" name="item[category_id]">
+                        <select class="category_select-box" id="child_category" name="product[category_id]">
                         <option value="---">---</option>
                         ${insertHTML}
                         </select>
@@ -16,12 +16,13 @@ $(function(){
                         <div class= 'product_select-grandchildren'>
                         </div>
                         </div>`;
+    $('.product_select-children').append(childSelectHtml);
   }
   function appendgrandChidrenBox(insertHTML){ // 孫セレクトボックスのhtml作成
     var grandchildrenSelectHtml = '';
     grandchildrenSelectHtml = `<div class='product-select-wrapper' id= 'grandchildren_wrapper'>
                               <div class='product_category-select'>
-                              <select class="category_select-box" id="grandchild_category" name="item[category_id]">
+                              <select class="category_select-box" id="grandchild_category" name="product[category_id]">
                               <option value="---">---</option>
                               ${insertHTML} 
                               </select>
