@@ -4,7 +4,8 @@
     = product.price
     円
   %p= product.condition
-  %p= product.category
+  -if product.category_id?
+    %p= product.category.name
   %p= product.brand
   %p= product.description
   %p= product.shipping_fee
