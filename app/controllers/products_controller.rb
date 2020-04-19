@@ -8,14 +8,11 @@ class ProductsController < ApplicationController
 
   def new
 
-    # if user_signed_in?
+   
     @product = Product.new
     @product.images.new
     @category = Category.all.order("id ASC").limit(13) # categoryの親を取得
-    # else
-    #   redirect_to items_path
-    # end
-
+    
   end
 
   def category_children 
@@ -42,7 +39,7 @@ end
   end
 
   def show
-   
+    @parents = Category.where(ancestry: nil)
   end
   
   

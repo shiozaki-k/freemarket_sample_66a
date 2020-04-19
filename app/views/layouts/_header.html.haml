@@ -20,13 +20,7 @@
           %li.header__inner__nav__left__category__treeContainer__parent
             - @parents.each do |parent|
               = link_to "#{parent.name}", class: "parent_category",id: "#{parent.id}"
-              -# %li.header__inner__nav__left__category__treeContainer__parent__children
-              -#   - parent.children.each do |child|
-              -#     = link_to "#{child.name}", class: "child_category",id: "#{parent.id}"
-              -#     %li.header__inner__nav__left__category__treeContainer__parent__children__grandchildren
-              -#       - child.children.each do |grandchild|
-              -#         = link_to "#{grandchild.name}", class: "grandchild_category",id: "#{parent.id}"
-         
+             
 
 
       %li.header__inner__nav__left__brand
