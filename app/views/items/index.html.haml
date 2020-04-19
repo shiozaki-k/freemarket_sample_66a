@@ -66,12 +66,12 @@
   %h2 新着一覧
   .post__box
     .post__box__head
-      = link_to "#" do
+      = link_to "products" do
         新規投稿商品
-    .post__box__lists
-      = render partial: 'index', locals: { index: @index }
-      = render partial: 'index', locals: { index: @index }
-      = render partial: 'index', locals: { index: @index }
+      .post__box__lists
+        = render partial: 'index', locals: { index: @index }
+        = render partial: 'index', locals: { index: @index }
+        = render partial: 'index', locals: { index: @index }
 
 .post
   %h2 ピックアップカテゴリー
