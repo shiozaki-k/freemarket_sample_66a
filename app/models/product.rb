@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   validates :name, length: { maximum: 40 }, presence: true
   validates :description, length: { maximum: 1000 }, presence: true
 
-  validates :price, :condition, :category, :category_id,:shipping_fee, :shipping_origin, :shipping_duration, presence: true
+  validates :price, :condition, :category, :category_id,:shipping_fee, :prefecture_id, :shipping_duration, presence: true
   belongs_to :user
 
 end

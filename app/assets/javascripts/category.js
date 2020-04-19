@@ -48,7 +48,7 @@ $(function(){
         dataType: 'json'
       })
       .done(function(children){  // 送られてきたデータをchildrenに代入
-        console.log
+        
         var insertHTML = '';
         children.forEach(function(child){  
   // forEachでchildに一つずつデータを代入｡子のoptionが一つずつ作成される｡

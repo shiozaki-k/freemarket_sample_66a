@@ -54,7 +54,9 @@
       %span.description-of-input 選択してください。
       %br/
     .product_category-select
+      
       = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+
       %i.fa.fa-chevron-down
     .product_select-children
      
@@ -78,7 +80,7 @@
       %span.plate-required 必須
       %span.description-of-input 選択してください。
       %br/
-      = f.collection_select :shipping_origin, Prefecture.all, :id, :name, autofocus: true
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true
     .field-of-product
       = f.label :発送までの日数
       %span.plate-required 必須
