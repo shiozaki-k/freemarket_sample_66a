@@ -55,8 +55,8 @@
       %br/
     .product_category-select
       
-      = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
-
+      = f.collection_select :category_id, @category, :id, :name,{ prompt: "---", selected: "" }, { class: "category_select-box", id: "category_select" }
+    
       %i.fa.fa-chevron-down
     .product_select-children
      

@@ -74,7 +74,7 @@ $(function(){
     var productcategory = document.getElementById('child_category').value;
     if (productcategory != ''){
     $.ajax ({
-      url: 'category_grandchildren',
+      url: '/products/category_grandchildren',
       type: 'GET',
       data: { productcategory: productcategory },
       dataType: 'json'
