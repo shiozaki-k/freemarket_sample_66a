@@ -45,6 +45,8 @@ end
   
   def edit
     @category = Category.all.order("id ASC").limit(13)
+    @grandchildren_category = @product.category.siblings
+    @children_category = @product.category.parent.siblings
 
   end
 

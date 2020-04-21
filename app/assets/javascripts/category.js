@@ -48,18 +48,17 @@ $(function(){
         dataType: 'json'
       })
       .done(function(children){  // 送られてきたデータをchildrenに代入
-        
+        $('#children_wrapper').remove(); 
         var insertHTML = '';
         children.forEach(function(child){  
   // forEachでchildに一つずつデータを代入｡子のoptionが一つずつ作成される｡
           insertHTML += appendOption(child); 
         });
         appendChidrenBox(insertHTML); 
-        $(document).on('change', '#category_select', function(){
+      
   // 通信成功時に親の選択肢を変えたらイベント発火｡子と孫を削除｡selectのidにかけるのではなく､親要素にかけないと残ってしまう
-          $('#children_wrapper').remove(); 
-          $('#grandchildren_wrapper').remove();
-        })
+          
+         
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
