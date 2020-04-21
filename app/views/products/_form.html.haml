@@ -53,11 +53,24 @@
       %span.plate-required 必須
       %span.description-of-input 選択してください。
       %br/
-    .product_category-select
-      = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
-      %i.fa.fa-chevron-down
-    .product_select-children
-     
+    
+    -if @product.persisted?
+      .product_category-select
+        = f.collection_select :category_id, @category, :id, :name,{ prompt: "---", selected:@product.category.parent.parent.id  }, { class: "category_select-box", id: "category_select" }
+        %i.fa.fa-chevron-down
+      .product_select-children
+        .product-select-wrapper#children_wrapper
+          .product_category-select
+            = f.collection_select :category_id, @children_category, :id, :name,{ prompt: "---", selected: @product.category.parent.id }, { class: "category_select-box", id: "child_category" }
+            %i.fa.fa-chevron-down
+          .product_category-select
+            = f.collection_select :category_id, @grandchildren_category , :id, :name,{ prompt: "---", selected: @product.category.id }, { class: "category_select-box", id: "grandchild_category" }
+            %i.fa.fa-chevron-down
+    -else
+      .product_category-select
+        = f.collection_select :category_id, @category, :id, :name,{ prompt: "---", selected:"" }, { class: "category_select-box", id: "category_select" }
+        %i.fa.fa-chevron-down
+      .product_select-children
     .field-of-product
       = f.label :ブランド
       %span.plate-option 任意
@@ -78,7 +91,7 @@
       %span.plate-required 必須
       %span.description-of-input 選択してください。
       %br/
-      = f.collection_select :shipping_origin, Prefecture.all, :id, :name, autofocus: true
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, autofocus: true
     .field-of-product
       = f.label :発送までの日数
       %span.plate-required 必須
