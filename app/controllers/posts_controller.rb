@@ -12,5 +12,13 @@ class PostsController < ApplicationController
     render "posts/card"
   end
 
+  def card
+    @parents = Category.where(ancestry: nil)
+  end
+
+  def logout
+    @parents = Category.where(ancestry: nil)
+  end
+
 end
   
