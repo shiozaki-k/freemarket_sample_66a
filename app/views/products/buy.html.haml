@@ -1,0 +1,54 @@
+%body
+  %header.new-header
+    %h1
+      =render partial:"layouts/header_simple"
+  .buy__main
+    .buy__main__container
+      %h2.buy__main__container__head 購入内容の確認
+      %section.buy__main__container__item
+        .buy__main__container__item__inner
+          .buy__main__container__item__inner__box
+            %h3.buy__main__container__item__inner__box__image
+              = image_tag('/images/material/pict/pict-reason-01.jpg',size:"80x80")
+              
+            .buy__main__container__item__inner__box__detail
+              %p.buy__main__container__item__inner__box__detail__name フレドリック
+              %p.buy__main__container__item__inner__box__detail__price-ja.bold
+                %span ¥1,500
+                %span.buy__main__container__item__inner__box__detail__price-ja__shipping-fee （税込）送料込み
+      %section.buy__main__container__item2
+        .buy__main__container__item2__inner
+          %form#buy-item-form.buy__main__container__item2__inner__form{action:""}
+            %ul.buy__main__container__item2__inner__form__table
+              %li.buy__main__container__item2__inner__form__table__pay.bold
+                .buy__main__container__item2__inner__form__table__pay__cell.buy-price-cell-label 支払い金額
+                .buy__main__container__item2__inner__form__table__pay__cell
+                  %span.buy__main__container__item2__inner__form__table__pay__cell__pay  ¥1,500
+            %ul.buy__main__container__item2__inner__form__accordion.buy-not-have-point
+              %li.buy__main__container__item2__inner__form__accordion__parent
+                .buy__main__container__item2__inner__form__accordion__parent__default.buy-use-point
+                  %input{disabled:"disabled", type:"checkbox"}/
+                  %i.icon-check
+                  %label ポイントを使用 (所持ポイント: P0)
+            %section.buy__main__container__item2__inner__form__info{"data-buy":"pay-method"}
+              .buy__main__container__item2__inner__form__info__inner
+                %h3 支払い方法
+                = link_to  "#" do
+                  %p.buy__main__container__item2__inner__form__info__inner__text
+                    %i.icon-plus-circle
+                    %span.buy-register-text 登録してください
+            %section.buy__main__container__item2__inner__form__content.buy-user-info
+              .buy__main__container__item2__inner__form__content__inner
+                %h3 配送先
+                = link_to  "#" do
+                  %p.buy__main__container__item2__inner__form__content__inner__text
+                    %i.icon-plus-circle
+                    %span.buy-register-text 登録してください
+            %section.buy__main__container__item2__inner__form__user-info
+              %button.buy__main__container__item2__inner__form__user-info__default.btn-red.bold{:disabled => "disabled", :type => "submit"} 購入する
+              %input#user_info_is_not_complete{:type => "hidden"}/
+
+
+      
+
+  = render partial: "layouts/footer_simple"
