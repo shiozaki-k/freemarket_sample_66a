@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren]
+  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren,:buy]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -70,6 +70,9 @@ end
     end
     
   end
+
+  def buy
+  end  
 
   private
 
