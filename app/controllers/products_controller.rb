@@ -74,6 +74,16 @@ end
   def buy
   end  
 
+  def pay
+    @product = Product.find(params[:id])
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: @product.price,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+  end
+
   private
 
   def product_params

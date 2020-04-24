@@ -44,11 +44,9 @@
                   %p.buy__main__container__item2__inner__form__content__inner__text
                     %i.icon-plus-circle
                     %span.buy-register-text 登録してください
+                    = render partial: "layouts/payjp"
             %section.buy__main__container__item2__inner__form__user-info
               %button.buy__main__container__item2__inner__form__user-info__default.btn-red.bold{:disabled => "disabled", :type => "submit"} 購入する
               %input#user_info_is_not_complete{:type => "hidden"}/
-
-
-      
 
   = render partial: "layouts/footer_simple"
