@@ -13,13 +13,16 @@ Rails.application.routes.draw do
 
   resources :items
   resources :products do 
-    get 'buy'
+    # get 'buy'
+    get  'products/purchase/:id', to: 'products#buy', as: 'purchase'
+    post 'products/pay/:id', to: 'products#pay', as: 'pay'
+    get  'products/done', to: 'products#done', as: 'done'
     collection do
       get 'category_children' 
       get 'category_grandchildren'
-      get  'purchase/:id', to 'products#buy', as: 'purchase'
-      post 'pay/:id', to 'products#pay', as: 'pay'
-      get  'done', to 'products#done', as: 'done'
+      # get  'products/purchase/:id', to: 'products#buy', as: 'purchase'
+      # post 'products/pay/:id', to: 'products#pay', as: 'pay'
+      # get  'products/done', to: 'products#done', as: 'done'
     end
   end
 
