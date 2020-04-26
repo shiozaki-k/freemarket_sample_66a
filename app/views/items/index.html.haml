@@ -68,11 +68,9 @@
     .post__box__head
       = link_to "products" do
         新規投稿商品
-      .post__box__lists
-        = render partial: 'index', locals: { index: @index }
-        = render partial: 'index', locals: { index: @index }
-        = render partial: 'index', locals: { index: @index }
-
+      .products_lists
+        = render partial: 'products_list'
+        
 .post
   %h2 ピックアップカテゴリー
   .post__box
