@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     collection do
       get 'category_children' 
       get 'category_grandchildren'
+      get  'purchase/:id', to 'products#buy', as: 'purchase'
+      post 'pay/:id', to 'products#pay', as: 'pay'
+      get  'done', to 'products#done', as: 'done'
     end
   end
 

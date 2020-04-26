@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren,:buy]
+  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren, :buy, :pay]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -82,6 +82,9 @@ end
     card: params['payjp-token'],
     currency: 'jpy'
     )
+  end
+
+  def done
   end
 
   private
