@@ -3,8 +3,10 @@
     .content__top
       = link_to "products" do
         .content__top__image
-          -# = image_tag "#"
-    .content__bottom
-      .content__bottom__title
-      .content__bottom__price
+          -# =image_tag url: products.image
+      .content__bottom
+        .content__bottom__title
+          =link_to product.name
+        .content__bottom__price
+          =link_to product.price
   
