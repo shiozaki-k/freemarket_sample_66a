@@ -1,12 +1,15 @@
 .content
   -@products.each do |product|
     .content__top
-      = link_to "products" do
-        .content__top__image
-          =link_to products_path(product.id)
+    = link_to "products" do
+      .content__top__image
+      - product.images.each do |image|
+        = image_tag image.src.url
+      -#   =link_to products_path(product.id)
+        -# = image_tag product.images.src.url
       .content__bottom
         .content__bottom__title
-          =link_to product.name
+          =product.name
         .content__bottom__price
-          =link_to product.price
-  
+          =product.price
+

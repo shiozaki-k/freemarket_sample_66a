@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get 'addresses', to: 'addresses#index'
 
   resources :products
-
+  
   resources :items
 end
