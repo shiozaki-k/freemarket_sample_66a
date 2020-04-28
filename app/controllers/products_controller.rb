@@ -70,17 +70,29 @@ end
     end
     
   end
-
+  # require 'payjp'
   def buy
+    # Payjp.api_key = "秘密鍵"
+    # Payjp::Charge.create(
+    # amount: 809, # 決済する値段
+    # card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+    # currency: 'jpy'
+    # )
   end  
-
+  require 'payjp'
   def pay
-    @product = Product.find(params[:id])
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    charge = Payjp::Charge.create(
-    amount: @product.price,
-    card: params['payjp-token'],
-    currency: 'jpy'
+    # @product = Product.find(params[:id])
+    # Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    # charge = Payjp::Charge.create(
+    # amount: @product.price,
+    # card: params['payjp-token'],
+    # currency: 'jpy'
+    # )
+    Payjp.api_key = "秘密鍵"
+    Payjp::Charge.create(
+      amount: 809, # 決済する値段
+      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      currency: 'jpy'
     )
   end
 

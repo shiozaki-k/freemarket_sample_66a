@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   get 'addresses', to: 'addresses#index'
 
   resources :items
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
   resources :products do 
     # get 'buy'
     get  'products/purchase/:id', to: 'products#buy', as: 'purchase'
@@ -20,9 +27,6 @@ Rails.application.routes.draw do
     collection do
       get 'category_children' 
       get 'category_grandchildren'
-      # get  'products/purchase/:id', to: 'products#buy', as: 'purchase'
-      # post 'products/pay/:id', to: 'products#pay', as: 'pay'
-      # get  'products/done', to: 'products#done', as: 'done'
     end
   end
 
