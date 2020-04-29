@@ -92,4 +92,6 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'active_hash'
+gem 'payjp'
+
 
