@@ -3,12 +3,7 @@
     .content__top
       .content__top__image
         = link_to image_tag(product.images[0].src.url ,size:"234x120"),  product_path(product.id)
-        -# -product.images.each do |image|
-          -# = link_to "products" 
-          -# = image_tag image.src.url
-          -# = link_to image_tag(image.src.url[]),  product_path(product.id)
-        -#   =link_to products_path(product.id)
-          -# = image_tag product.images.src.url
+   
       .content__top__bottom
         = link_to product_path(product.id) do
           .content__top__bottom__title
