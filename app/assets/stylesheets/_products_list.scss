@@ -18,20 +18,22 @@
       // background-color: red;
       border: solid 1px;
       
-      &__bottom{
-        height: 30px;
+    }
+    &__bottom{
+      height: 30px;
+      width: 100%;
+      
+      &__title{
+        height: 20px;
         width: 100%;
         color: black;
-        &__title{
-          height: 15px;
-          width: 100%;
-          
-        }
-        &__price{
-          height: 15px;
-          width: 100%;
-          
-        }
+        
+      }
+      &__price{
+        height: 15px;
+        width: 100%;
+        color: black;
+        
       }
     }
   }
