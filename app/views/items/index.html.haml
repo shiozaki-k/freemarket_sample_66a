@@ -65,25 +65,12 @@
 
         
 .post
-  %h2 ピックアップカテゴリー
+  %h2 商品一覧
   .post__box
     .post__box__head
       = link_to "products" do
         新規投稿商品
     .post__box__lists
       = render partial: 'products_list'
-      -# = render partial: 'index', locals: { index: @index }
-      -# = render partial: 'index', locals: { index: @index }
-      -# = render partial: 'index', locals: { index: @index }
-      
-.post
-  %h2 ピックアップブランド
-  .post__box
-    .post__box__head
-      = link_to "#" do
-        アーカイブ
-    .post__box__lists
-      = render partial: 'index', locals: { index: @index }
-      = render partial: 'index', locals: { index: @index }
-      = render partial: 'index', locals: { index: @index }
+
 = render partial: 'layouts/footer'
