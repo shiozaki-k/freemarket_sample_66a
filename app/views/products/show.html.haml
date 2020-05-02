@@ -9,9 +9,11 @@
      .main__show__content__top__itenBox__body
       %ul
        %li
-        .main__show__content__top__itenBox__body__image
-         = image_tag @product.images[0].src.url class: "main__show__content__top__itenBox__body__image__big"
-        
+        .main__show__content__top__itenBox__body__image{style: "\n    width: 500px;\n    height: 364px;\n"}
+         = image_tag(@product.images[0].src.url ,:size => "500x364")
+         
+   
+
         %ul
          - @product.images.each do |image|
           %li
@@ -31,7 +33,7 @@
            削除
        - else
         .main__show__content__top__itenBox__price__detail__buy2
-         = link_to  "#" do
+         = link_to  product_buy_path(:product_id) do
           購入する
 
      .main__show__content__top__itenBox__itenpetali
@@ -43,18 +45,18 @@
        %tbody
         %tr
          %th 出品者
-         -# %td= @product.user.nickname
+         %td= @product.user.nickname
         %tr
          %th カテゴリー
          %td
           = link_to "" do
-           ベビー・キッズ
+           = @product.category.root.name
           %br/
           = link_to "" do
-           ベビー服(男女兼用)  ~95cm
+           = @product.category.parent.name
           %br/
           = link_to "" do
-           アウター
+           = @product.category.name
         %tr
          %th ブランド
          %td= @product.brand
@@ -71,7 +73,7 @@
          %th 発送元の地域
          %td
           = link_to "" do
-           岩手県
+           = @product.prefecture.name 
         %tr
          %th 発送日の目安
          %td= @product.shipping_duration

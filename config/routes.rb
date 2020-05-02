@@ -8,11 +8,19 @@ Rails.application.routes.draw do
   resource :posts do
     get 'logout'
     get 'card'
-    
   end
   get 'addresses', to: 'addresses#index'
+
 
   resources :products
   
   resources :items
+  resources :products do 
+    get 'buy'
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
+  end
+
 end
