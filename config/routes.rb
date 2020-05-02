@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   end
   get 'addresses', to: 'addresses#index'
 
+
+  resources :products
+  
   resources :items
   resources :products do 
     get 'buy'

@@ -1,14 +1,17 @@
 .post__box__lists__list
-  = link_to  item_path(:id) do
+  = link_to  product_path(:id) do
+    -# -@products.each do |product|
     %figure.post__box__lists__list__img
       = image_tag "/images/material/pict/pict-reason-01.jpg"
     .post__box__lists__list__body
-      %h3 product1
+      -# =link_to product.name
+      -# %h3 product1
       .post__box__lists__list__body__details
-        %ul
-          %li 3000円
-          %li 
-            = icon("fas", "star")
-            0
-        %p (税込)
+        -# =link_to product.price
+        -# %ul
+        -#   %li 3000円
+        -#   %li 
+        -#     = icon("fas", "star")
+        -#     0
+        -# %p (税込)
     
