@@ -73,4 +73,12 @@
     .post__box__lists
       = render partial: 'products_list'
 
-= render partial: 'layouts/footer'
+
+    .post__box__head
+      = link_to "products" do
+        カテゴリー別
+    .post__box__lists
+      = render partial: 'products_list'
+
+
+    = render partial: 'layouts/footer'
