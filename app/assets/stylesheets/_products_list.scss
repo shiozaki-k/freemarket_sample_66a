@@ -1,0 +1,40 @@
+.content{
+  height: 600px;
+  max-width:1020px;
+  overflow: scroll;
+  text-align: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  
+  &__top{
+    height: 180px;
+    width: 30%;
+    &__image{
+      height: 120px;
+      width: 100%;
+      background-size:cover;
+      // background-color: red;
+      border: solid 1px;
+      
+    }
+    &__bottom{
+      height: 30px;
+      width: 100%;
+      
+      &__title{
+        height: 20px;
+        width: 100%;
+        color: black;
+        
+      }
+      &__price{
+        height: 15px;
+        width: 100%;
+        color: black;
+        
+      }
+    }
+  }
+}
