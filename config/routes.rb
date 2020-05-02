@@ -12,15 +12,17 @@ Rails.application.routes.draw do
   get 'addresses', to: 'addresses#index'
 
 
-  resources :products
+
   
   resources :items
   resources :products do 
     get 'buy'
+    resources :comments, only: :create
     collection do
       get 'category_children' 
       get 'category_grandchildren'
     end
+
   end
 
 end

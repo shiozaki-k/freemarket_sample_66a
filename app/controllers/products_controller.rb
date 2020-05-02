@@ -40,6 +40,8 @@ end
 
   def show
   @parents = Category.where(ancestry: nil)
+  @comment = Comment.new
+  @comments = @product.comments.includes(:user)
   end
   
   
