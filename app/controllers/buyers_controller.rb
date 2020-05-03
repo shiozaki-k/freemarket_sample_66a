@@ -2,7 +2,6 @@ class BuyersController < ApplicationController
   
 require 'payjp'#Payjpの読み込み
 before_action :set_card, :set_item
-
 def index
   if @card.blank?
     #登録された情報がない場合にカード登録画面に移動

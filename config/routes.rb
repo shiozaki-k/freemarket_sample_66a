@@ -13,13 +13,13 @@ Rails.application.routes.draw do
     get 'logout'
     get 'card'
   end
-  get 'addresses', to: 'addresses#index'
+  
 
 
-  resources :products
   
   resources :items
   resources :products do 
+    get 'addresses', to: 'addresses#index'
     get 'buy'
     collection do
       get 'category_children' 

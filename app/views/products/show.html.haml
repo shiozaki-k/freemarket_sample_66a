@@ -33,8 +33,8 @@
            削除
        - else
         .main__show__content__top__itenBox__price__detail__buy2
-         = link_to  product_buy_path(:product_id) do
-          購入する
+         = link_to  product_buyers_path(@product.id) do
+          購入画面に進む
 
      .main__show__content__top__itenBox__itenpetali
       = @product.description

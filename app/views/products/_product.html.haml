@@ -13,5 +13,8 @@
   %p= product.shipping_duration
   - product.images.each do |image|
     = image_tag image.src.url
+     -if product.buyer_id.present? 
+     .items-box_photo__sold
+      .items-box_photo__sold__inner SOLD
 = link_to '編集', edit_product_path(product)
 = link_to '削除', product_path(product), method: :delete, data: { confirm: '削除してよろしいですか?' }
