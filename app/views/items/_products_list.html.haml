@@ -1,9 +1,13 @@
 .content
   -@products.each do |product|
     .content__top
-      .content__top__image
-        = link_to image_tag(product.images[0].src.url ,size:"234x120"),  product_path(product.id)
-   
+      -if product.status === "sold"
+        .content__top__image
+          = link_to image_tag(product.images[0].src.url ,size:"234x120"),  product_path(product.id)
+          .sold-out 売り切れ
+      - else
+        .content__top__image
+          = link_to image_tag(product.images[0].src.url ,size:"234x120"),  product_path(product.id)
       .content__top__bottom
         = link_to product_path(product.id) do
           .content__top__bottom__title
