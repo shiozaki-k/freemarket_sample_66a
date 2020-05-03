@@ -95,16 +95,25 @@
      %ul
      - if current_user
       = form_with(model: [@product, @comment], local: true, id: "new_comment") do |form|
-       = form.text_area :text, placeholder: "コメントする" , rows: "2", class: "textbox"
-       = form.submit "SEND", class: "form__submit"
+       = form.text_area :text, placeholder: "" , rows: "2", class: "textbox"
+       %p.noticeMsg
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br/
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %br/
+       = button_tag type: "submit",  class: "form__submit" do
+        %i.fa.fa-comment
+        質問・コメントする
+       
      - else
       %strong
        %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+     %h4 ＜質問・コメント一覧＞
      .main__show__content__top__commentBox__comments
-      %h4 ＜コメント一覧＞
+      
       - if @comments
        - @comments.each do |comment|
-        %p
+        %p.main__show__content__top__commentBox__comments__comment
          %strong
           = link_to comment.user.nickname, "#"
           ：
