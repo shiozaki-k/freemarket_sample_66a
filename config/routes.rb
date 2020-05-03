@@ -10,9 +10,6 @@ Rails.application.routes.draw do
     get 'card'
   end
   get 'addresses', to: 'addresses#index'
-
-
-  resources :products
   
   resources :items
   resources :products do 
