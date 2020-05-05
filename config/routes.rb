@@ -31,6 +31,7 @@ Rails.application.routes.draw do
         post 'pay', to: 'buyers#pay'
       end
     end
+    
   end
 
   resources :cards,only:[:index,:new,:show]do

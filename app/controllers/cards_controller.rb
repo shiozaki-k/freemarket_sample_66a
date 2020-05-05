@@ -45,6 +45,7 @@ class CardsController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出す
+    @product = Product.all
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 

@@ -10,3 +10,8 @@
     = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
       %input{ type: "hidden", name: "card_id", value: "" }
       %button.btn_delate  削除する
+
+  .card-group_return
+    = link_to product_buyers_path(@product.ids), method: :get do
+      購入画面に進む
+   
