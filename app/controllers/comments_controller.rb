@@ -1,11 +1,31 @@
 class CommentsController < ApplicationController
 
   def create
-    comment = Comment.create(comment_params)
-    # redirect_to "/products/#{comment.product.id}" 
-    redirect_to product_path(comment.product.id)
+    @comments = Comment.create(comment_params)
+    if @comments.id == nil
+     redirect_to product_path(@comments.product.id),notice: 'コメント送信に失敗しました。' and return
+    else
+     redirect_to product_path(@comments.product.id),notice: 'コメントが送信されました。' and return
+    end
     
   end
+
+  # def destroy
+  #   if user_signed_in? && current_user.id
+  #     @comments = Comment.find(params[:id])
+  #     if @comments.destroy
+  #       redirect_to product_path(@comments.product.id),notice: 'コメントが削除されました' and return
+  #     else
+  #       redirect_to product_path(@comments.product.id),notice: 'コメント削除に失敗しました' and return
+  #     end
+  #   else
+  #     redirect_to product_path(@comments.product.id),notice: 'コメント削除に失敗しました' and return
+  #   end
+    
+  # end
+
+
+
 
   private
   def comment_params

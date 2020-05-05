@@ -1,6 +1,11 @@
 = render partial: 'layouts/header'
+.notice2
+ - flash.each do |key, value|
+  = content_tag(:div, value, class: key)
 .main
+
  .main__show
+
   .main__show__content
    .main__show__content__top
     .main__show__content__top__itenBox
@@ -12,7 +17,7 @@
         .main__show__content__top__itenBox__body__image{style: "\n    width: 500px;\n    height: 364px;\n"}
          = image_tag(@product.images[0].src.url ,:size => "500x364")
          
-   
+
 
         %ul
          - @product.images.each do |image|

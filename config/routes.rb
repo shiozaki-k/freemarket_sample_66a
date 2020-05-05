@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :items
   resources :products do 
     get 'buy'
-    resources :comments, only: :create
+    resources :comments, only: [ :create, :destroy]
     collection do
       get 'category_children' 
       get 'category_grandchildren'

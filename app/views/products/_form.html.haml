@@ -5,6 +5,9 @@
   -# %h2 出品フォーム
   = form_for @product do |f|
     = render 'products/error_messages', model: f.object
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
     .field-of-imageUploader
       = f.label :出品画像
       %span.plate-required 必須
@@ -51,7 +54,7 @@
     .field-of-product
       = f.label :カテゴリー
       %span.plate-required 必須
-      %span.description-of-input 選択してください。
+      %span.description-of-input ３つ選択してください。
       %br/
     
     -if @product.persisted?

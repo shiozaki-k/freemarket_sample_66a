@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren,:buy]
+  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren,:buy,]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
-
+    
   end
 
   def new
@@ -34,6 +34,10 @@ end
     if @product.save
       redirect_to product_path(@product.id)
     else
+
+      # @product = Product.new
+      @product.images.new
+      @category = Category.all.order("id ASC").limit(13)
       render :new
     end
   end
@@ -57,18 +61,40 @@ end
   def update
     @product.update(product_params)
     if @product.save
-      redirect_to product_path(@product.id)
+      redirect_to product_path(@product.id),notice: '商品編集が完了しました' and return
     else
+      @category = Category.all.order("id ASC").limit(13)
+      # @children_category = @product.category.parent.siblings
+      # @grandchildren_category = @product.category.siblings
+
+
+      if @product.category == nil
+        redirect_to edit_product_path(@product.id), notice: '・カテゴリーは3つ選択してください。' and return
+      
+      else
+        @children_category = @product.category.parent.siblings
+       
+      end
+        if @product.category == nil
+          redirect_to edit_product_path(@product.id), notice: '・カテゴリーは3つ選択してください。' and return
+          
+        else
+          @grandchildren_category = @product.category.siblings
+        end
+     
       render :edit
     end
   end
 
   def destroy
- 
-    if @product.destroy
-      redirect_to root_path
+    if user_signed_in? && current_user.id == @product.user_id
+      if @product.destroy
+        redirect_to root_path,notice: '商品が削除されました' and return
+      else
+        redirect_to product_path(@product.id),notice: '商品削除に失敗しました' and return
+      end
     else
-      redirect_to product_path(@product.id)
+      redirect_to product_path(@product.id),notice: '商品削除に失敗しました' and return
     end
     
   end
