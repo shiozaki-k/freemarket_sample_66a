@@ -219,3 +219,33 @@
     padding-right: 12px;
   }  
 }
+
+.notifications {
+  color: #ff0033;
+  text-align: center;  
+  width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.notice1 {
+  color: white;
+  text-align: center;  
+
+  .notice {
+    background-color: rgb(117, 191, 216);
+  }
+
+
+}
+
+.notice2 {
+  color: white;
+  text-align: center;  
+
+  .notice {
+    background-color:red;
+  }
+
+
+}

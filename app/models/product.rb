@@ -12,5 +12,5 @@ class Product < ApplicationRecord
 
   validates :price, :condition, :category, :category_id,:shipping_fee, :prefecture_id, :shipping_duration, presence: true
   belongs_to :user
-
+  has_many :comments 
 end

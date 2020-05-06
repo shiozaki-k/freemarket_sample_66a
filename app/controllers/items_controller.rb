@@ -1,14 +1,14 @@
 class ItemsController < ApplicationController
 
 
-def index
-  @parents = Category.where(ancestry: nil)
+  def index
+    @products = Product.includes(:images).order('created_at DESC')
+    @parents = Category.where(ancestry: nil)
+   
+  end
 
-end
-
-
-def show
-  
-end
+  def show
+        
+  end
 
 end
