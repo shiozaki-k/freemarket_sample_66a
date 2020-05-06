@@ -30,7 +30,6 @@ after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
-    set :linked_files, fetch(:linked_files, []).push("config/master.key")
   end
   set :default_env, {
     rbenv_root: "/usr/local/rbenv",
@@ -39,3 +38,4 @@ namespace :deploy do
     AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
   }
 end
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
