@@ -13,6 +13,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
@@ -22,7 +23,6 @@ set :ssh_options, auth_methods: ['publickey'],
                   set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
                   
                   # Unicornの設定ファイルの場所
-set :linked_files, fetch(:linked_files, []).push("config/master.key")
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
