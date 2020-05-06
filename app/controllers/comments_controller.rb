@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    @comments = Comment.create(comment_params)
+    @comments = Comment.new(comment_params)
     if @comments.save
       redirect_to product_path(@comments.product.id),notice: 'コメントが送信されました。' and return
      
