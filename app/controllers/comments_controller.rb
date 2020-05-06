@@ -2,14 +2,19 @@ class CommentsController < ApplicationController
 
   def create
     @comments = Comment.create(comment_params)
-    if @comments.id == nil
-     redirect_to product_path(@comments.product.id),notice: 'コメント送信に失敗しました。' and return
+    if @comments.save
+      redirect_to product_path(@comments.product.id),notice: 'コメントが送信されました。' and return
+     
     else
-     redirect_to product_path(@comments.product.id),notice: 'コメントが送信されました。' and return
+      redirect_to product_path(@comments.product.id),notice: 'コメント送信に失敗しました。' and return
+    
     end
     
   end
+  
 
+
+  # コメント削除機能追加予定
   # def destroy
   #   if user_signed_in? && current_user.id
   #     @comments = Comment.find(params[:id])
