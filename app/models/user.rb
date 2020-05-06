@@ -13,15 +13,11 @@ class User < ApplicationRecord
   validates :birth_month, presence: true
   validates :birth_day, presence: true
   validates :phone_number, uniqueness: true
- 
-
-
-
   has_many :items
   has_many :products
   has_many :orders
   has_many :comments
-  has_many :creditcards
+  has_many :cards
   has_one :address
   accepts_nested_attributes_for :address
 
