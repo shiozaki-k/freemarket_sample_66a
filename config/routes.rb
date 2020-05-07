@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'buyers/index'
-  get 'buyers/done'
-  get 'cards/new'
-  get 'cards/show'
   root to: "items#index"
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
