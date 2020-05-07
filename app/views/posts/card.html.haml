@@ -1,4 +1,19 @@
 = render partial: 'layouts/header'
+%nav.breadCrumbs
+  %ul
+    %li
+      = link_to "/" do
+        FURIMA
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to posts_path do
+        マイページ
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to card_posts_path do
+        支払い方法
 .c-container
   = render partial: 'posts/sidemenu'
   .c-container__form
