@@ -16,15 +16,18 @@ Rails.application.routes.draw do
   
 
 
+
   
   resources :items
   resources :products do 
     get 'addresses', to: 'addresses#index'
     get 'buy'
+    resources :comments, only: [ :create, :destroy]
     collection do
       get 'category_children' 
       get 'category_grandchildren'
     end
+
     resources :buyers, only: [:index] do
       collection do
         get 'done', to: 'buyers#done'
@@ -32,6 +35,7 @@ Rails.application.routes.draw do
       end
     end
     
+
   end
 
   resources :cards,only:[:index,:new,:show]do

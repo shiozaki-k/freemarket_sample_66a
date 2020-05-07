@@ -1,5 +1,8 @@
 = render partial: 'layouts/header'
 .main
+  .notice1
+    - flash.each do |key, value|
+      = content_tag(:div, value, class: key)
   .main__top
     .main__top__inner
       %h2 人生を変えるフリマアプリ

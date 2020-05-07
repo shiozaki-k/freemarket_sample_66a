@@ -19,6 +19,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :cards
   has_one :address
+  has_many :comments
   accepts_nested_attributes_for :address
 
 end
