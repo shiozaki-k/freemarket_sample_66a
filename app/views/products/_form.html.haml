@@ -54,11 +54,6 @@
       = f.label :商品の説明
       %span.plate-required 必須
       = f.text_area :description, autofocus: true, :placeholder => "1000文字以内（色、素材、重さ、定価、注意点など）"
-    .field-of-product
-      = f.label :カテゴリー
-      %span.plate-required 必須
-      %span.description-of-input ３つ選択してください。
-      %br/
     
     -if @product.persisted?
       .product_category-select
