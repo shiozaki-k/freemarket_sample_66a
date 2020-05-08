@@ -13,4 +13,8 @@ class Product < ApplicationRecord
   validates :price, :condition, :category, :category_id,:shipping_fee, :prefecture_id, :shipping_duration, presence: true
   belongs_to :user
   has_many :comments 
+  has_many :bookmarks, dependent: :destroy
+  def bookmark_by?(user)
+    bookmarks.where(user_id: user.id).exists?
+  end
 end

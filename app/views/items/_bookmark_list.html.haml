@@ -1,0 +1,13 @@
+.likes
+  -@products.each do |product|
+    .likes__top
+      .likes__top__image
+        = link_to image_tag(product.images[0].src.url ,size:"234x120"),  product_path(product.id)
+   
+      .likes__top__bottom
+        = link_to product_path(product.id) do
+          .likes__top__bottom__title
+            =product.name
+          .likes__top__bottom__price
+            =product.price
+            円

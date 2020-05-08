@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
-    
+    @products = Board.all.includes(:user).recent
+  end
+  def bookmarks
+    @products = current_user.bookmark_boards.includes(:user).recent
   end
 
   def new

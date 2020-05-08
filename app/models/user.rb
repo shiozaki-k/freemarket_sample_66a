@@ -25,5 +25,8 @@ class User < ApplicationRecord
   has_one :address
   has_many :comments
   accepts_nested_attributes_for :address
+  has_many :products, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_products, through: :bookmarks, source: :product
 
 end

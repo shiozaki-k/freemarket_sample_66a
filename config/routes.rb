@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookmarks/create'
+  get 'bookmarks/destroy'
   root to: "items#index"
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
@@ -21,6 +23,10 @@ Rails.application.routes.draw do
     collection do
       get 'category_children' 
       get 'category_grandchildren'
+    end
+    resources :products, shallow: true do
+      resource :bookmarks, only: %i[create destroy]
+      get :bookmarks, on: :collection
     end
 
   end
