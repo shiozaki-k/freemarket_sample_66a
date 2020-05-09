@@ -98,7 +98,7 @@ end
   end
 
   def buy
-    @address = Address.where(user_id: current_user.id).first
+    @address = Address.find_by(user_id: current_user.id)
     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
     customer = Payjp::Customer.retrieve(@creditcard.customer_id)
     @creditcard_information = customer.cards.retrieve(@creditcard.card_id)
