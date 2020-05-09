@@ -17,6 +17,15 @@
       background-size:cover;
       // background-color: red;
       border: solid 1px;
+      position:relative;
+      .sold-out{
+        position:absolute;
+        top:50px;
+        left:0;
+        background-color:red;
+        color:white;
+        width: 100%;
+      }
       
     }
     &__bottom{
@@ -38,3 +47,23 @@
     }
   }
 }
+
+.items-box_photo__sold{
+  width: 0;
+  height: 0;
+  border-width: 120px 120px 0 0;
+  border-color: #ea352d transparent transparent transparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-style: solid;
+  &__inner{
+    top: -90px;
+    font-size: 30px;
+    position: absolute;
+    left: 0;
+  }
+}
+

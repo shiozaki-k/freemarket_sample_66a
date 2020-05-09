@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren,:buy,]
+  require 'payjp'
+  before_action :set_product, except: [:index, :new, :create, :category_children, :category_grandchildren,:buy]
+  before_action :set_creditcard, only: [:buy, :purchase]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -96,7 +98,27 @@ end
   end
 
   def buy
-  end  
+    @address = Address.find_by(user_id: current_user.id)
+    Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+    customer = Payjp::Customer.retrieve(@creditcard.customer_id)
+    @creditcard_information = customer.cards.retrieve(@creditcard.card_id)
+    @card_brand = @creditcard_information.brand 
+    case @card_brand
+    when "Visa"
+      @card_src = "visa.svg"
+    when "JCB"
+      @card_src = "jcb.svg"
+    when "MasterCard"
+      @card_src = "master-card.svg"
+    when "American Express"
+      @card_src = "american_express.svg"
+    when "Diners Club"
+      @card_src = "dinersclub.svg"
+    when "Discover"
+      @card_src = "discover.svg"
+    end
+  end
+
 
   private
 
@@ -108,5 +130,9 @@ end
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_creditcard
+    @creditcard = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
 end
