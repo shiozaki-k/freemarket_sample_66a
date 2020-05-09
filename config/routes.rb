@@ -10,14 +10,15 @@ Rails.application.routes.draw do
     get 'card'
   end
   
+  get 'addresses', to: 'addresses#index'
 
 
 
   
   resources :items
   resources :products do 
-    get 'addresses', to: 'addresses#index'
     get 'buy'
+    get 'purchase'
     resources :comments, only: [ :create, :destroy]
     collection do
       get 'category_children' 

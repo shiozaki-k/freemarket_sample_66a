@@ -29,7 +29,10 @@ end
 
 def done
   @product_purchaser= Product.find(params[:product_id])
-  @product_purchaser.update( status: 2)
+  if @product_purchaser.update( status: 2)
+  else
+   redirect_to root_path
+  end
 end
 
 private

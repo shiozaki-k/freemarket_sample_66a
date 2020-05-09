@@ -13,11 +13,8 @@ class CardsController < ApplicationController
     if params['payjp-token'].blank?
     # paramsの中にjsで作った'payjpTokenが存在するか確かめる
       redirect_to action: "new"
-      
     else
       customer = Payjp::Customer.create(
-        description: '登録テスト', #なくてもOK
-        email: current_user.email, #なくてもOK
         card: params['payjp-token'],
         metadata: {user_id: current_user.id}
         ) 
@@ -33,7 +30,7 @@ class CardsController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     if card.present?
       Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
@@ -45,7 +42,7 @@ class CardsController < ApplicationController
 
   def show #Cardのデータpayjpに送り情報を取り出す
     @product = Product.all
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     if card.blank?
       redirect_to action: "new" 
     else

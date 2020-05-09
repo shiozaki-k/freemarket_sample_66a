@@ -1,8 +1,8 @@
 %body
   %header.new-header
     %h1
-      %a{:href => "http://furima.tokyo/?utf8=%E2%9C%93&key=&authenticity_token=UevxGZzcSKajTarCjryjWUlJ55%2FOE4M%2FrOCFzPCEFL7s7SCAGAxNbn7dZb5LoXbcXoEKY6%2B94hlugXjuBVJ%2BXQ%3D%3D"}
-        %img{:alt => "furima", :src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
+     = link_to "/" do
+      = image_tag '/images/material/logo/logo.png'
   %h2 発送元・お届け先情報登録
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
@@ -100,6 +100,6 @@
   .new-footer
     .footer-main
     .footer-logo
-      %a{:href => "http://furima.tokyo/?utf8=%E2%9C%93&key=&authenticity_token=UevxGZzcSKajTarCjryjWUlJ55%2FOE4M%2FrOCFzPCEFL7s7SCAGAxNbn7dZb5LoXbcXoEKY6%2B94hlugXjuBVJ%2BXQ%3D%3D"}/
-      %img{:alt => "furima", :src => {"http://furima.tokyo/assets/logo-white-f61961ed5170064c5f33dd4524bdceeb5a5df2c83eb76fba31143f63fbab2c5e.svg"}/
+     = link_to "/" do
+      = image_tag "/images/material/logo/logo-white.png"
     .mark-of-copy-right ©︎ FURIMA
