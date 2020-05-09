@@ -1,9 +1,9 @@
 class CardsController < ApplicationController
   require "payjp"
+  before_action :set_card, except: [:pay]
+ 
 
   def new
-    #current_user.idでログインしてるユーザーのみ登録ができるようにしてます
-    card = Card.where(user_id: current_user.id)
     #カード登録がまだならshowページへ飛ぶ
     redirect_to action: "show" if card.exists?
   end
@@ -30,7 +30,6 @@ class CardsController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除
-    card = Card.find_by(user_id: current_user.id)
     if card.present?
       Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
@@ -42,7 +41,6 @@ class CardsController < ApplicationController
 
   def show #Cardのデータpayjpに送り情報を取り出す
     @product = Product.all
-    card = Card.find_by(user_id: current_user.id)
     if card.blank?
       redirect_to action: "new" 
     else
@@ -51,4 +49,10 @@ class CardsController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
+
+  private
+
+def set_card
+  card = Card.find_by(user_id: current_user.id)
+end
 end
