@@ -75,14 +75,14 @@
         新規投稿商品
     .post__box__lists
       = render partial: 'products_list'
+-# - if user_signed_in? && current_user.id == @product.user_id      
 .post
   %h2 お気に入り商品
   .post__box
-    .post__box__head
-      = link_to "products" do
+    -# .post__box__head
+      -# = link_to "products" do
         新規投稿商品
     .post__box__lists
       = render partial: 'bookmark_list'
-
 
 = render partial: 'layouts/footer'
