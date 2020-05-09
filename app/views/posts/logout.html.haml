@@ -1,4 +1,19 @@
 = render partial: 'layouts/header'
+%nav.breadCrumbs
+  %ul
+    %li
+      = link_to "/" do
+        FURIMA
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to posts_path do
+        マイページ
+    %li
+      %i.fa.fa-angle-right
+    %li
+      = link_to logout_posts_path do
+        ログアウト
 .l-container
   = render partial: 'posts/sidemenu'
   .l-container__main

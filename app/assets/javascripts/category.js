@@ -11,7 +11,6 @@ $(function(){
                         <option value="---">---</option>
                         ${insertHTML}
                         </select>
-                        <i class='fa fa-chevron-down'></i>
                         </div>
                         <div class= 'product_select-grandchildren'>
                         </div>
@@ -26,7 +25,6 @@ $(function(){
                               <option value="---">---</option>
                               ${insertHTML} 
                               </select>
-                              <i class='fa fa-chevron-down'></i>
                               </div>
                               <div class= 'product_select-grandchildren'>
                               </div>

@@ -1,11 +1,35 @@
 = render partial: 'layouts/header'
+%nav.breadCrumbs
+ %ul
+  %li
+   = link_to "/" do
+    FURIMA
+  %li
+   %i.fa.fa-angle-right
+  %li
+   = link_to "#" do
+    = @product.category.root.name
+  %li
+   %i.fa.fa-angle-right
+  %li
+   = link_to "#" do
+    = @product.category.parent.name
+  %li
+   %i.fa.fa-angle-right
+  %li
+   = link_to "#" do
+    = @product.category.name
+  %li
+   %i.fa.fa-angle-right
+  %li
+   %p= @product.name
+
 .notice2
  - flash.each do |key, value|
   = content_tag(:div, value, class: key)
+
 .main
-
  .main__show
-
   .main__show__content
    .main__show__content__top
     .main__show__content__top__itenBox
@@ -17,7 +41,7 @@
         .main__show__content__top__itenBox__body__image{style: "\n    width: 500px;\n    height: 364px;\n"}
          = image_tag(@product.images[0].src.url ,:size => "500x364")
          
-
+   
 
         %ul
          - @product.images.each do |image|
@@ -104,47 +128,18 @@
 
     .main__show__content__top__commentBox
      %ul
-     - if current_user
-      = form_with(model: [@product, @comment], local: true, id: "new_comment") do |form|
-       = form.text_area :text, placeholder: "" , rows: "2", class: "textbox"
-       %p.noticeMsg
-        相手のことを考え丁寧なコメントを心がけましょう。
-        %br/
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %br/
-       = button_tag type: "submit",  class: "form__submit" do
-        %i.fa.fa-comment
-        質問・コメントする
-       
-     - else
-      %strong
-       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+     %form#new_comment.new_comment{"accept-charset": "UTF-8", action: "#", method: "post"}
+      %input{name: "utf8", type: "hidden", value: "✓"}/
+      %input{name: "authenticity_token", type: "hidden", value: "2MIRwP1MJCHYlbUI+lpl/4LwSC4Ct40LvmaXNY7iedE+7jY33jZcXLubxRnXNKKUYNZRhraF0SZ2GbkVWrkL/A=="}/
+      %textarea#comment_body{name: "comment[body]", required: "required"}
+      %p.noticeMsg
+       相手のことを考え丁寧なコメントを心がけましょう。
        %br/
-     %h4 ＜質問・コメント一覧＞
-     .main__show__content__top__commentBox__comments
-      
-      - if @comments
-       - @comments.each do |comment|
-        %p.main__show__content__top__commentBox__comments__comment
-         %strong
-          = link_to comment.user.nickname, "#"
-          ：
-         = comment.text
-
-
-
-         
-
-
-
-
-
-
-
-
-
-
-
+       不快な言葉遣いなどは利用制限や退会処分となることがあります。
+       %br/
+      %button.commentBtn{name: "button", type: "submit"}
+       %i.fa.fa-comment
+       コメントする
     %ul.main__show__content__top__links
      %li
       = link_to "" do
