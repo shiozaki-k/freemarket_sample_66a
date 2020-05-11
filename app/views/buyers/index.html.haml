@@ -51,9 +51,11 @@
                     %i.icon-plus-circle
                     %span.buy-register-text 登録してください
             %section.buy__main__container__item2__inner__form__user-info
-              = submit_tag("購入する", class:"purchase")
+              = submit_tag("購入する", class:"purchase",action: :pay, method: :post)
               %input#user_info_is_not_complete{:type => "hidden"}/
-
+              -# = form_tag(action: :pay, method: :post) do
+              -#     %button{type:"submit"} 購入する
+              
 
       
 
