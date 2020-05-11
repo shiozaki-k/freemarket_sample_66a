@@ -52,6 +52,7 @@
       .main__show__content__top__itenBox__price__detail
        %span (税入)
        %span 送料込み
+       
      - if user_signed_in? && current_user.id == @product.user_id
       %ul.main__show__content__top__itenBox__price__detail__buy
        %li
@@ -59,11 +60,17 @@
          編集
        %li
         = link_to  product_path(@product.id), method: :delete do
-         削除      
+         削除
+     - elsif @product.status == "sold"
+      .main__show__content__top__itenBox__price__detail__buy2
+       = link_to "" do
+        売り切れ
      - elsif user_signed_in? 
       .main__show__content__top__itenBox__price__detail__buy2
        = link_to  product_buyers_path(@product.id), method: :get do
         購入画面に進む
+     
+     
      - else
       .main__show__content__top__itenBox__price__detail__buy2
        = link_to new_user_registration_path(@product.id), method: :get do
