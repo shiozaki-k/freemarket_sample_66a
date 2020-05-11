@@ -51,13 +51,10 @@
       %span= @product.price
       .main__show__content__top__itenBox__price__detail
        %span (税入)
-       %span 送料込みoo
+       %span 送料込み
        
-     - if @product.status == "sold"
-      .main__show__content__top__itenBox__price__detail__buy2
-       = link_to "" do
-        売り切れ
-     - elsif user_signed_in? && current_user.id == @product.user_id
+     
+     - if user_signed_in? && current_user.id == @product.user_id
       %ul.main__show__content__top__itenBox__price__detail__buy
        %li
         = link_to  edit_product_path(@product.id), method: :get do
@@ -74,7 +71,7 @@
      - else
       .main__show__content__top__itenBox__price__detail__buy2
        = link_to new_user_registration_path(@product.id), method: :get do
-        購入画面に進む
+        新規登録画面へ
 
           
        
