@@ -5,12 +5,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
-    
   end
 
   def new
-
-   
     @product = Product.new
     @product.images.new
     @category = Category.all.order("id ASC").limit(13) # categoryの親を取得
