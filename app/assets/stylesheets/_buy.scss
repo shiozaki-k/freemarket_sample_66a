@@ -87,6 +87,7 @@
               }
 
               &__info{
+                
                   &__inner{
                     max-width: 343px;
                     margin: 0 auto;
@@ -126,6 +127,7 @@
 
               &__user-info{
                 padding-bottom: 0;
+                text-align: center;
                 &__default.btn-red.bold{
                   border: 1px solid #888;
                   background: #888;
@@ -149,4 +151,14 @@
   margin: 0 auto;
   width: 600px;
   margin-top: 100px;
+}
+
+.purchase {
+    line-height: 48px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    width: 60%;
+    font-size: 18px;
+    border-radius: 100px;
 }

@@ -1,10 +1,12 @@
 class CardsController < ApplicationController
   require "payjp"
-  before_action :set_card, except: [:pay]
- 
+  before_action :set_card, except: [:pay,:new]
+
 
   def new
     #カード登録がまだならshowページへ飛ぶ
+    # @card = Card.find_by(user_id: current_user.id)
+    card = Card.find_by(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
 
@@ -52,7 +54,7 @@ class CardsController < ApplicationController
 
   private
 
-def set_card
-  card = Card.find_by(user_id: current_user.id)
-end
+    def set_card
+      card = Card.find_by(user_id: current_user.id)
+    end
 end
