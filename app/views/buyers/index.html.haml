@@ -1,49 +1,60 @@
-.buy-content 
-  %h2.buy-content__title
-    購入内容の確認
-  .buy-content__item
-    .buy-content__item__inner
-      .buy-item-main
-        .buy-item-image
-          = image_tag "#{@product.images[0].src}", size: '64x64', class: 'buydetails-contet__image'
-        .buy-item-detail
-          .buy-item-name
-            = @product.name
-            %p.buy-price
-              = "¥#{@product.price.to_s}"
-              %span.shipping-free (税込) 送料込み
-  .buy-content__item
-    %form.buy-form
-      .buy-price-table
-        .buy-price-table__left
-          支払金額
-        .buy-price-table__right
-          = "¥#{@product.price.to_s}"
-  .buy-content__user-info
-    .buy-content__user-info__inner
-    %h3 支払方法
-    .user-info-update
-      = link_to "変更する", "#", calss:"update-btn"
-    .user-info-text
-    - if @default_card_information.blank?
-      %br /
-    - else
-      = "**** **** **** " + "#{@default_card_information.last4}"
-      %br
-      - exp_month = @default_card_information.exp_month.to_s
-      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-      = "有効期限 " + exp_month + " / " + exp_year
-      %br
-  .buy-content__user-info
-    .buy-content__user-info__inner              
-      %h3 配送先
-      .user-info-update
-        = link_to "変更する","#", calss:"update-btn"
-      .user-info-text
-        〒111-1111
-        %br
-        大阪府大阪市北区〇〇1-11
-        %br
-        山田太郎
-        = form_tag(action: :pay, method: :post) do
-          %button.buy-button{type:"submit"} 購入する
+
+%body
+  %header.new-header
+    %h1
+      =render partial:"layouts/header_simple"
+  .buy__main
+    .buy__main__container
+      %h2.buy__main__container__head 購入内容の確認
+      %section.buy__main__container__item
+        .buy__main__container__item__inner
+          .buy__main__container__item__inner__box
+            %h3.buy__main__container__item__inner__box__image
+              = image_tag(@product.images[0].src.url , size:"80x80")
+            
+              
+              
+            .buy__main__container__item__inner__box__detail
+              %p.buy__main__container__item__inner__box__detail__name=@product.name
+              %p.buy__main__container__item__inner__box__detail__price-ja.bold
+              
+                %span ¥
+                = @product.price
+                %span.buy__main__container__item__inner__box__detail__price-ja__shipping-fee （税込）送料込み
+      %section.buy__main__container__item2
+        .buy__main__container__item2__inner
+          %form#buy-item-form.buy__main__container__item2__inner__form{action:""}
+            %ul.buy__main__container__item2__inner__form__table
+              %li.buy__main__container__item2__inner__form__table__pay.bold
+                .buy__main__container__item2__inner__form__table__pay__cell.buy-price-cell-label 支払い金額
+                .buy__main__container__item2__inner__form__table__pay__cell
+                  %span.buy__main__container__item2__inner__form__table__pay__cell__pay ¥
+                  =@product.price
+            %ul.buy__main__container__item2__inner__form__accordion.buy-not-have-point
+              %li.buy__main__container__item2__inner__form__accordion__parent
+                .buy__main__container__item2__inner__form__accordion__parent__default.buy-use-point
+                  %input{disabled:"disabled", type:"checkbox"}/
+                  %i.icon-check
+                  %label ポイントを使用 (所持ポイント: P0)
+            %section.buy__main__container__item2__inner__form__info{"data-buy":"pay-method"}
+              .buy__main__container__item2__inner__form__info__inner
+                %h3 支払い方法
+                = link_to  "#" do
+                  %p.buy__main__container__item2__inner__form__info__inner__text
+                    %i.icon-plus-circle
+                    %span.buy-register-text 登録してください
+            %section.buy__main__container__item2__inner__form__content.buy-user-info
+              .buy__main__container__item2__inner__form__content__inner
+                %h3 配送先
+                = link_to  "#" do
+                  %p.buy__main__container__item2__inner__form__content__inner__text
+                    %i.icon-plus-circle
+                    %span.buy-register-text 登録してください
+            %section.buy__main__container__item2__inner__form__user-info
+              = submit_tag("購入する", class:"purchase")
+              %input#user_info_is_not_complete{:type => "hidden"}/
+
+
+      
+
+  = render partial: "layouts/footer_simple"
