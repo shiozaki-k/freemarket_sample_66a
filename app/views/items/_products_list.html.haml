@@ -3,8 +3,9 @@
     .content__top
       -if product.status === "sold"
         .content__top__image
-          = link_to image_tag(product.images[0].src.url ,size:"234x120"),  product_path(product.id)
-          .sold-out 売り切れ
+          = link_to image_tag(product.images[0].src.url ,size:"234x120"),  product_path(product.id) 
+          = link_to "売り切れ", product_path(product.id), {class:"sold-out" }
+
       - else
         .content__top__image
           = link_to image_tag(product.images[0].src.url ,size:"234x120"),  product_path(product.id)
