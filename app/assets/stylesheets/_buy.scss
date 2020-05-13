@@ -149,8 +149,15 @@
 
 .buy-content{
   margin: 0 auto;
-  width: 600px;
-  margin-top: 100px;
+  width: 400px;
+  &__user-info{
+    h3{
+      font-size: 20px;
+    }
+    &__inner{
+      margin-top:40px;
+    }
+  }
 }
 
 .purchase {
@@ -176,4 +183,41 @@
 
 .user-info-text {
   text-align: center;
+}
+
+.buy-item-main{
+  display:flex;
+  margin-bottom: 31px;
+}
+
+.buy-item-detail{
+margin-left:20px;
+}
+
+p.buy-price{
+  margin-top:10px;
+}
+
+.buy-price-table{
+  margin-bottom: 10px;
+  display:flex;
+  &__title{
+    font-size: 20px;
+    margin-right: 40px;
+  }
+  &__price{
+    vertical-align: bottom;
+    padding-top: 8px;
+  }
+  
+}
+
+.buy-content-buy-use-point{
+  text-align: left;
+  margin-bottom:20px;
+}
+
+.user-info-text{
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
