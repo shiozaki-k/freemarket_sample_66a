@@ -84,9 +84,11 @@
          %td= @product.shipping_duration
 
      .main__show__content__top__itenBox__Area
+      -# = link_to "このイベントをクリップ", add_bookmark_path(bookmark), method: :post
       %ul.option1
        %li.option1__li
         %i.fa.fa-star
+      -# =link_to  product_bookmarks_path(:product_id) do
         お気に入り 0
 
       %ul.option2
