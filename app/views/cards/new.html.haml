@@ -1,10 +1,19 @@
 .form-wapper
+  %h1 支払い方法
   = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
     .signup-content_text
       .form-group.form-group_text
         %label.form-group_label カード番号
         %span.essential 必須
       = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+      .card-logo
+        = image_tag '/images/material/logo/visa.svg'
+        = image_tag '/images/material/logo/master-card.svg'
+        = image_tag '/images/material/logo/saison-card.svg'
+        = image_tag '/images/material/logo/jcb.svg'
+        = image_tag '/images/material/logo/american_express.svg'
+        = image_tag '/images/material/logo/dinersclub.svg'
+        = image_tag '/images/material/logo/discover.svg'
       .form-group.form-group_text.card_label
         %label.form-group_label 有効期限
         %span.essential 必須
@@ -12,7 +21,6 @@
       .form-flex#form-flex
         .birth-group
           %select#exp_month{name: "exp_month", type: "text", class: "select-default"}
-            %option{value: ""} --
             %option{value: "1"}01
             %option{value: "2"}02
             %option{value: "3"}03
@@ -25,11 +33,10 @@
             %option{value: "10"}10
             %option{value: "11"}11
             %option{value: "12"}12
-          %i.fa.fa-chevron-down
-        %span.birth-group__month 月
+          -# %i.fa.fa-chevron-down
+          %span.birth-group__month 月
         .birth-group
           %select#exp_year{name: "exp_year", type: "text", class: "select-default2"}
-            %option{value: ""} --
             %option{value: "2020"}20
             %option{value: "2021"}21
             %option{value: "2022"}22
@@ -41,12 +48,15 @@
             %option{value: "2028"}28
             %option{value: "2029"}29
             %option{value: "2030"}30
-          %i.fa.fa-chevron-down.down
-        %span.birth-group__year 年
+          -# %i.fa.fa-chevron-down.down
+          %span.birth-group__year 年
     .form-group.form-group_text.card_code
       %label.form-group_label セキュリティコード
       %span.essential3 必須
     = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+    .cvc-info
+      %span.question ?
+      カード裏面の番号とは？
     #card_token
     .form-group
-    = submit_tag "追加する", id: "token_submit"
+    = submit_tag "登録する", id: "token_submit"
