@@ -268,8 +268,10 @@ span.question{
   text-align: center;
 }
 .cvc-info{
-  text-align: right;
   color: #0099e8;
+  // width: 50%;
+  // float: right;
+  position:relative;
 }
 
 .cvc-info:hover{
@@ -287,7 +289,7 @@ span.question{
 p.hidden{
  position:absolute;
  top:10px;
- left:70px;
+ left:10px;
  color:black;
 }
 .cvc-hidden img{
