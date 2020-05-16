@@ -57,6 +57,9 @@
     .cvc-info
       %span.question ?
       カード裏面の番号とは？
+      .cvc-hidden
+        %p.hidden カードの裏面をご参照ください。
+        = image_tag '/images/material/logo/seq-card.png',id: "image"
     #card_token
     .form-group
     = submit_tag "登録する", id: "token_submit"
