@@ -26,6 +26,315 @@
       margin: 60px auto;
       display: block;
     }
+   
+    
+    .card-title{
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    &__inner{
+      @include back(white);
+      height: auto;
+      width: 700px;
+      &__top{
+        @include back(white);
+        height: 90px;
+        width: 700px;
+        margin-top: 50px;
+        .card-number{
+          font-size: 14px;
+          font-weight: 600;
+          
+        }
+        &__label{
+          @include back(red);
+          color: white;
+          border-radius: 2px;
+          font-size: 14px;
+        }
+        &__content{
+          .card__input.number{
+          height: 40px;
+          width: 350px; 
+          }
+        }
+        
+      }
+      &__middle{
+        @include back(white);
+        height: 90px;
+        width: 700px;
+        margin-top: 30px;
+        .card-date{
+          font-size: 14px;
+          font-weight: 600;
+        }
+        &__label{
+          @include back(red);
+          color: white;
+          border-radius: 2px;
+          font-size: 14px;
+        }
+        &__date-form{
+          font-size: 20px;
+          .exp_month{
+            width: 100px;
+            background: transparent;
+          }
+          .exp_year{
+            width: 100px;
+            margin-left: 30px;
+            background: transparent;
+          }
+        }
+        
+      }
+      &__bottom{
+        @include back(white);
+        height: 75px;
+        width: 700px;
+        .seq-cord{
+          font-size: 14px;
+          font-weight: 600;
+        }
+        &__label{
+          @include back(red);
+          color: white;
+          font-size : 14px;
+          border-radius: 2px;
+        }
+        .card__input.number{
+          height: 40px;
+          width: 250px;
+          font-size: 12px;
+        }
+      }
+      &__seq {
+        a {
+          color: #3ccace;
+          font-size: 16px;
+        }
+
+      }
+
+      &__btn{
+        @include back(blackwhite);
+        color: currentColor;
+        font-size: 18px;
+        height: 40px;
+        width: 200px;
+        text-align: center;
+        margin-top: 20px;
+        
+        
+      }
+    }
+
   }
 }
+
+.form-wapper{
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color:rgb(233, 229, 229);
+  padding: 30px;
+  h1{
+    text-align:center;
+    font-weight: bold;
+    font-size:25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(179, 175, 175);
+}
+}
+
+#charge-form{
+  width:406px;
+  margin:0 auto;
+}
+
+.form-group_label{
+  font-weight:bold;
+  font-size:15px;
+}
+
+.form-group{
+  margin-bottom:5px;
+}
+
+.essential{
+  background: red;
+  color: white;
+  padding: 4px;
+  font-size: 13px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+.essential3{
+  background: red;
+  color: white;
+  padding: 4px;
+  font-size: 13px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+#card_number{
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+::placeholder{
+  margin-left:20px;
+}
+
+.card-logo{
+  margin-top:10px;
+  margin-bottom: 20px;
+}
+
+.card-logo img{
+  width: 42px;
+  height: 20px;
+}
+
+.birth-group{
+  float:left;
+  margin-right: 10px;
+
+}
+
+.form-flex::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+select.select-default{
+  width: 140px;
+  height: 40px;
+  padding-left: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(/images/material/icon/chevron-down-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+}
+select.select-default2{
+  width: 140px;
+  height: 40px;
+  padding-left: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(/images/material/icon/chevron-down-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+}
+
+span.birth-group__month{
+  margin-left:5px;
+}
+span.birth-group__year{
+  margin-left:5px;
+}
+
+#cvc{
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+input ::placeholder{
+  margin-left:20px;
+  color:red;
+}
+
+.card_code{
+  margin-top:30px;
+}
+
+#token_submit{
+  background-color: red;
+  width: 400px;
+  height: 43px;
+  color: white;
+  margin-top: 40px;
+}
+
+span.question{
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0099e8;
+  color: #fff;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+.cvc-info{
+  color: #0099e8;
+  position:relative;
+}
+
+.cvc-hidden{
+  display:none;
+  position:relative;
+}
+
+
+
+p.hidden{
+ position:absolute;
+ top:10px;
+ left:10px;
+ color:black;
+}
+.cvc-hidden img{
+  background-color: #eee;
+  width:400px;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.card-group{
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color:rgb(233, 229, 229);
+  padding: 30px;
+  &__title{
+   width:300px;
+   margin:0 auto;
+    h1{
+      width:100%;
+      text-align:center;
+      font-weight: bold;
+      font-size:25px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgb(179, 175, 175);
+    }
+    #charge-form{
+      margin-top: 10px
+    }
+    &__return{
+      background-color:red;
+      width: 200px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      a{
+        color:white;
+      }
+    }
+  }
+  }
+
 
