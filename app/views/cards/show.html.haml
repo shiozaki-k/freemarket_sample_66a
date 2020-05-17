@@ -1,6 +1,7 @@
 .card-group
   .card-group__title
-    %label クレジットカード一覧
+    %h1 支払い方法
+    %p クレジットカード一覧
     %br
     = "**** **** **** " + @default_card_information.last4
     %br
@@ -11,7 +12,7 @@
       %input{ type: "hidden", name: "card_id", value: "" }
       %button.btn_delate  削除する
 
-  .card-group_return
-    = link_to product_buyers_path(@product.ids), method: :get do
-      購入画面に進む
+    .card-group__title__return
+      = link_to product_buyers_path(@product.ids), method: :get do
+        購入画面に進む
    

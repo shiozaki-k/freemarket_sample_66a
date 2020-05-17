@@ -269,8 +269,6 @@ span.question{
 }
 .cvc-info{
   color: #0099e8;
-  // width: 50%;
-  // float: right;
   position:relative;
 }
 
@@ -278,6 +276,9 @@ span.question{
   display:none;
   position:relative;
 }
+
+
+
 p.hidden{
  position:absolute;
  top:10px;
@@ -289,5 +290,39 @@ p.hidden{
   width:400px;
   padding: 40px;
   border-radius: 20px;
+}
+
+.card-group{
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color:rgb(233, 229, 229);
+  padding: 30px;
+  &__title{
+   width:300px;
+   margin:0 auto;
+    h1{
+      width:100%;
+      text-align:center;
+      font-weight: bold;
+      font-size:25px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgb(179, 175, 175);
+    }
+    #charge-form{
+      margin-top: 10px
+    }
+    &__return{
+      background-color:red;
+      width: 200px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      a{
+        color:white;
+      }
+    }
+  }
 }
 
