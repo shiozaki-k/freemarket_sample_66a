@@ -10,11 +10,22 @@
   margin: 40px auto;
   
   &__form{
-    @include back(white);
-    height: 50px;
+    @include back(rgb(246, 246, 246));
+    height: 180px;
     width: 700px;
-    margin-top:40px;
+    margin:60px auto;
     text-align: center;
+    a{
+      @include back(#FF3366);
+      height: 50px;
+      width: 320px;
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      line-height: 50px;
+      margin: 60px auto;
+      display: block;
+    }
    
     
     .card-title{
@@ -324,5 +335,6 @@ p.hidden{
       }
     }
   }
-}
+  }
+
 
