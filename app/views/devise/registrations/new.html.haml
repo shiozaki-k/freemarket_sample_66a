@@ -221,18 +221,6 @@
       = f.telephone_field :phone_number, autocomplete: true
     = f.fields_for :address do |f|
       .field
-        = f.label :お名前
-        %span.plate-required 必須
-        %br/
-        = f.text_field :last_name_ad, autofocus: true, :placeholder => "例) 大阪"
-        = f.text_field :first_name_ad, autofocus: true, :placeholder => "例) 花子"
-      .field
-        = f.label :ふりがな
-        %span.plate-required 必須
-        %br/
-        = f.text_field :last_furigana_ad, autofocus: true, :placeholder => "例) おおさか"
-        = f.text_field :first_furigana_ad, autofocus: true, :placeholder => "例) はなこ"
-      .field
         = f.label :郵便番号
         %span.plate-required 必須
         %br/
